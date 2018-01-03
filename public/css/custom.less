@@ -1,0 +1,99 @@
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after { 
+  box-sizing: inherit;
+  padding: 0;
+  margin: 0;
+}
+a, a:hover, a:link, a:visited, a:active{color: #000; text-decoration: none;}
+.testborder{border: 1px solid red}
+// colors
+@red: #b82828;
+@dark: #3b3b3b;
+@width: 1200px;
+
+@font-face{
+	font-family: 'oxygen-regular';
+	src: url('/fonts/oxygen/Oxygen-Regular.woff2') format('woff2'),
+		 url('/fonts/oxygen/Oxygen-Regular.woff') format('woff');
+}
+@font-face{
+	font-family: 'oxygen-bold';
+	src: url('/fonts/oxygen/Oxygen-Bold.woff2') format('woff2'),
+		 url('/fonts/oxygen/Oxygen-Bold.woff') format('woff');
+}
+@font-face{
+	font-family: 'hindreg';
+	src: url('/fonts/hind/Hind-Regular.woff2') format('woff2'),
+		 url('/fonts/hind/Hind-Regular.woff') format('woff');
+}
+.oxyreg{font-family: 'oxygen-regular';}
+.oxybold{font-family: 'oxygen-bold';}
+.hindreg{font-family: 'hindreg';}
+
+// start
+.container{
+	max-width: @width;
+	padding: 5px 10px;
+	width: 100%;
+	margin: 0 auto;
+}
+nav{
+	position: fixed;
+	top: 0;
+	width: 100%;
+	.top{
+		background: #5b5b5b;
+		width: 100;
+		.hindreg;
+		.container{
+			text-align: right;
+			padding: 3px 10px;
+			a{
+				color: #fff;
+				margin: 0 0 0 15px;
+				transition: 0.3s;
+				&:hover{color: @red}
+				font-size: 14px;
+			}
+		}
+	}
+	.bottom{
+		background: @dark;
+		width: 100%;
+		color: #fff;
+		.oxyreg;
+		text-align: center;
+		.container{
+			padding: 7px 0;
+		}
+		.left{
+			width: 49%;
+			vertical-align: middle;
+			display: inline-block;
+			text-align: left;
+			.title{
+				font-size: 29px;
+				color: #fff;
+			}
+		}
+		.right{
+			width: 50%;
+			vertical-align: middle;
+			display: inline-block;
+			text-align: right;
+			p{
+				font-size: 16px;
+				span{
+					font-size: 25px;
+				}
+			}
+		}
+	}
+}
+.content_container{
+	margin-top: 83px;
+	height: 140vh;
+	background: #eeeeee;
+}
