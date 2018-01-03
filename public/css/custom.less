@@ -207,8 +207,11 @@ nav{
 	}
 }
 
-// add overflow hidden style to body 
-.mymodal{
+// add overflow hidden style to body
+ .mymodal{
+	visibility: hidden;
+	opacity: 0;
+	transition: 0.3s;
 	position: fixed;
 	z-index: 20;
 	top: 0;
@@ -218,18 +221,17 @@ nav{
 	width: 100%;
 	height: 100%;
 	background: rgba(0,0,0,0.6);
-	overflow-y: auto;
 	padding: 0 10px;
 	.modal{
 		background: #fff;
 		border-radius: 5px;
-		box-shadow: 0 0 11px #fff;
+		box-shadow: 0 0 11px #000;
 		max-width: 700px;
 		width: 100%;
 		margin: 3% auto 0 auto;
 		position: relative;
 		display: table;
-		.close{
+		.modal-closer{
 			position: absolute;
 			right: 5px;
 			top: 5px;
@@ -258,7 +260,13 @@ nav{
 			}
 			.form_group{
 				padding: 10px;
-				label{display: block; font-size: 15px; .oxyreg; margin-bottom: 3px; text-align: left;}
+				label{
+					display: block;
+					font-size: 15px;
+					.oxyreg; margin-bottom: 3px;
+					text-align: left;
+					i{color: red;}
+				}
 				input{
 					.oxyreg;
 					width: 100%;
@@ -287,5 +295,10 @@ nav{
 			padding: 15px;
 		}
 	}
+}
+.modal-active{
+	visibility: visible;
+	opacity: 1;
+	overflow-y: auto;
 }
 .modal-opened{overflow:hidden;}

@@ -40,44 +40,44 @@
 		</div>
 		<div class="mymodal registerModal">
 			<div class="modal">
-				<button class="close"><i class="fa fa-times" aria-hidden="true"></i></button>
+				<button class="modal-closer"><i class="fa fa-times" aria-hidden="true"></i></button>
 				<div class="header">Register</div>
 				<div class="body">
 					<form method="post" action="/register">
 						<div class="form_group">
-							<label>Name:</label>
-							<input type="text" name="name">
+							<label>Name: <i>*</i></label>
+							<input required type="text" name="name">
 						</div>
 						<div class="column">
 							<div class="form_group">
-								<label>Email:</label>
-								<input type="text" name="email">
+								<label>Email: <i>*</i></label>
+								<input required type="email" name="email">
 							</div>
 						</div>
 						<div class="column">
 							<div class="form_group">
-								<label>Mobile Number:</label>
-								<input type="text" name="mobile">
+								<label>Mobile Number: <i>*</i></label>
+								<input required type="text" name="mobile">
 							</div>
 						</div>
 						<div class="form_group">
-							<label>Address:</label>
-							<input type="text" name="address">
+							<label>Address: <i>*</i></label>
+							<input required type="text" name="address">
 						</div>
 						<div class="form_group">
-							<label>Username:</label>
-							<input type="text" name="username">
+							<label>Username: <i>*</i></label>
+							<input required type="text" name="username">
 						</div>
 						<div class="column">
 							<div class="form_group">
-								<label>Password:</label>
-								<input type="password" name="password">
+								<label>Password: <i>*</i></label>
+								<input required type="password" name="password">
 							</div>
 						</div>
 						<div class="column">
 							<div class="form_group">
-								<label>Re-enter Password:</label>
-								<input type="password" name="password2">
+								<label>Re-enter Password: <i>*</i></label>
+								<input required type="password" name="password2">
 							</div>
 						</div>
 						<div class="form_group">
