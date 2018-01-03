@@ -211,7 +211,7 @@ nav{
  .mymodal{
 	visibility: hidden;
 	opacity: 0;
-	transition: 0.3s;
+	transition: 0.5s;
 	position: fixed;
 	z-index: 20;
 	top: 0;
@@ -226,7 +226,6 @@ nav{
 		background: #fff;
 		border-radius: 5px;
 		box-shadow: 0 0 11px #000;
-		max-width: 700px;
 		width: 100%;
 		margin: 3% auto 0 auto;
 		position: relative;
@@ -302,3 +301,9 @@ nav{
 	overflow-y: auto;
 }
 .modal-opened{overflow:hidden;}
+.registerModal{
+	.modal{max-width: 700px;}
+}
+.loginModal{
+	.modal{max-width: 700px;}
+}

@@ -6,6 +6,10 @@ $('#btnRegister').click(function(){
 	$('.registerModal').addClass('modal-active');
 	bodyDisableScroll();
 });
+$('#btnLogin').click(function(){
+	$('.loginModal').addClass('modal-active');
+	bodyDisableScroll();
+});
 
 $('.modal-closer').click(function(){
 	$(this).closest('.mymodal').removeClass('modal-active');

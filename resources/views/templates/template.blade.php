@@ -87,6 +87,28 @@
 				</div>
 			</div>
 		</div>
+		<div class="mymodal loginModal">
+			<div class="modal">
+				<button class="modal-closer"><i class="fa fa-times" aria-hidden="true"></i></button>
+				<div class="header">Authentication</div>
+				<div class="body">
+					<form method="post" action="/login">
+						{{ csrf_field() }}
+						<div class="form_group">
+							<label>Username: <i>*</i></label>
+							<input required type="text" name="username">
+						</div>
+						<div class="form_group">
+							<label>Password: <i>*</i></label>
+							<input required type="password" name="password">
+						</div>
+						<div class="form_group">
+							<button type="submit">Login</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
 		<script type="text/javascript" src="/js/jquery-3.2.1.min.js"></script>
 		<script type="text/javascript" src="/js/owl.carousel.min.js"></script>
 		<script type="text/javascript" src="/js/actions.js"></script>
