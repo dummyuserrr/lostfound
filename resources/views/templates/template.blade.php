@@ -22,10 +22,10 @@
 			<div class="bottom">
 				<div class="container">
 					<div class="left">
-						<a href="/" class="title">TITLE DITO</a>
+						<a href="/" class="title"><i class="fa fa-tags" aria-hidden="true"></i> TITLE DITO</a>
 					</div>
 					<div class="right">
-						<p>Total found items: <span>992,321</span></p>
+						<p>Total found items: <span>999,999</span></p>
 					</div>
 				</div>
 			</div>

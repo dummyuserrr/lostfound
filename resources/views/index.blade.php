@@ -6,7 +6,7 @@
 				<div class="table">
 					<div class="content">
 						<p class="title">
-							Lost and Found Management System for Pangasinan
+							Lost and Found Management Something for Pangasinan I Forgot the Title
 						</p>
 						<div class="columns">
 							<a href="javascript:;" class="lost">LOST SOMETHING</a>
@@ -17,6 +17,11 @@
 					</div>
 				</div>
 			</div>
+		</div>
+	</div>
+	<div class="how_it_works">
+		<div class="container">
+			
 		</div>
 	</div>
 @stop
