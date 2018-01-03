@@ -94,6 +94,83 @@ nav{
 }
 .content_container{
 	margin-top: 83px;
-	height: 140vh;
 	background: #eeeeee;
+}
+.home_banner{
+	height: 560px;
+	width: 100%;
+	background-image: url('/img/banner.jpg');
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	position: relative;
+	.overlayer{
+		position: absolute;
+		top: 0;
+		right: 0;
+		left: 0;
+		bottom: 0;
+		height: 100%;
+		width: 100%;
+		background: rgba(0,0,0,0.5);
+		.container{
+			.table{
+				display: table;
+				height: 545px;
+				width: 100%;
+				.content{
+					display: table-cell;
+					vertical-align: middle;
+					text-align: center;
+					width: 100%;
+					color: #fff;
+					.title{
+						.oxybold;
+						font-size: 55px;
+						text-shadow: 0px 0px 11px #d7d7d7;
+					}
+					.columns{
+						display: inline-block;
+						vertical-align: middle;
+						text-align: center;
+						width: 30%;
+						margin: 30px 0;
+						a{
+							display: block;
+							margin: 0 auto;
+							padding: 15px 10px;
+							text-align: center;
+							transition: 0.5s;
+							border-radius: 10px;
+							font-size: 20px;
+						}
+						.lost{
+							background: @red;
+							max-width: 300px;
+							width: 100%;
+							color: #ddd;
+							border: 1px solid @red;
+							.oxybold;
+							&:hover{
+								color: @red;
+								background: #ddd;
+							}
+						}
+						.found{
+							background: @dark;
+							max-width: 300px;
+							width: 100%;
+							color: #fff;
+							border: 1px solid @dark;
+							.oxybold;
+							&:hover{
+								color: @dark;
+								background: #ddd;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
 }
