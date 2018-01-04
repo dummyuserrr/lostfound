@@ -40,6 +40,10 @@
 					</div>
 				</form>
 			</div>
+			<p class="mini_title">Lost Items</p>
+			<div class="box">
+				asdasd
+			</div>
 		</div>
 	</div>
 </div>
