@@ -74,7 +74,7 @@ nav{
 		}
 		.left{
 			padding-left: 10px;
-			width: 39%;
+			width: 29%;
 			vertical-align: middle;
 			display: inline-block;
 			text-align: left;
@@ -86,7 +86,7 @@ nav{
 		}
 		.right{
 			padding-right: 10px;
-			width: 60%;
+			width: 70%;
 			vertical-align: middle;
 			display: inline-block;
 			text-align: right;
@@ -340,3 +340,86 @@ nav{
 .loginModal{
 	.modal{max-width: 700px;}
 }
+.lost_container{
+	.container{
+		padding: 15px 10px;
+		text-align: center;
+		.left, .right{
+			display: inline-block;
+			vertical-align: top;
+			margin: 10px 0;
+			text-align: center;
+			.box{
+				background: #fff;
+				border: 1px solid #fff;
+				padding: 10px;
+				box-shadow: 0 2px 11px #b6b6b6;
+				border-radius: 3px;
+			}
+		}
+		.left{
+			width: 28%;
+			.box{
+				margin-right: 10px;
+			}
+		}
+		.right{
+			width: 70%;
+			.box{
+				margin-left: 10px;
+				display: table;
+				width: 100%;
+				//
+				.column{
+					text-align: left;
+					display: inline-block;
+					vertical-align: top;
+					width: 50%;
+					float: left;
+				}
+				.form_group{
+					padding: 10px;
+					label{
+						display: block;
+						font-size: 15px;
+						.oxyreg; margin-bottom: 3px;
+						text-align: left;
+						i{color: red;}
+					}
+					input, select{
+						.oxyreg;
+						width: 100%;
+						padding: 6px;
+						font-size: 16px;
+						border-radius: 5px;
+						border: 1px solid #000;
+						transition: 0.3s;
+						&:focus{
+							outline: none;
+							box-shadow: 0 0 11px #6c6c6c;
+						}
+					}
+					select{
+						background: #fff;
+					}
+					button{
+						padding: 10px 15px;
+						border-radius: 8px;
+						font-size: 16px;
+						border: 1px solid @red;
+						background: @red;
+						color: #fff	;
+						margin-top: 10px;
+						width: 100%;
+					}
+					#photo{
+						border: 1px solid #bebebe;
+					}
+				}
+
+				//
+			}
+		}
+	}
+}
+// wew
