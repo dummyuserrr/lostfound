@@ -73,7 +73,8 @@ nav{
 			padding: 7px 0;
 		}
 		.left{
-			width: 49%;
+			padding-left: 10px;
+			width: 39%;
 			vertical-align: middle;
 			display: inline-block;
 			text-align: left;
@@ -84,14 +85,28 @@ nav{
 			}
 		}
 		.right{
-			width: 50%;
+			padding-right: 10px;
+			width: 60%;
 			vertical-align: middle;
 			display: inline-block;
 			text-align: right;
 			p{
-				font-size: 16px;
+				font-size: 14px;
+				display: inline-block;
+				padding-left: 20px;
+				text-align: center;
 				span{
-					font-size: 25px;
+					font-size: 20px;
+					text-align: center;
+				}
+				a{
+					color: #fff;
+					font-size: 22px;
+					transition: 0.3s;
+					.hindreg;
+					&:hover{
+						text-shadow: 0 0 11px #fff;
+					}
 				}
 			}
 		}
@@ -100,6 +115,7 @@ nav{
 .content_container{
 	margin-top: 83px;
 	background: #eeeeee;
+	min-height: 83vh;
 }
 .home_banner{
 	height: 560px;

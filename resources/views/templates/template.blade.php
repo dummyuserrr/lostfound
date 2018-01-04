@@ -15,8 +15,8 @@
 		<nav>
 			<div class="top">
 				<div class="container">
-				<div class="options" id="btnRegister"><i class="fa fa-user" aria-hidden="true"></i> Register</div>
-				<div class="options" id="btnLogin"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</div>
+					<div class="options" id="btnRegister"><i class="fa fa-user" aria-hidden="true"></i> Register</div>
+					<div class="options" id="btnLogin"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</div>
 				</div>
 			</div>
 			<div class="bottom">
@@ -25,6 +25,10 @@
 						<a href="/" class="title"><i class="fa fa-tags" aria-hidden="true"></i> TITLE DITO</a>
 					</div>
 					<div class="right">
+						@if(checkCurrentDirectory('/') != 'true')
+						<p><a href="/lost">LOST SOMETHING</a></p>
+						<p><a href="/found">FOUND SOMETHING</a></p>
+						@endif
 						<p>Total found items: <span>999,999</span></p>
 					</div>
 				</div>
