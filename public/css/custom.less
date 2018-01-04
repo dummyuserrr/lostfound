@@ -70,7 +70,7 @@ nav{
 		.oxyreg;
 		text-align: center;
 		.container{
-			padding: 7px 0;
+			padding: 12px 0;
 		}
 		.left{
 			padding-left: 10px;
@@ -102,18 +102,22 @@ nav{
 				a{
 					color: #fff;
 					font-size: 22px;
-					transition: 0.3s;
+					transition: 0.5s;
+					border-bottom: 2px solid @dark;
 					.hindreg;
 					&:hover{
-						text-shadow: 0 0 11px #fff;
+						border-bottom: 2px solid #fff;
 					}
+				}
+				.link_active{
+					border-bottom: 2px solid #fff;
 				}
 			}
 		}
 	}
 }
 .content_container{
-	margin-top: 83px;
+	margin-top: 93px;
 	background: #eeeeee;
 	min-height: 83vh;
 }

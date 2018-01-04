@@ -26,8 +26,8 @@
 					</div>
 					<div class="right">
 						@if(checkCurrentDirectory('/') != 'true')
-						<p><a href="/lost">LOST SOMETHING</a></p>
-						<p><a href="/found">FOUND SOMETHING</a></p>
+						<p><a href="/lost" class="{{ navSetActive('lost') }}">LOST SOMETHING</a></p>
+						<p><a href="/found" class="{{ navSetActive('found') }}">FOUND SOMETHING</a></p>
 						@endif
 						<p>Total found items: <span>999,999</span></p>
 					</div>

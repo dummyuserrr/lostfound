@@ -7,9 +7,9 @@ function setActive($path){
     }
 }
 
-function adminSetActive($path){
+function navSetActive($path){
     if(Request::is($path . '*')){
-    	return 'active';
+    	return 'link_active';
     }
 }
 
