@@ -4,6 +4,7 @@ $(document).ready(function(){
 
 $('#btnRegister').click(function(){
 	$('.registerModal').addClass('modal-active');
+	$('#register_name').focus();
 	bodyDisableScroll();
 });
 $('#btnLogin').click(function(){

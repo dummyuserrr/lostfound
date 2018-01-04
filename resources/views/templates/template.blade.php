@@ -15,8 +15,8 @@
 		<nav>
 			<div class="top">
 				<div class="container">
-					<a href="javascript:;" id="btnRegister"><i class="fa fa-user" aria-hidden="true"></i> Register</a>
-					<a href="javascript:;" id="btnLogin"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a>
+				<div class="options" id="btnRegister"><i class="fa fa-user" aria-hidden="true"></i> Register</div>
+				<div class="options" id="btnLogin"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</div>
 				</div>
 			</div>
 			<div class="bottom">
@@ -46,39 +46,43 @@
 					<form method="post" action="/register">
 						<div class="form_group">
 							<label>Name: <i>*</i></label>
-							<input required type="text" name="name">
+							<input required type="text" name="name" placeholder="John Doe" id="register_name">
 						</div>
 						<div class="column">
 							<div class="form_group">
 								<label>Email: <i>*</i></label>
-								<input required type="email" name="email">
+								<input required type="email" name="email" placeholder="johndoe@email.com">
 							</div>
 						</div>
 						<div class="column">
 							<div class="form_group">
 								<label>Mobile Number: <i>*</i></label>
-								<input required type="text" name="mobile">
+								<input required type="text" name="mobile" placeholder="09991234567">
 							</div>
 						</div>
 						<div class="form_group">
 							<label>Address: <i>*</i></label>
-							<input required type="text" name="address">
+							<input required type="text" name="address" placeholder="43, Amado St., Dagupan City, Pangasinan">
 						</div>
 						<div class="form_group">
 							<label>Username: <i>*</i></label>
-							<input required type="text" name="username">
+							<input required type="text" name="username" placeholder="johndoe">
 						</div>
 						<div class="column">
 							<div class="form_group">
 								<label>Password: <i>*</i></label>
-								<input required type="password" name="password">
+								<input required type="password" placeholder="Password" name="password">
 							</div>
 						</div>
 						<div class="column">
 							<div class="form_group">
 								<label>Re-enter Password: <i>*</i></label>
-								<input required type="password" name="password2">
+								<input required type="password" placeholder="Password" name="password2">
 							</div>
+						</div>
+						<div class="form_group">
+							<label for="photo">Photo: <i>*</i></label>
+							<input required id="photo" type="file" name="image">
 						</div>
 						<div class="form_group">
 							<button type="submit">Register</button>
@@ -90,17 +94,17 @@
 		<div class="mymodal loginModal">
 			<div class="modal">
 				<button class="modal-closer"><i class="fa fa-times" aria-hidden="true"></i></button>
-				<div class="header">Authentication</div>
+				<div class="header">User Login</div>
 				<div class="body">
 					<form method="post" action="/login">
 						{{ csrf_field() }}
 						<div class="form_group">
 							<label>Username: <i>*</i></label>
-							<input required type="text" name="username">
+							<input required type="text" name="username" autocomplete="off">
 						</div>
 						<div class="form_group">
 							<label>Password: <i>*</i></label>
-							<input required type="password" name="password">
+							<input required type="password" name="password" autocomplete="off">
 						</div>
 						<div class="form_group">
 							<button type="submit">Login</button>
