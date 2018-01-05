@@ -45,3 +45,7 @@ function bodyDisableScroll(){
 function bodyEnableScroll(){
 	$('body').removeClass('modal-opened');
 }
+
+function viewImage(imagePath){
+	// wala pa
+}

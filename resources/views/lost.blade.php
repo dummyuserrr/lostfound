@@ -27,7 +27,7 @@
 					</div>
 					<div class="column">
 						<div class="form_group">
-							<label>Photo(s): <i>*</i></label>
+							<label>Photo/s (You can upload multiple): <i>*</i></label>
 							<input required type="file" name="name" multiple>
 						</div>
 					</div>
@@ -77,8 +77,21 @@
 						</p>
 						<div class="post_photos_container">
 							<div class="boxes">
-								<img src="/img/sample_lost.jpg">
+								<div class="post_photos morephotos" style="background-image: url('/img/sample_lost.jpg');"></div>
 							</div>
+						</div>
+					</div>
+					<hr>
+					<p class="minititle">COMMENTS</p>
+					<div class="post_comments">
+						<div class="post_comments_left" style="background-image: url('/img/sample_lost.jpg');"></div>
+						<div class="post_comments_right">
+							<p class="comment">
+								<a href="#!" class="name">John Doe</a>
+								<span class="comment_content">
+									Nakita ko to kahapon
+								</span>
+							</p>
 						</div>
 					</div>
 				</div>

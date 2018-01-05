@@ -446,7 +446,6 @@ nav{
 					.left, .right{
 						display: inline-table;
 						vertical-align: top;
-						.testborder;
 					}
 					.left{
 						width: 34%;
@@ -458,7 +457,6 @@ nav{
 							.hindreg;
 							color: #000;
 							vertical-align: middle;
-							.testborder;
 							img{
 								max-width: 100%;
 							}
@@ -479,15 +477,54 @@ nav{
 							width: 100%;
 							.boxes{
 								display: inline-block;
-								width: 23%;
+								width: 21%;
+								margin: 5px;
+								height: 100px;
 								img{max-width: 100%;}
+								.morephotos{
+									background-size: cover;
+									background-position: center;
+									height: 100%;
+									width: 100%;
+								}
 							}
+						}
+					}
+					.minititle{
+						font-size: 14px;
+						.oxybold;
+						text-align: left;
+						color: #595959;
+						display: block;
+						margin: 10px 0;
+					}
+				}
+				.post_comments{
+					text-align: left;
+					.post_comments_left, .post_comments_right{
+						display: inline-block;
+						vertical-align: top;
+					}
+					.post_comments_left{
+						width: 6%;
+						text-align: center;
+						background-size: cover;
+						background-position: center;
+						height: 50px;
+					}
+					.post_comments_right{
+						width: 93%;
+						.comment{
+							.hindreg;
+							.name{font-weight: bold; color: @red; display: block;}
+							.comment_content{margin-top: -5px; display: block;}
 						}
 					}
 				}
 			} // end of box
 			.mini_title{
 				.oxybold;
+				margin-top: 10px;
 				text-align: left;
 				margin: 20px 0 7px 10px;
 			}
