@@ -82,14 +82,14 @@
 						</div>
 					</div>
 					<hr>
-					<p class="minititle">COMMENTS</p>
+					<p class="minititle postcomments_toggler"><a href="javascript:;">VIEW 1 COMMENT(S) <i class="fa fa-chevron-right" aria-hidden="true"></i></a></p>
 					<div class="post_comments">
 						<div class="post_comments_left" style="background-image: url('/img/sample_lost.jpg');"></div>
 						<div class="post_comments_right">
 							<p class="comment">
 								<a href="#!" class="name">John Doe</a>
 								<span class="comment_content">
-									Nakita ko to kahapon
+									Nakita ko to kahapon ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris n
 								</span>
 							</p>
 						</div>

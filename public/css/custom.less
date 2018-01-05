@@ -501,19 +501,26 @@ nav{
 				}
 				.post_comments{
 					text-align: left;
+					position: relative;
+					max-height: 0;
+					overflow: hidden;
+					transition: max-height 0.3s ease-out;
 					.post_comments_left, .post_comments_right{
-						display: inline-block;
-						vertical-align: top;
+						// display: inline-block;
+						// vertical-align: top;
 					}
 					.post_comments_left{
-						width: 6%;
 						text-align: center;
 						background-size: cover;
 						background-position: center;
 						height: 50px;
+						width: 50px;
+						position: absolute;
+						left: 0;
+						top: 0;
 					}
 					.post_comments_right{
-						width: 93%;
+						margin-left: 60px;
 						.comment{
 							.hindreg;
 							.name{font-weight: bold; color: @red; display: block;}

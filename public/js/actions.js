@@ -1,11 +1,12 @@
 $(document).ready(function(){
 	// accordion for main_content left_nav
-	var acc = document.getElementsByClassName("postToggler");
+	var acc = document.getElementsByClassName("postcomments_toggler");
 	var i;
 	for (i = 0; i < acc.length; i++) {
 	  acc[i].onclick = function() {
 	    this.classList.toggle("active");
-	    var panel = $(this).closest('.box').find('.form');
+	    // var panel = $(this).closest('.box').find('.form');
+	    var panel = this.nextElementSibling;
 	    if (panel.style.maxHeight){
 	      panel.style.maxHeight = null;
 	      $(this).find('i').attr('class', 'fa fa-chevron-right');
