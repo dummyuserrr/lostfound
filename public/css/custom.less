@@ -469,7 +469,7 @@ nav{
 						.texts{
 							.hindreg;
 							font-size: 16px;
-							.name{font-weight: bold;}
+							.label{font-weight: bold; color: @red;}
 							display: block;
 							padding: 0 0 5px 0;
 						}
@@ -502,9 +502,9 @@ nav{
 				.post_comments{
 					text-align: left;
 					position: relative;
-					max-height: 0;
-					overflow: hidden;
-					transition: max-height 0.3s ease-out;
+					// max-height: 0;
+					// overflow: hidden;
+					// transition: max-height 0.3s ease-out;
 					.post_comments_left, .post_comments_right{
 						// display: inline-block;
 						// vertical-align: top;
@@ -523,10 +523,20 @@ nav{
 						margin-left: 60px;
 						.comment{
 							.hindreg;
-							.name{font-weight: bold; color: @red; display: block;}
-							.comment_content{margin-top: -5px; display: block;}
+							.name{font-weight: bold; color: @red; display: block;
+								.comment_date{
+									color: #7b7b7b;
+									font-size: 12px;
+								}
+							}
+							.comment_content{margin-top: -5px; display: block; line-height: 1.3; .oxyreg; font-size: 14px;}
 						}
 					}
+				}
+				.commentbox{
+					.testborder;
+					width: 100%;
+					padding: 10px;
 				}
 			} // end of box
 			.mini_title{

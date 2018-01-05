@@ -87,7 +87,7 @@
 						<div class="post_comments_left" style="background-image: url('/img/sample_lost.jpg');"></div>
 						<div class="post_comments_right">
 							<p class="comment">
-								<a href="#!" class="name">John Doe</a>
+								<a href="#!" class="name">John Doe <span class="comment_date">&#9679; 1 min ago</span></a>
 								<span class="comment_content">
 									Nakita ko to kahapon ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris n
 								</span>
