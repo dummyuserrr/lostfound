@@ -298,7 +298,7 @@ nav{
 					padding: 6px;
 					font-size: 16px;
 					border-radius: 5px;
-					border: 1px solid #000;
+					border: 1px solid #818181;
 					transition: 0.3s;
 					&:focus{
 						outline: none;
@@ -370,7 +370,25 @@ nav{
 				display: table;
 				width: 100%;
 				margin-bottom: 15px;
-
+				.header{
+					text-align: left;
+					.oxyreg;
+					padding: 10px;
+					font-weight: bold;
+					.toggle{
+						float: right;
+						background: none;
+						border: none;
+						font-size: 16px;
+						cursor: pointer;
+						display: none;
+					}
+				}
+				// .form{
+				// 	max-height: 0;
+				// 	overflow: hidden;
+				// 	transition: max-height 0.3s ease-out;
+				// }
 				.column{
 					text-align: left;
 					display: inline-block;
@@ -393,7 +411,7 @@ nav{
 						padding: 6px;
 						font-size: 16px;
 						border-radius: 5px;
-						border: 1px solid #000;
+						border: 1px solid #818181;
 						transition: 0.3s;
 						&:focus{
 							outline: none;
@@ -419,7 +437,53 @@ nav{
 					#photo{
 						border: 1px solid #bebebe;
 					}
-					
+				}
+				.posts{
+					text-align: center;
+					.post_photos{
+						cursor: pointer;
+					}
+					.left, .right{
+						display: inline-table;
+						vertical-align: top;
+						.testborder;
+					}
+					.left{
+						width: 34%;
+						padding: 0 10px 0 0;
+						min-height: 250px;
+						.content{
+							display: table-cell;
+							width: 100%;
+							.hindreg;
+							color: #000;
+							vertical-align: middle;
+							.testborder;
+							img{
+								max-width: 100%;
+							}
+						}
+					}
+					.right{
+						width: 64%;
+						// padding: 0 0 0 10px;
+						text-align: left;
+						.texts{
+							.hindreg;
+							font-size: 16px;
+							.name{font-weight: bold;}
+							display: block;
+							padding: 0 0 5px 0;
+						}
+						.post_photos_container{
+							width: 100%;
+							.boxes{
+								display: inline-block;
+								width: 23%;
+								img{max-width: 100%;}
+							}
+						}
+					}
 				}
 			} // end of box
 			.mini_title{
