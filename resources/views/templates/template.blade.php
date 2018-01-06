@@ -137,6 +137,12 @@
 				</div>
 			</div>
 		</div>
+		@if(session()->has('status'))
+		<form id="deleteForm" method="post" action="none">
+			{{ csrf_field() }}
+			{{ method_field('delete') }}
+		</form>
+		@endif
 		<script type="text/javascript" src="/js/jquery-3.2.1.min.js"></script>
 		<script type="text/javascript" src="/js/owl.carousel.min.js"></script>
 		<script type="text/javascript" src="/tippyjs-master/dist/tippy.min.js"></script>
