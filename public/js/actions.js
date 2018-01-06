@@ -22,7 +22,12 @@ $(document).ready(function(){
 	    } 
 	  }
 	}
-});
+
+	tippy('.deletebutton', {
+		position: 'top',
+		arrow: true,
+	});
+}); // end ready
 
 $('.btnRegister').click(function(){
 	$('.registerModal').addClass('modal-active');

@@ -69,6 +69,9 @@
 			<p class="mini_title">Lost Items by Other People</p>
 			@foreach($lostItems as $l)
 			<div class="box">
+				<div class="deletebutton" title="Delete this post">
+					<i class="fa fa-trash" aria-hidden="true"></i>
+				</div>
 				<div class="posts">
 					<div class="left">
 						<div class="content">

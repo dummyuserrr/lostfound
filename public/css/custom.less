@@ -390,6 +390,7 @@ nav{
 				display: table;
 				width: 100%;
 				margin-bottom: 15px;
+				position: relative;
 				.prompt{
 					a{color: @red;}
 				}
@@ -460,6 +461,18 @@ nav{
 					#photo{
 						border: 1px solid #bebebe;
 					}
+				}
+				.deletebutton{
+					position: absolute;
+					top: -15px;
+					right: -15px;
+					font-size: 20px;
+					padding: 6px 8px 3px 8px;
+					border-radius: 55px;
+					border: 1px solid @red;
+					color: @red;
+					cursor: pointer;
+					background: #fff;
 				}
 				.posts{
 					text-align: center;
