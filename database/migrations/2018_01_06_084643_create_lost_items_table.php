@@ -19,6 +19,7 @@ class CreateLostItemsTable extends Migration
             $table->string('name');
             $table->string('category');
             $table->text('place');
+            $table->date('datelost');
             $table->text('otherdetails');
             $table->integer('status')->default(0);
             $table->softDeletes();

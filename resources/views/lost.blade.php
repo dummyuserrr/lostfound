@@ -21,9 +21,17 @@
 				<form method="post" action="/lost-something/add" enctype="multipart/form-data" class="form">
 					{{ csrf_field() }}
 					@include('prompts.validation_errors')
-					<div class="form_group">
-						<label>Item Name: <i>*</i></label>
-						<input required type="text" name="name" autofocus>
+					<div class="column">
+						<div class="form_group">
+							<label>Item Name: <i>*</i></label>
+							<input required type="text" name="name" autofocus>
+						</div>
+					</div>
+					<div class="column">
+						<div class="form_group">
+							<label>Date Lost: <i>*</i></label>
+							<input required type="date" name="datelost" style="padding: 5px;" max="{{ date('Y-m-d') }}"> 
+						</div>
 					</div>
 					<div class="column">
 						<div class="form_group">
@@ -59,50 +67,59 @@
 			</div>
 			@endif
 			<p class="mini_title">Lost Items by Other People</p>
+			@foreach($lostItems as $l)
 			<div class="box">
 				<div class="posts">
 					<div class="left">
 						<div class="content">
-							<img src="/img/sample_lost.jpg" class="post_photos" onclick="viewImage()">
-							<!-- <p class="prompt">
-										No Image(s) Uploaded
-							</p> -->
+							@if($l->images)
+							<img src="/{{ $l->images->first()->image }}" class="post_photos" onclick="viewImage('/{{ $l->images->first()->image }}')">
+							@else
+							<p class="prompt">
+								No Image(s) Uploaded
+							</p>
+							@endif
 						</div>
 					</div>
 					<div class="right">
 						<!-- <p class="texts"><span class="found"><i class="fa fa-check" aria-hidden="true"></i> This has been marked as found</span></p> -->
 						<p class="texts">
 							<span class="label">Item Name: </span>
-							<span class="name">iPhone 6s</span>
+							<span class="name">{{ $l->name }}</span>
 						</p>
 						<p class="texts">
 							<span class="label">Category: </span>
-							<span class="name">Phone</span>
+							<span class="name">{{ $l->category }}</span>
 						</p>
 						<p class="texts">
 							<span class="label">Last Place Seen: </span>
-							<span class="name">CSI Lucao</span>
+							<span class="name">{{ $l->place }}</span>
 						</p>
 						<p class="texts">
 							<span class="label">Other Details: </span>
-							<span class="name">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </span>
+							<span class="name">{{ $l->otherdetails }}</span>
 						</p>
 						<p class="texts">
 							<span class="label">Posted by: </span>
-							<span class="name">Jane Doe</span>
+							<span class="name">{{ $l->user->name }}</span>
 						</p>
 						<p class="texts">
 							<span class="label">Posted On: </span>
-							<span class="name">January 5, 2018</span>
+							<span class="name">{{ $l->created_at }}</span>
 						</p>
+						@if($l->images->count() > 1)
 						<p class="texts">
 							<span class="label">Other Photos:</span>
 						</p>
 						<div class="post_photos_container">
+							@foreach($l->images as $image)
+							@if ($loop->first) @continue @endif
 							<div class="boxes">
-								<div class="post_photos morephotos" style="background-image: url('/img/sample_lost.jpg');"></div>
+								<div class="post_photos morephotos" style="background-image: url('/{{ $image->image }}');"></div>
 							</div>
+							@endforeach
 						</div>
+						@endif
 					</div>
 					<hr>
 					<p class="minititle postcomments_toggler"><a href="javascript:;">VIEW 2 COMMENT(S) <i class="fa fa-chevron-right" aria-hidden="true"></i></a></p>
@@ -143,6 +160,7 @@
 					</div>
 				</div>
 			</div>
+			@endforeach
 		</div>
 	</div>
 </div>

@@ -98,4 +98,5 @@ function bodyEnableScroll(){
 function viewImage(imagePath){
 	bodyDisableScroll();
 	$('.photoModal').addClass('modal-active');
+	$('.photoView').attr('src', imagePath);
 }

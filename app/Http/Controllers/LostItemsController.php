@@ -14,6 +14,7 @@ class LostItemsController extends Controller
     		'name' => 'required',
     		'category' => 'required',
     		'place' => 'required',
+            'datelost' => 'required',
     		'otherdetails' => 'required',
     		'images' => 'required',
     		'images.*' => 'mimes:jpeg,bmp,png,jpg',
@@ -24,6 +25,7 @@ class LostItemsController extends Controller
     	$l->name = $r->name;
     	$l->category = $r->category;
     	$l->place = $r->place;
+        $l->datelost = $r->datelost;
     	$l->otherdetails = $r->otherdetails;
     	$l->save();
 
