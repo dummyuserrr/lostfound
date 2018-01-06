@@ -23,7 +23,7 @@ class CreateUsersTable extends Migration
             $table->string('username');
             $table->string('password');
             $table->string('role')->default('user');
-            $table->integer('approved');
+            $table->integer('approved')->default(0);
             $table->softDeletes();
             $table->timestamps();
         });

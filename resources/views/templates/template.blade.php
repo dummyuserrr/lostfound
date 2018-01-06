@@ -15,8 +15,15 @@
 		<nav>
 			<div class="top">
 				<div class="container">
+					@if(session()->has('status'))
+					<div class="options btnLogout"><i class="fa fa-sign-out" aria-hidden="true"></i> Log Out</div>
+					<form id="frmLogout" method="post" action="/logout">
+						{{ csrf_field() }}
+					</form>
+					@else
 					<div class="options btnRegister"><i class="fa fa-user" aria-hidden="true"></i> Register</div>
 					<div class="options btnLogin"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</div>
+					@endif
 				</div>
 			</div>
 			<div class="bottom">
@@ -100,18 +107,21 @@
 				<button class="modal-closer"><i class="fa fa-times" aria-hidden="true"></i></button>
 				<div class="header">User Login</div>
 				<div class="body">
-					<form method="post" action="/login">
+					<form method="post" action="/login" id="frmLogin">
 						{{ csrf_field() }}
 						<div class="form_group">
 							<label>Username: <i>*</i></label>
-							<input required type="text" name="username" autocomplete="off">
+							<input type="text" name="username" autocomplete="off">
 						</div>
 						<div class="form_group">
 							<label>Password: <i>*</i></label>
-							<input required type="password" name="password" autocomplete="off">
+							<input type="password" name="password" autocomplete="off">
+						</div>
+						<div class="form_group loginerror">
+							<div class="prompt">Wrong username or password. Please try again.</div>
 						</div>
 						<div class="form_group">
-							<button type="submit">Login</button>
+							<button type="submit" class="loginbutton">Login</button>
 						</div>
 					</form>
 				</div>
