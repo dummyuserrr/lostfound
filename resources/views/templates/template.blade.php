@@ -145,7 +145,7 @@
 					Are you sure you want to delete this item?
 					<div class="form_group">
 						<button onclick="initiateDelete()">Yes</button>
-						<button style="background: #818181; border: 1px solid #818181;">No</button>
+						<button style="background: #818181; border: 1px solid #818181;" onclick="closeModal()">No</button>
 					</div>
 				</div>
 			</div>

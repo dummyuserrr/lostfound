@@ -118,3 +118,8 @@ function setDeleteTarget(id){
 function initiateDelete(){
 	$('#deleteForm').submit();
 }
+
+function closeModal(){
+	$('.mymodal').removeClass('modal-active');
+	bodyEnableScroll();
+}
