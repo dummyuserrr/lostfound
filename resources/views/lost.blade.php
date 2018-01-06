@@ -96,6 +96,10 @@
 							<span class="name">{{ $l->place }}</span>
 						</p>
 						<p class="texts">
+							<span class="label">Date Lost: </span>
+							<span class="name">{{ $l->datelost }}</span>
+						</p>
+						<p class="texts">
 							<span class="label">Other Details: </span>
 							<span class="name">{{ $l->otherdetails }}</span>
 						</p>
