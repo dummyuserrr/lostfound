@@ -51,11 +51,12 @@
 						<div class="content">
 							<img src="/img/sample_lost.jpg" class="post_photos">
 							<!-- <p class="prompt">
-								No Image(s) Uploaded
+									No Image(s) Uploaded
 							</p> -->
 						</div>
 					</div>
 					<div class="right">
+						<!-- <p class="texts"><span class="found"><i class="fa fa-check" aria-hidden="true"></i> This has been marked as found</span></p> -->
 						<p class="texts">
 							<span class="label">Item Name: </span>
 							<span class="name">iPhone 6s</span>
@@ -73,6 +74,14 @@
 							<span class="name">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </span>
 						</p>
 						<p class="texts">
+							<span class="label">Posted by: </span>
+							<span class="name">Jane Doe</span>
+						</p>
+						<p class="texts">
+							<span class="label">Posted On: </span>
+							<span class="name">January 5, 2018</span>
+						</p>
+						<p class="texts">
 							<span class="label">Other Photos:</span>
 						</p>
 						<div class="post_photos_container">
@@ -82,16 +91,36 @@
 						</div>
 					</div>
 					<hr>
-					<p class="minititle postcomments_toggler"><a href="javascript:;">VIEW 1 COMMENT(S) <i class="fa fa-chevron-right" aria-hidden="true"></i></a></p>
+					<p class="minititle postcomments_toggler"><a href="javascript:;">VIEW 2 COMMENT(S) <i class="fa fa-chevron-right" aria-hidden="true"></i></a></p>
 					<div class="post_comments">
-						<div class="post_comments_left" style="background-image: url('/img/sample_lost.jpg');"></div>
-						<div class="post_comments_right">
-							<p class="comment">
-								<a href="#!" class="name">John Doe <span class="comment_date">&#9679; 1 min ago</span></a>
-								<span class="comment_content">
-									Nakita ko to kahapon ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris n
-								</span>
-							</p>
+						<div class="commentbox">
+							<form method="post" action="/lost/comment/add">
+								{{ csrf_field() }}
+								<textarea name="comment" rows="3" placeholder="Add a comment..." required></textarea>
+								<button type="submit">Submit</button>
+							</form>
+						</div>
+						<div class="commentcontainer">
+							<div class="post_comments_left" style="background-image: url('/img/sample_lost.jpg');"></div>
+							<div class="post_comments_right">
+								<p class="comment">
+									<a href="#!" class="name">John Doe <span class="comment_date">&#9679; 1 min ago</span></a>
+									<span class="comment_content">
+										Nakita ko to kahapon ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris n
+									</span>
+								</p>
+							</div>
+						</div>
+						<div class="commentcontainer">
+							<div class="post_comments_left" style="background-image: url('/img/sample_lost.jpg');"></div>
+							<div class="post_comments_right">
+								<p class="comment">
+									<a href="#!" class="name">John Doe <span class="comment_date">&#9679; 1 min ago</span></a>
+									<span class="comment_content">
+										Nakita ko to kahapon ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris n
+									</span>
+								</p>
+							</div>
 						</div>
 					</div>
 				</div>

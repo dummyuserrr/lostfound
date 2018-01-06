@@ -469,9 +469,9 @@ nav{
 						.texts{
 							.hindreg;
 							font-size: 16px;
-							.label{font-weight: bold; color: @red;}
+							.label{font-weight: bold; font-size: 14px; color: @red;}
 							display: block;
-							padding: 0 0 5px 0;
+							padding: 0 0 3px 0;
 						}
 						.post_photos_container{
 							width: 100%;
@@ -502,13 +502,14 @@ nav{
 				.post_comments{
 					text-align: left;
 					position: relative;
-					// max-height: 0;
-					// overflow: hidden;
-					// transition: max-height 0.3s ease-out;
+					max-height: 0;
+					overflow: hidden;
+					transition: max-height 0.3s ease-out;
 					.post_comments_left, .post_comments_right{
 						// display: inline-block;
 						// vertical-align: top;
 					}
+					.commentcontainer{position: relative; margin: 15px 0;}
 					.post_comments_left{
 						text-align: center;
 						background-size: cover;
@@ -517,7 +518,7 @@ nav{
 						width: 50px;
 						position: absolute;
 						left: 0;
-						top: 0;
+						top: 5px;
 					}
 					.post_comments_right{
 						margin-left: 60px;
@@ -534,9 +535,35 @@ nav{
 					}
 				}
 				.commentbox{
-					.testborder;
 					width: 100%;
-					padding: 10px;
+					padding: 10px 0;
+					textarea{
+						resize: none;
+						width: 100%;
+						border: 1px solid #818181;
+						border-radius: 3px;
+						padding: 5px;
+						transition: .3s;
+						font-size: 14px;
+						.oxyreg;
+						display: block;
+						&:focus{
+							outline: none;
+							box-shadow: 0 0 11px #6c6c6c;
+						}
+					}
+					button{
+						background: @red;
+						padding: 5px 15px;
+						font-size: 14px;
+						.oxyreg;
+						border: none;
+						color: #fff;
+						border-radius: 7px;
+						margin: 5px 0 15px 0;
+						cursor: pointer;
+						&:focus{outline: none}
+					}
 				}
 			} // end of box
 			.mini_title{
