@@ -33,8 +33,8 @@
 					</div>
 					<div class="right">
 						@if(checkCurrentDirectory('/') != 'true')
-						<p><a href="/lost" class="{{ navSetActive('lost') }}">LOST SOMETHING</a></p>
-						<p><a href="/found" class="{{ navSetActive('found') }}">FOUND SOMETHING</a></p>
+						<p><a href="/lost-something" class="{{ navSetActive('lost') }}">LOST SOMETHING</a></p>
+						<p><a href="/found-something" class="{{ navSetActive('found') }}">FOUND SOMETHING</a></p>
 						@endif
 						<p>Total found items: <span>999,999</span></p>
 					</div>
@@ -110,11 +110,11 @@
 					<form method="post" action="/login" id="frmLogin">
 						{{ csrf_field() }}
 						<div class="form_group">
-							<label>Username: <i>*</i></label>
-							<input type="text" name="username" autocomplete="off">
+							<label>Username:</label>
+							<input type="text" name="username" id="login_username" autofocus autocomplete="off">
 						</div>
 						<div class="form_group">
-							<label>Password: <i>*</i></label>
+							<label>Password:</label>
 							<input type="password" name="password" autocomplete="off">
 						</div>
 						<div class="form_group loginerror">

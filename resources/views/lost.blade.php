@@ -8,45 +8,56 @@
 			</div>
 		</div>
 		<div class="right">
+			@if(!session()->has('status'))
 			<div class="box">
-				<p class="prompt">You need to <a class="btnLogin" href="javascript:;">login</a> or <a href="javascript:;" class="btnRegister">register</a> to post your lost item</p>
+				<p class="prompt">You need to <a class="btnLogin" href="javascript:;">LOGIN</a> or <a href="javascript:;" class="btnRegister">REGISTER</a> to post your lost item</p>
 			</div>
+			@else
 			<div class="box">
 				<div class="header">
 					POST YOUR LOST ITEM:
 					<button class="toggle postToggler"><i class="fa fa-chevron-up" aria-hidden="true"></i></button>
 				</div>
-				<form method="post" action="/lost" enctype="multipart/form-data" class="form">
+				<form method="post" action="/lost-something/add" enctype="multipart/form-data" class="form">
 					{{ csrf_field() }}
+					@include('prompts.validation_errors')
+					<div class="form_group">
+						<label>Item Name: <i>*</i></label>
+						<input required type="text" name="name" autofocus>
+					</div>
 					<div class="column">
 						<div class="form_group">
 							<label>Category: <i>*</i></label>
 							<select name="category" required>
 								<option selected disabled>Select Category</option>
-								<option>saa</option>
-								<option>saa</option>
+								<option>Gadget</option>
+								<option>Document</option>
+								<option>ID</option>
+								<option>Person</option>
+								<option>Others</option>
 							</select>
 						</div>
 					</div>
 					<div class="column">
 						<div class="form_group">
 							<label>Photo/s (You can upload multiple): <i>*</i></label>
-							<input required type="file" name="name" multiple>
+							<input required type="file" name="images[]" multiple>
 						</div>
 					</div>
 					<div class="form_group">
 						<label>Place Where You Lost It: <i>*</i></label>
-						<input required type="text" name="name">
+						<input required type="text" name="place">
 					</div>
 					<div class="form_group">
 						<label>Other Details: <i>*</i></label>
-						<textarea name="description" rows="4" required></textarea>
+						<textarea name="otherdetails" rows="4" required></textarea>
 					</div>
 					<div class="form_group" style="text-align: left; margin-top: -10px;">
 						<button style="max-width: 100px; font-size: 14px;">Post</button>
 					</div>
 				</form>
 			</div>
+			@endif
 			<p class="mini_title">Lost Items by Other People</p>
 			<div class="box">
 				<div class="posts">
@@ -54,7 +65,7 @@
 						<div class="content">
 							<img src="/img/sample_lost.jpg" class="post_photos" onclick="viewImage()">
 							<!-- <p class="prompt">
-									No Image(s) Uploaded
+										No Image(s) Uploaded
 							</p> -->
 						</div>
 					</div>
@@ -96,6 +107,7 @@
 					<hr>
 					<p class="minititle postcomments_toggler"><a href="javascript:;">VIEW 2 COMMENT(S) <i class="fa fa-chevron-right" aria-hidden="true"></i></a></p>
 					<div class="post_comments">
+						@if(session()->has('status'))
 						<div class="commentbox">
 							<form method="post" action="/lost/comment/add">
 								{{ csrf_field() }}
@@ -103,6 +115,9 @@
 								<button type="submit">Submit</button>
 							</form>
 						</div>
+						@else
+						<p class="prompt">You need to <a class="btnLogin" href="javascript:;">LOGIN</a> or <a href="javascript:;" class="btnRegister">REGISTER</a> to post your lost item</p>
+						@endif
 						<div class="commentcontainer">
 							<div class="post_comments_left" style="background-image: url('/img/sample_lost.jpg');"></div>
 							<div class="post_comments_right">

@@ -26,12 +26,13 @@ $(document).ready(function(){
 
 $('.btnRegister').click(function(){
 	$('.registerModal').addClass('modal-active');
-	$('#register_name').focus();
 	bodyDisableScroll();
+	$('#register_name').focus();
 });
 $('.btnLogin').click(function(){
 	$('.loginModal').addClass('modal-active');
 	bodyDisableScroll();
+	$('#loginUsername').focus();
 });
 
 $('.modal-closer').click(function(){
@@ -75,6 +76,13 @@ $('#frmLogin').on('submit', function(e){
 
 $('.btnLogout').click(function(){
 	$('#frmLogout').submit();
+});
+
+$(document).keyup(function(e) {
+    if(e.keyCode == 27){ // if escape key is pressed
+    	$('.mymodal').removeClass('modal-active');
+		bodyEnableScroll();
+    }
 });
 
 // wew
