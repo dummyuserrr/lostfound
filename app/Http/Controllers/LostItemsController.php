@@ -39,4 +39,12 @@ class LostItemsController extends Controller
 
     	return back();
     }
+
+    public function destroy(LostItem $item){
+        foreach($item->images as $image){
+            $image->delete();
+        }
+        $item->delete();
+        return back();
+    }
 }

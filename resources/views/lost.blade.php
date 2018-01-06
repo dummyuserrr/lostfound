@@ -69,9 +69,11 @@
 			<p class="mini_title">Lost Items by Other People</p>
 			@foreach($lostItems as $l)
 			<div class="box">
-				<div class="deletebutton" title="Delete this post">
+				@if($l->user_id == session('id') || session('role') == 'admin' || session('role') == 'superadmin')
+				<div class="deletebutton" title="Delete this post" onclick="setDeleteTarget('{{ $l->id }}')">
 					<i class="fa fa-trash" aria-hidden="true"></i>
 				</div>
+				@endif
 				<div class="posts">
 					<div class="left">
 						<div class="content">
@@ -122,7 +124,7 @@
 							@foreach($l->images as $image)
 							@if ($loop->first) @continue @endif
 							<div class="boxes">
-								<div class="post_photos morephotos" style="background-image: url('/{{ $image->image }}');"></div>
+								<div class="post_photos morephotos" style="background-image: url('/{{ $image->image }}');" onclick="viewImage('/{{ $image->image }}')"></div>
 							</div>
 							@endforeach
 						</div>
@@ -146,7 +148,7 @@
 							<div class="post_comments_left" style="background-image: url('/img/sample_lost.jpg');"></div>
 							<div class="post_comments_right">
 								<p class="comment">
-									<a href="#!" class="name">John Doe <span class="comment_date">&#9679; 1 min ago</span></a>
+									<a href="#!" class="name">John Doe </a> <span class="comment_date">&#9679; 1 min ago</span>
 									<span class="comment_content">
 										Nakita ko to kahapon ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris n
 									</span>
@@ -157,7 +159,7 @@
 							<div class="post_comments_left" style="background-image: url('/img/sample_lost.jpg');"></div>
 							<div class="post_comments_right">
 								<p class="comment">
-									<a href="#!" class="name">John Doe <span class="comment_date">&#9679; 1 min ago</span></a>
+									<a href="#!" class="name">John Doe </a> <span class="comment_date">&#9679; 1 min ago</span>
 									<span class="comment_content">
 										Nakita ko to kahapon ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris n
 									</span>

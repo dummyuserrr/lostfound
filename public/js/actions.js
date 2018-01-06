@@ -90,6 +90,11 @@ $(document).keyup(function(e) {
     }
 });
 
+$('.deletebutton').click(function(){
+	$('.deleteModal').addClass('modal-active');
+	bodyDisableScroll();
+});
+
 // wew
 
 function bodyDisableScroll(){
@@ -104,4 +109,12 @@ function viewImage(imagePath){
 	bodyDisableScroll();
 	$('.photoModal').addClass('modal-active');
 	$('.photoView').attr('src', imagePath);
+}
+
+function setDeleteTarget(id){
+	$('#deleteForm').attr('action', '/lost-something/'+id+'/delete');
+}
+
+function initiateDelete(){
+	$('#deleteForm').submit();
 }

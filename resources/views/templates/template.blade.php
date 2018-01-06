@@ -137,6 +137,19 @@
 				</div>
 			</div>
 		</div>
+		<div class="mymodal deleteModal">
+			<div class="modal">
+				<button class="modal-closer"><i class="fa fa-times" aria-hidden="true"></i></button>
+				<div class="header">Warning</div>
+				<div class="body">
+					Are you sure you want to delete this item?
+					<div class="form_group">
+						<button onclick="initiateDelete()">Yes</button>
+						<button style="background: #818181; border: 1px solid #818181;">No</button>
+					</div>
+				</div>
+			</div>
+		</div>
 		@if(session()->has('status'))
 		<form id="deleteForm" method="post" action="none">
 			{{ csrf_field() }}

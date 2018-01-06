@@ -360,6 +360,9 @@ nav{
 	.loginerror{display: none;}
 	.modal{max-width: 700px;}
 }
+.deleteModal{
+	.modal{max-width: 400px;}
+}
 .lost_container{
 	.container{
 		padding: 15px 10px;
@@ -464,15 +467,12 @@ nav{
 				}
 				.deletebutton{
 					position: absolute;
-					top: -15px;
-					right: -15px;
-					font-size: 20px;
+					top: -1px;
+					right: 0;
+					font-size: 22px;
 					padding: 6px 8px 3px 8px;
-					border-radius: 55px;
-					border: 1px solid @red;
 					color: @red;
 					cursor: pointer;
-					background: #fff;
 				}
 				.posts{
 					text-align: center;
@@ -560,11 +560,10 @@ nav{
 						margin-left: 60px;
 						.comment{
 							.hindreg;
-							.name{font-weight: bold; color: @red; display: block;
-								.comment_date{
-									color: #7b7b7b;
-									font-size: 12px;
-								}
+							.name{font-weight: bold; color: @red; display: inline-block;}
+							.comment_date{
+								color: #7b7b7b;
+								font-size: 12px;
 							}
 							.comment_content{margin-top: -5px; display: block; line-height: 1.3; .oxyreg; font-size: 14px;}
 						}
