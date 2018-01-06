@@ -15,8 +15,8 @@
 		<nav>
 			<div class="top">
 				<div class="container">
-					<div class="options" id="btnRegister"><i class="fa fa-user" aria-hidden="true"></i> Register</div>
-					<div class="options" id="btnLogin"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</div>
+					<div class="options btnRegister"><i class="fa fa-user" aria-hidden="true"></i> Register</div>
+					<div class="options btnLogin"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</div>
 				</div>
 			</div>
 			<div class="bottom">
@@ -114,6 +114,15 @@
 							<button type="submit">Login</button>
 						</div>
 					</form>
+				</div>
+			</div>
+		</div>
+		<div class="mymodal photoModal">
+			<div class="modal">
+				<button class="modal-closer"><i class="fa fa-times" aria-hidden="true"></i></button>
+				<div class="header">Image Preview</div>
+				<div class="body">
+					<img class="photoView" src="/img/sample_lost.jpg">
 				</div>
 			</div>
 		</div>

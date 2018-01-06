@@ -9,6 +9,9 @@
 		</div>
 		<div class="right">
 			<div class="box">
+				<p class="prompt">You need to <a class="btnLogin" href="javascript:;">login</a> or <a href="javascript:;" class="btnRegister">register</a> to post your lost item</p>
+			</div>
+			<div class="box">
 				<div class="header">
 					POST YOUR LOST ITEM:
 					<button class="toggle postToggler"><i class="fa fa-chevron-up" aria-hidden="true"></i></button>
@@ -49,7 +52,7 @@
 				<div class="posts">
 					<div class="left">
 						<div class="content">
-							<img src="/img/sample_lost.jpg" class="post_photos">
+							<img src="/img/sample_lost.jpg" class="post_photos" onclick="viewImage()">
 							<!-- <p class="prompt">
 									No Image(s) Uploaded
 							</p> -->
