@@ -135,10 +135,10 @@
 					<div class="post_comments">
 						@if(session()->has('status'))
 						<div class="commentbox">
-							<form method="post" action="/lost/comment/add">
+							<form method="post" action="/lost-something/{{ $l->id }}/comment/add" class="comment_form">
 								{{ csrf_field() }}
 								<textarea name="comment" rows="3" placeholder="Add a comment..." required></textarea>
-								<button type="submit">Submit</button>
+								<button type="submit" class="comment_submit_button">Submit</button>
 							</form>
 						</div>
 						@else
