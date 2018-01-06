@@ -13,4 +13,8 @@ class LostItem extends Model
     public function images(){
     	return $this->hasMany(LostItemImage::class);
     }
+
+    public function comments(){
+    	return $this->hasMany(LostItemComment::class);
+    }
 }
