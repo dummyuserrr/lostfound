@@ -588,7 +588,7 @@ nav{
 							box-shadow: 0 0 11px #6c6c6c;
 						}
 					}
-					button{
+					.comment_submit_button{
 						background: @red;
 						padding: 5px 15px;
 						font-size: 14px;
@@ -599,6 +599,10 @@ nav{
 						margin: 5px 0 15px 0;
 						cursor: pointer;
 						&:focus{outline: none}
+					}
+					.button_disabled{
+						cursor: not-allowed;
+						opacity: 0.6;
 					}
 				}
 			} // end of box

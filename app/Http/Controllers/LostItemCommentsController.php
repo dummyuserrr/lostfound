@@ -18,7 +18,6 @@ class LostItemCommentsController extends Controller
 
 		$comment = $lic;
 
-		// return view('templates.lost_items_comments', compact('comment'));
-		return back();
+		return view('templates.lost_items_comments', compact('comment'));
 	}
 }
