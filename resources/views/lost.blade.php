@@ -131,7 +131,7 @@
 						@endif
 					</div>
 					<hr>
-					<p class="minititle postcomments_toggler"><a href="javascript:;">VIEW 2 COMMENT(S) <i class="fa fa-chevron-right" aria-hidden="true"></i></a></p>
+					<p class="minititle postcomments_toggler"><a href="javascript:;">VIEW {{ $l->comments->count() }} COMMENT(S) <i class="fa fa-chevron-right" aria-hidden="true"></i></a></p>
 					<div class="post_comments">
 						@if(session()->has('status'))
 						<div class="commentbox">
@@ -145,9 +145,9 @@
 						<p class="prompt">You need to <a class="btnLogin" href="javascript:;">LOGIN</a> or <a href="javascript:;" class="btnRegister">REGISTER</a> to post your lost item</p>
 						@endif
 						<div class="comments_holder">
-							@foreach($l->comments as $comment)
+							@foreach($l->comments()->orderBy('created_at', 'desc')->get() as $comment)
 							<div class="commentcontainer">
-								<div class="post_comments_left" style="background-image: url('/{{ $comment->user->image }}');"></div>
+								<div class="post_comments_left" style="background-image: url('{{ $comment->user->image }}');"></div>
 								<div class="post_comments_right">
 									<p class="comment">
 										<a href="#!" class="name">{{ $comment->user->name }} </a> <span class="comment_date">&#9679; {{ $comment->created_at->diffForHumans() }}</span>

@@ -97,6 +97,7 @@ $('.deletebutton').click(function(){
 
 $('.comment_form').on('submit', function(e){
 	e.preventDefault();
+	var me = $(this);
 	var request = $.ajax({
 		url: $(this).attr('action'),
 		type: "POST",           
@@ -105,16 +106,16 @@ $('.comment_form').on('submit', function(e){
 		cache: false,      
 		processData:false,       
 		beforeSend: function(data){
-			$(this).find('.comment_submit_button').attr('disabled', 'true');
-			$(this).find('textarea').attr('disabled', 'true');
-			$(this).find('.comment_submit_button').addClass('button_disabled');
+			me.find('.comment_submit_button').attr('disabled', 'true');
+			me.find('textarea').attr('disabled', 'true');
+			me.find('.comment_submit_button').addClass('button_disabled');
 		},
 		success: function(data){
-			$(this).closest('.post_comments').find('.comments_holder').prepend(request.responseText);
-			// do a function that will prepend a comment view blade to its container
-			$(this).find('.comment_submit_button').removeAttr('disabled');
-			$(this).find('textarea').removeAttr('disabled');
-			$(this).find('.comment_submit_button').removeClass('button_disabled');
+			me.closest('.post_comments').find('.comments_holder').prepend(request.responseText);
+			me.find('.comment_submit_button').removeAttr('disabled');
+			me.find('textarea').removeAttr('disabled');
+			me.find('.comment_submit_button').removeClass('button_disabled');
+			me.find('textarea').val('');
 		},
 		error: function(data){
 			var errors = "";
@@ -122,9 +123,9 @@ $('.comment_form').on('submit', function(e){
 				errors += data.responseJSON[datos]+'\n';
 			}
 			alert(errors);
-			$(this).find('.comment_submit_button').removeAttr('disabled');
-			$(this).find('textarea').removeAttr('disabled');
-			$(this).find('.comment_submit_button').removeClass('button_disabled');
+			me.find('.comment_submit_button').removeAttr('disabled');
+			me.find('textarea').removeAttr('disabled');
+			me.find('.comment_submit_button').removeClass('button_disabled');
 		}
 	});
 });

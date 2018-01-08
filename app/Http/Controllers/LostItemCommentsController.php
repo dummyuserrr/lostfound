@@ -10,14 +10,12 @@ use App\LostItem;
 class LostItemCommentsController extends Controller
 {
 	public function store(LostItem $item, Request $r){
-		$lic = new LostItemComment;
-		$lic->lost_item_id = $item->id;
-		$lic->user_id = session('id');
-		$lic->comment = $r->comment;
-		$lic->save();
-
-		$comment = $lic;
-
+		$comment = new LostItemComment;
+		$comment->lost_item_id = $item->id;
+		$comment->user_id = session('id');
+		$comment->comment = $r->comment;
+		$comment->save();
 		return view('templates.lost_items_comments', compact('comment'));
+		// return view('templates.lost_items_comments');
 	}
 }
