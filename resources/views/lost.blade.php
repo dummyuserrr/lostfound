@@ -4,7 +4,7 @@
 	<div class="container">
 		<div class="left">
 			<div class="box">
-				sadsa
+				Left panel under construction
 			</div>
 		</div>
 		<div class="right">
