@@ -95,6 +95,11 @@ $('.deletebutton').click(function(){
 	bodyDisableScroll();
 });
 
+$('.deletelink').click(function(){
+	$('.deleteModal').addClass('modal-active');
+	bodyDisableScroll();
+});
+
 $('.comment_form').on('submit', function(e){
 	e.preventDefault();
 	var me = $(this);
@@ -148,6 +153,10 @@ function viewImage(imagePath){
 
 function setDeleteTarget(id){
 	$('#deleteForm').attr('action', '/lost-something/'+id+'/delete');
+}
+
+function setCommentDeleteTarget(id){
+	// $('#deleteForm').attr('action', '/lost-something/'+id+'/delete'); 
 }
 
 function initiateDelete(){
