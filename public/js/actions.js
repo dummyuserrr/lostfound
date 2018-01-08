@@ -109,7 +109,7 @@ $('.comment_form').on('submit', function(e){
 			$(this).find('.comment_submit_button').attr('disabled');
 		},
 		success: function(data){
-			alert(request.responseText);
+			$(this).closest('.post_comments').find('.comments_holder').prepend(request.responseText);
 			// do a function that will prepend a comment view blade to its container
 		},
 		error: function(data){

@@ -30,7 +30,7 @@
 					<div class="column">
 						<div class="form_group">
 							<label>Date Lost: <i>*</i></label>
-							<input required type="date" name="datelost" style="padding: 5px;" max="{{ date('Y-m-d') }}"> 
+							<input required type="date" name="datelost" style="padding: 5px;" max="{{ date('Y-m-d') }}">
 						</div>
 					</div>
 					<div class="column">
@@ -144,27 +144,20 @@
 						@else
 						<p class="prompt">You need to <a class="btnLogin" href="javascript:;">LOGIN</a> or <a href="javascript:;" class="btnRegister">REGISTER</a> to post your lost item</p>
 						@endif
-						<div class="commentcontainer">
-							<div class="post_comments_left" style="background-image: url('/img/sample_lost.jpg');"></div>
-							<div class="post_comments_right">
-								<p class="comment">
-									<a href="#!" class="name">John Doe </a> <span class="comment_date">&#9679; 1 min ago</span>
-									<span class="comment_content">
-										Nakita ko to kahapon ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris n
-									</span>
-								</p>
+						<div class="comments_holder">
+							@foreach($l->comments as $comment)
+							<div class="commentcontainer">
+								<div class="post_comments_left" style="background-image: url('/{{ $comment->user->image }}');"></div>
+								<div class="post_comments_right">
+									<p class="comment">
+										<a href="#!" class="name">{{ $comment->user->name }} </a> <span class="comment_date">&#9679; {{ $comment->created_at->diffForHumans() }}</span>
+										<span class="comment_content">
+											{{ $comment->comment }}
+										</span>
+									</p>
+								</div>
 							</div>
-						</div>
-						<div class="commentcontainer">
-							<div class="post_comments_left" style="background-image: url('/img/sample_lost.jpg');"></div>
-							<div class="post_comments_right">
-								<p class="comment">
-									<a href="#!" class="name">John Doe </a> <span class="comment_date">&#9679; 1 min ago</span>
-									<span class="comment_content">
-										Nakita ko to kahapon ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris n
-									</span>
-								</p>
-							</div>
+							@endforeach
 						</div>
 					</div>
 				</div>
