@@ -9,10 +9,10 @@
 						Lost and Found Management Something for Pangasinan I Forgot the Title
 					</p>
 					<div class="columns">
-						<a href="/lost" class="lost-something"><i class="fa fa-frown-o" aria-hidden="true"></i> LOST SOMETHING</a>
+						<a href="/lost-something" class="lost"><i class="fa fa-frown-o" aria-hidden="true"></i> LOST SOMETHING</a>
 					</div>
 					<div class="columns">
-						<a href="/found" class="found-something"><i class="fa fa-smile-o" aria-hidden="true"></i> FOUND SOMETHING</a>
+						<a href="/found-something" class="found"><i class="fa fa-smile-o" aria-hidden="true"></i> FOUND SOMETHING</a>
 					</div>
 				</div>
 			</div>
