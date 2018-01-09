@@ -29,6 +29,8 @@ $(document).ready(function(){
 	});
 }); // end ready
 
+var commentDeleteTarget = 0;
+
 $('.btnRegister').click(function(){
 	$('.registerModal').addClass('modal-active');
 	bodyDisableScroll();
@@ -135,6 +137,35 @@ $('.comment_form').on('submit', function(e){
 	});
 });
 
+$('#deleteFormComment').on('submit', function(e){
+	e.preventDefault();
+	var me = $(this);
+	var request = $.ajax({
+		url: $(this).attr('action'),
+		type: "POST",           
+		data: new FormData(this),
+		contentType: false,       
+		cache: false,      
+		processData:false,       
+		beforeSend: function(data){
+
+		},
+		success: function(data){
+			if(request.responseText == 1){
+				$('.cc'+commentDeleteTarget).remove();
+				closeModal();
+			}
+		},
+		error: function(data){
+			var errors = "";
+			for(datos in data.responseJSON){
+				errors += data.responseJSON[datos]+'\n';
+			}
+			alert(errors);
+		}
+	});
+});
+
 // wew
 
 function bodyDisableScroll(){
@@ -156,11 +187,12 @@ function setDeleteTarget(id){
 }
 
 function setCommentDeleteTarget(lostItemID, commentID){
-	$('#deleteForm').attr('action', '/lost-something/'+lostItemID+'/comment/'+commentID+'/delete'); 
+	commentDeleteTarget = commentID;
+	$('#deleteFormComment').attr('action', '/lost-something/'+lostItemID+'/comment/'+commentID+'/delete'); 
 }
 
 function initiateDelete(){
-	$('#deleteForm').submit();
+	$('#deleteFormComment').submit();
 }
 
 function closeModal(){

@@ -146,7 +146,7 @@
 						@endif
 						<div class="comments_holder">
 							@foreach($l->comments()->orderBy('created_at', 'desc')->get() as $comment)
-							<div class="commentcontainer">
+							<div class="commentcontainer cc{{ $comment->id }}">
 								<div class="post_comments_left" style="background-image: url('{{ $comment->user->image }}');"></div>
 								<div class="post_comments_right">
 									<p class="comment">

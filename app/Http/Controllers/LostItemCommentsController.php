@@ -21,6 +21,6 @@ class LostItemCommentsController extends Controller
 
 	public function destroy(LostItem $lostitem, LostItemComment $item){
 		$item->delete();
-		return back();
+		return 1;
 	}
 }
