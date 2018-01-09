@@ -11,8 +11,22 @@
 					<form method="post" action="/lost-something">
 						{{ csrf_field() }}
 						<div class="form_group">
-							<label>Query: <i>*</i></label>
-							<input required type="text" name="name" autofocus>
+							<label>Query: </label>
+							<input required type="text" name="name" placeholder="Search">
+						</div>
+						<div class="form_group">
+							<label>Category: </label>
+							<select name="category" required>
+								<option selected>All</option>
+								<option>Gadget</option>
+								<option>Document</option>
+								<option>ID</option>
+								<option>Person</option>
+								<option>Others</option>
+							</select>
+						</div>
+						<div class="form_group">
+							<button style="max-width: 100px; font-size: 14px;">Search</button>
 						</div>
 					</form>
 				</div>
