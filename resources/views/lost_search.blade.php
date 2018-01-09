@@ -9,6 +9,7 @@
 				</div>
 				<div class="body">
 					<form method="get" action="/lost-something/search">
+						{{ csrf_field() }}
 						<div class="form_group">
 							<label>Query: </label>
 							<input type="text" name="query" placeholder="Search">
@@ -32,65 +33,7 @@
 			</div>
 		</div>
 		<div class="right">
-			@if(!session()->has('status'))
-			<div class="box">
-				<p class="prompt">You need to <a class="btnLogin" href="javascript:;">LOGIN</a> or <a href="javascript:;" class="btnRegister">REGISTER</a> to post your lost item</p>
-			</div>
-			@else
-			<div class="box">
-				<div class="header">
-					POST YOUR LOST ITEM:
-					<button class="toggle postToggler"><i class="fa fa-chevron-up" aria-hidden="true"></i></button>
-				</div>
-				<form method="post" action="/lost-something/add" enctype="multipart/form-data" class="form">
-					{{ csrf_field() }}
-					@include('prompts.validation_errors')
-					<div class="column">
-						<div class="form_group">
-							<label>Item Name: <i>*</i></label>
-							<input required type="text" name="name" autofocus>
-						</div>
-					</div>
-					<div class="column">
-						<div class="form_group">
-							<label>Date Lost: <i>*</i></label>
-							<input required type="date" name="datelost" style="padding: 5px;" max="{{ date('Y-m-d') }}">
-						</div>
-					</div>
-					<div class="column">
-						<div class="form_group">
-							<label>Category: <i>*</i></label>
-							<select name="category" required>
-								<option selected disabled>Select Category</option>
-								<option>Gadget</option>
-								<option>Document</option>
-								<option>ID</option>
-								<option>Person</option>
-								<option>Others</option>
-							</select>
-						</div>
-					</div>
-					<div class="column">
-						<div class="form_group">
-							<label>Photo/s (You can upload multiple): <i>*</i></label>
-							<input required type="file" name="images[]" multiple>
-						</div>
-					</div>
-					<div class="form_group">
-						<label>Place Where You Lost It: <i>*</i></label>
-						<input required type="text" name="place">
-					</div>
-					<div class="form_group">
-						<label>Other Details: <i>*</i></label>
-						<textarea name="otherdetails" rows="4" required></textarea>
-					</div>
-					<div class="form_group" style="text-align: left; margin-top: -10px;">
-						<button style="max-width: 100px; font-size: 14px;">Post</button>
-					</div>
-				</form>
-			</div>
-			@endif
-			<p class="mini_title">Lost Items by Other People</p>
+			<p class="mini_title" style="margin-top: 0">Search Results: </p>
 			@foreach($lostItems as $l)
 			<div class="box">
 				@if($l->user_id == session('id') || session('role') == 'admin' || session('role') == 'superadmin')

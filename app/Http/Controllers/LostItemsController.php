@@ -49,6 +49,14 @@ class LostItemsController extends Controller
     }
 
     public function search(Request $r){
-        return $r;
+        $li = new LostItem;
+        if(is_null($r->query)){
+            return 'wala';
+            // $lostItems = $li->where('name', 'like', $r->query)->orderBy('created_at', 'desc')->get();
+            // $lostItems = $li->orderBy('created_at', 'desc')->get();
+            // return view('lost_search', compact('lostItems'));
+        }else{
+            return 'meron';
+        }
     }
 }
