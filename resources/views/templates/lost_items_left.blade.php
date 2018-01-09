@@ -7,7 +7,7 @@
 			<form method="get" action="/lost-something/search">
 				<div class="form_group">
 					<label>Query: </label>
-					<input type="text" name="q" placeholder="Search" value="">
+					<input type="text" name="q" placeholder="Search" value="@if(!empty($q)){{ $q }}@endif">
 				</div>
 				<div class="form_group">
 					<label>Category: </label>
