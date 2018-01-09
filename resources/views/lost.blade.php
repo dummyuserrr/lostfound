@@ -4,7 +4,18 @@
 	<div class="container">
 		<div class="left">
 			<div class="box">
-				Left panel under construction
+				<div class="header">
+					FILTER
+				</div>
+				<div class="body">
+					<form method="post" action="/lost-something">
+						{{ csrf_field() }}
+						<div class="form_group">
+							<label>Query: <i>*</i></label>
+							<input required type="text" name="name" autofocus>
+						</div>
+					</form>
+				</div>
 			</div>
 		</div>
 		<div class="right">

@@ -387,6 +387,54 @@ nav{
 			width: 28%;
 			.box{
 				margin-right: 10px;
+				text-align: left;
+				.header{
+					.oxybold;
+					font-size: 16px;
+					text-align: left;
+					margin-bottom: 15px;
+				}
+				.body{
+					.form_group{
+						label{
+							display: block;
+							font-size: 15px;
+							.oxyreg;
+							margin-bottom: 3px;
+							text-align: left;
+							i{color: red;}
+						}
+						input, select, textarea{
+							.oxyreg;
+							width: 100%;
+							padding: 6px;
+							font-size: 16px;
+							border-radius: 5px;
+							border: 1px solid #818181;
+							transition: 0.3s;
+							&:focus{
+								outline: none;
+								box-shadow: 0 0 11px #6c6c6c;
+							}
+						}
+						select{
+							background: #fff;
+						}
+						textarea{
+							resize: none;
+						}
+						button{
+							padding: 10px 15px;
+							border-radius: 8px;
+							font-size: 16px;
+							border: 1px solid @red;
+							background: @red;
+							color: #fff	;
+							margin-top: 10px;
+							width: 100%;
+						}
+					}
+				}
 			}
 		}
 		.right{
