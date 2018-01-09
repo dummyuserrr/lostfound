@@ -8,15 +8,15 @@
 					FILTER
 				</div>
 				<div class="body">
-					<form method="post" action="/lost-something">
+					<form method="get" action="/lost-something/search">
 						{{ csrf_field() }}
 						<div class="form_group">
 							<label>Query: </label>
-							<input required type="text" name="name" placeholder="Search">
+							<input type="text" name="query" placeholder="Search">
 						</div>
 						<div class="form_group">
 							<label>Category: </label>
-							<select name="category" required>
+							<select name="category">
 								<option selected>All</option>
 								<option>Gadget</option>
 								<option>Document</option>

@@ -28,6 +28,12 @@ a, a:hover, a:link, a:visited, a:active{color: #000; text-decoration: none;}
 	src: url('/fonts/hind/Hind-Regular.woff2') format('woff2'),
 		 url('/fonts/hind/Hind-Regular.woff') format('woff');
 }
+body{
+	background-image: url('/img/background.jpg');
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
 .oxyreg{font-family: 'oxygen-regular';}
 .oxybold{font-family: 'oxygen-bold';}
 .hindreg{font-family: 'hindreg';}
@@ -127,7 +133,7 @@ nav{
 }
 .content_container{
 	margin-top: 93px;
-	background: #eeeeee;
+	// background-color: #eeeeee;
 	min-height: 83vh;
 }
 .home_banner{
@@ -379,7 +385,7 @@ nav{
 				background: #fff;
 				border: 1px solid #fff;
 				padding: 10px;
-				box-shadow: 0 2px 11px #b6b6b6;
+				box-shadow: 0 2px 11px #000;
 				border-radius: 3px;
 			}
 		}
@@ -388,6 +394,7 @@ nav{
 			.box{
 				margin-right: 10px;
 				text-align: left;
+				margin-bottom: 15px;
 				.header{
 					.oxybold;
 					font-size: 16px;
@@ -668,6 +675,7 @@ nav{
 				margin-top: 10px;
 				text-align: left;
 				margin: 20px 0 7px 10px;
+				color: #fff;
 			}
 		}
 	}

@@ -30,14 +30,14 @@
 			<div class="bottom">
 				<div class="container">
 					<div class="left">
-						<a href="/" class="title"><i class="fa fa-tags" aria-hidden="true"></i> TITLE DITO</a>
+						<a href="/" class="title"><i class="fa fa-tags" aria-hidden="true"></i> missingZ</a>
 					</div>
 					<div class="right">
 						@if(checkCurrentDirectory('/') != 'true')
 						<p><a href="/lost-something" class="{{ navSetActive('lost') }}">LOST SOMETHING</a></p>
 						<p><a href="/found-something" class="{{ navSetActive('found') }}">FOUND SOMETHING</a></p>
 						@endif
-						<p>Total found items: <span>999,999</span></p>
+						<p>Total found items: <span>3</span></p>
 					</div>
 				</div>
 			</div>

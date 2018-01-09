@@ -10,6 +10,7 @@ Route::post('/logout', 'UsersController@logout');
 // lost items
 Route::post('/lost-something/add', 'LostItemsController@store')->middleware('checkUserSession');
 Route::delete('/lost-something/{item}/delete', 'LostItemsController@destroy')->middleware('checkUserSession');
+Route::get('/lost-something/search', 'LostItemsController@search');
 
 // lost items comments
 Route::post('/lost-something/{item}/comment/add', 'LostItemCommentsController@store')->middleware('checkUserSession');

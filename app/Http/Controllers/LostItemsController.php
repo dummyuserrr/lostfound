@@ -47,4 +47,8 @@ class LostItemsController extends Controller
         $item->delete();
         return back();
     }
+
+    public function search(Request $r){
+        return $r;
+    }
 }
