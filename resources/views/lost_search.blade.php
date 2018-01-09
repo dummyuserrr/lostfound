@@ -2,35 +2,7 @@
 @section('content')
 <div class="lost_container">
 	<div class="container">
-		<div class="left">
-			<div class="box">
-				<div class="header">
-					FILTER
-				</div>
-				<div class="body">
-					<form method="get" action="/lost-something/search">
-						<div class="form_group">
-							<label>Query: </label>
-							<input type="text" name="q" placeholder="Search">
-						</div>
-						<div class="form_group">
-							<label>Category: </label>
-							<select name="category">
-								<option selected>All</option>
-								<option>Gadget</option>
-								<option>Document</option>
-								<option>ID</option>
-								<option>Person</option>
-								<option>Others</option>
-							</select>
-						</div>
-						<div class="form_group">
-							<button style="max-width: 100px; font-size: 14px;">Search</button>
-						</div>
-					</form>
-				</div>
-			</div>
-		</div>
+		@include('templates.lost_items_left')
 		<div class="right">
 			<p class="mini_title" style="margin-top: 0">{{ $lostItems->count() }} Result(s) Found </p>
 			@foreach($lostItems as $l)
