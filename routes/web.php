@@ -13,3 +13,4 @@ Route::delete('/lost-something/{item}/delete', 'LostItemsController@destroy')->m
 
 // lost items comments
 Route::post('/lost-something/{item}/comment/add', 'LostItemCommentsController@store')->middleware('checkUserSession');
+Route::delete('lost-something/{lostitem}/comment/{item}/delete', 'LostItemCommentsController@destroy')->middleware('checkUserSession');

@@ -155,8 +155,8 @@ function setDeleteTarget(id){
 	$('#deleteForm').attr('action', '/lost-something/'+id+'/delete');
 }
 
-function setCommentDeleteTarget(id){
-	// $('#deleteForm').attr('action', '/lost-something/'+id+'/delete'); 
+function setCommentDeleteTarget(lostItemID, commentID){
+	$('#deleteForm').attr('action', '/lost-something/'+lostItemID+'/comment/'+commentID+'/delete'); 
 }
 
 function initiateDelete(){
