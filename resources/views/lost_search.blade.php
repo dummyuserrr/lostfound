@@ -9,10 +9,9 @@
 				</div>
 				<div class="body">
 					<form method="get" action="/lost-something/search">
-						{{ csrf_field() }}
 						<div class="form_group">
 							<label>Query: </label>
-							<input type="text" name="query" placeholder="Search">
+							<input type="text" name="q" placeholder="Search">
 						</div>
 						<div class="form_group">
 							<label>Category: </label>
@@ -33,7 +32,7 @@
 			</div>
 		</div>
 		<div class="right">
-			<p class="mini_title" style="margin-top: 0">Search Results: </p>
+			<p class="mini_title" style="margin-top: 0">{{ $lostItems->count() }} Result(s) Found </p>
 			@foreach($lostItems as $l)
 			<div class="box">
 				@if($l->user_id == session('id') || session('role') == 'admin' || session('role') == 'superadmin')

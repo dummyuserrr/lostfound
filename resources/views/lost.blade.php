@@ -11,7 +11,7 @@
 					<form method="get" action="/lost-something/search">
 						<div class="form_group">
 							<label>Query: </label>
-							<input type="text" name="query" placeholder="Search">
+							<input type="text" name="q" placeholder="Search" value="">
 						</div>
 						<div class="form_group">
 							<label>Category: </label>
@@ -25,7 +25,7 @@
 							</select>
 						</div>
 						<div class="form_group">
-							<button style="max-width: 100px; font-size: 14px;">Search</button>
+							<button type="submit" style="max-width: 100px; font-size: 14px;">Search</button>
 						</div>
 					</form>
 				</div>
