@@ -56,6 +56,20 @@ class UsersController extends Controller
             'mobile' => $r->mobile,
         ]);
 
+        if($r->image){
+            $image = $r->image->store('/uploads/images');
+            $user->update([
+                'image' => $image,
+            ]);
+        }
+
+        if($r->password){
+            $user->update([
+                'password' => $r->password,
+            ]);
+        }
+
+        session()->flash('successMessage', 'Your account has been updated.');
         return back();
     }
 }
