@@ -3,8 +3,9 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="csrf_token" content="{{ csrf_token() }}">
-		<title>Lost and Found</title>
+		<title>missingZ</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
 		<link rel="stylesheet" type="text/css" href="/css/owl.carousel.min.css">
 		<link rel="stylesheet" type="text/css" href="/css/owl.theme.default.min.css">
 		<link rel="stylesheet" type="text/css" href="/font-awesome/css/font-awesome.min.css">
@@ -30,7 +31,7 @@
 			<div class="bottom">
 				<div class="container">
 					<div class="left">
-						<a href="/" class="title"><i class="fa fa-tags" aria-hidden="true"></i> missingZ</a>
+						<a href="/" class="title"><img src="/img/icon.png"> missingZ</a>
 					</div>
 					<div class="right">
 						@if(checkCurrentDirectory('/') != 'true')

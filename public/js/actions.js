@@ -15,7 +15,7 @@ $(document).ready(function(){
 	    var panel = this.nextElementSibling;
 	    if (panel.style.maxHeight){
 	      panel.style.maxHeight = null;
-	      $(this).find('i').attr('class', 'fa fa-chevron-right');
+	      // $(this).find('i').attr('class', 'fa fa-chevron-right');
 	    } else {
 	      panel.style.maxHeight = panel.scrollHeight + "px";
 	      $(this).find('i').attr('class', 'fa fa-chevron-down');
