@@ -15,15 +15,17 @@
 						@if(empty($categorySelected))
 							<option selected>All</option>
 							<option>Gadget</option>
-							<option>Document</option>
-							<option>ID</option>
+							<option>License (ID, Passport, etc)</option>
+							<option>Pet</option>
+							<option>Jewelry</option>
 							<option>Person</option>
 							<option>Others</option>
 						@else
 							<option @if($categorySelected == 'All') selected @endif>All</option>
 							<option @if($categorySelected == 'Gadget') selected @endif>Gadget</option>
-							<option @if($categorySelected == 'Document') selected @endif>Document</option>
-							<option @if($categorySelected == 'ID') selected @endif>ID</option>
+							<option @if($categorySelected == 'License (ID, Passport, etc)') selected @endif>License (ID, Passport, etc)</option>
+							<option @if($categorySelected == 'Pet') selected @endif>Pet</option>
+							<option @if($categorySelected == 'Jewelry') selected @endif>Jewelry</option>
 							<option @if($categorySelected == 'Person') selected @endif>Person</option>
 							<option @if($categorySelected == 'Others') selected @endif>Others</option>
 						@endif

@@ -35,8 +35,9 @@
 							<select name="category" required>
 								<option selected disabled>Select Category</option>
 								<option>Gadget</option>
-								<option>Document</option>
-								<option>ID</option>
+								<option>License (ID, Passport, etc)</option>
+								<option>Pet</option>
+								<option>Jewelry</option>
 								<option>Person</option>
 								<option>Others</option>
 							</select>
