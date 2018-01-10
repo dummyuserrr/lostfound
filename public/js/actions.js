@@ -38,6 +38,7 @@ $(document).ready(function(){
 }); // end ready
 
 var commentDeleteTarget = 0;
+var activeDeleteForm = '';
 
 $('.btnRegister').click(function(){
 	$('.registerModal').addClass('modal-active');
@@ -199,15 +200,17 @@ function viewImage(imagePath){
 
 function setDeleteTarget(id){
 	$('#deleteForm').attr('action', '/lost-something/'+id+'/delete');
+	activeDeleteForm = $('#deleteForm');
 }
 
 function setCommentDeleteTarget(lostItemID, commentID){
 	commentDeleteTarget = commentID;
 	$('#deleteFormComment').attr('action', '/lost-something/'+lostItemID+'/comment/'+commentID+'/delete'); 
+	activeDeleteForm = $('#deleteFormComment');
 }
 
 function initiateDelete(){
-	$('#deleteFormComment').submit();
+	activeDeleteForm.submit();
 }
 
 function closeModal(){

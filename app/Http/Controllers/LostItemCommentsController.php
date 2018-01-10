@@ -16,7 +16,6 @@ class LostItemCommentsController extends Controller
 		$comment->comment = $r->comment;
 		$comment->save();
 		return view('templates.lost_items_comments', compact('comment'));
-		// return view('templates.lost_items_comments');
 	}
 
 	public function destroy(LostItem $lostitem, LostItemComment $item){
