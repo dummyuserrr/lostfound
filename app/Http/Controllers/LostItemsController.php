@@ -44,6 +44,9 @@ class LostItemsController extends Controller
         foreach($item->images as $image){
             $image->delete();
         }
+        foreach($item->comments as $comment){
+            $comment->delete();
+        }
         $item->delete();
         return back();
     }
