@@ -1,2 +1,5 @@
 <h3>Notes for system</h3>
-<p>Include deletion of comment and pictures on database on deletion of post</p>
+<ul>
+	<li>Add user's marking of item as "found"</li>
+	<li>Show the post of users on his profile</li>
+</ul>
