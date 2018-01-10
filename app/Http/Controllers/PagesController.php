@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\LostItem;
+use App\User;
 
 class PagesController extends Controller
 {
@@ -15,5 +16,9 @@ class PagesController extends Controller
     	$li = new LostItem;
     	$lostItems = $li->orderBy('created_at', 'desc')->get();
     	return view('lost', compact('lostItems'));
+    }
+
+    public function userView(User $user){
+    	return view('user_view', compact('user'));
     }
 }

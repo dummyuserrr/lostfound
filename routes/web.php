@@ -6,6 +6,7 @@ Route::get('/lost-something', 'PagesController@lost');
 // users
 Route::post('/login', 'UsersController@login');
 Route::post('/logout', 'UsersController@logout');
+Route::get('/user/{user}', 'PagesController@userView');
 
 // lost items
 Route::post('/lost-something/add', 'LostItemsController@store')->middleware('checkUserSession');
