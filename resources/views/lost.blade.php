@@ -74,7 +74,7 @@
 					<div class="left">
 						<div class="content">
 							@if($l->images)
-							<img src="/{{ $l->images->first()->image }}" class="post_photos" onclick="viewImage('/{{ $l->images->first()->image }}')">
+							<img src="/{{ $l->images->first()->image }}" title="Click to view photo" class="post_photos" onclick="viewImage('/{{ $l->images->first()->image }}')">
 							@else
 							<p class="prompt">
 								No Image(s) Uploaded
@@ -120,7 +120,7 @@
 							@foreach($l->images as $image)
 							@if ($loop->first) @continue @endif
 							<div class="boxes">
-								<div class="post_photos morephotos" style="background-image: url('/{{ $image->image }}');" onclick="viewImage('/{{ $image->image }}')"></div>
+								<div title="Click to view photo" class="post_photos morephotos" style="background-image: url('/{{ $image->image }}');" onclick="viewImage('/{{ $image->image }}')"></div>
 							</div>
 							@endforeach
 						</div>

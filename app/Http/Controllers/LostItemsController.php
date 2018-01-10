@@ -50,14 +50,15 @@ class LostItemsController extends Controller
 
     public function search(Request $r){
         $li = new LostItem;
+        $categorySelected = $r->category;
         if($r->category == 'All'){
             $lostItems = $li->where('name', 'like', '%'.$r->q.'%')->orderBy('created_at', 'desc')->get();
             $q = $r->q;
-            return view('lost_search', compact('lostItems', 'q'));
+            return view('lost_search', compact('lostItems', 'q', 'categorySelected'));
         }else{
             $lostItems = $li->where('name', 'like', '%'.$r->q.'%')->where('category', $r->category)->orderBy('created_at', 'desc')->get();
             $q = $r->q;
-            return view('lost_search', compact('lostItems', 'q'));
+            return view('lost_search', compact('lostItems', 'q', 'categorySelected'));
         }
     }
 }

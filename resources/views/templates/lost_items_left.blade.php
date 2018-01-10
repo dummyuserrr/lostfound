@@ -12,12 +12,21 @@
 				<div class="form_group">
 					<label>Category: </label>
 					<select name="category">
-						<option selected>All</option>
-						<option>Gadget</option>
-						<option>Document</option>
-						<option>ID</option>
-						<option>Person</option>
-						<option>Others</option>
+						@if(empty($categorySelected))
+							<option selected>All</option>
+							<option>Gadget</option>
+							<option>Document</option>
+							<option>ID</option>
+							<option>Person</option>
+							<option>Others</option>
+						@else
+							<option @if($categorySelected == 'All') selected @endif>All</option>
+							<option @if($categorySelected == 'Gadget') selected @endif>Gadget</option>
+							<option @if($categorySelected == 'Document') selected @endif>Document</option>
+							<option @if($categorySelected == 'ID') selected @endif>ID</option>
+							<option @if($categorySelected == 'Person') selected @endif>Person</option>
+							<option @if($categorySelected == 'Others') selected @endif>Others</option>
+						@endif
 					</select>
 				</div>
 				<div class="form_group">

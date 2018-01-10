@@ -27,6 +27,10 @@ $(document).ready(function(){
 		position: 'top',
 		arrow: true,
 	});
+	tippy('.post_photos', {
+		position: 'top',
+		arrow: true,
+	});
 }); // end ready
 
 var commentDeleteTarget = 0;
