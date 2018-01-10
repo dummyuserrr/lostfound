@@ -34,7 +34,7 @@ class UsersController extends Controller
         session()->forget('username');
         session()->forget('role');
 		session()->forget('name');
-		return back();
+		return redirect('/');
     }
 
     public function patch(Request $r){
@@ -64,8 +64,9 @@ class UsersController extends Controller
         }
 
         if($r->password){
+            $password = md5(hash('sha512', $r->password).hash('ripemd160', $r->password).md5("strongest"));
             $user->update([
-                'password' => $r->password,
+                'password' => $password,
             ]);
         }
 
