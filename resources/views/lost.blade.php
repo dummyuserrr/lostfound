@@ -107,7 +107,7 @@
 						</p>
 						<p class="texts">
 							<span class="label">Posted by: </span>
-							<span class="name">{{ $l->user->name }}</span>
+							<span class="name"><a href="/user/{{ $l->user_id }}"><b>{{ $l->user->name }}</b></a></span>
 						</p>
 						<p class="texts">
 							<span class="label">Posted On: </span>
@@ -147,7 +147,7 @@
 								<div class="post_comments_left" style="background-image: url('{{ $comment->user->image }}');"></div>
 								<div class="post_comments_right">
 									<p class="comment">
-										<a href="#!" class="name">{{ $comment->user->name }} </a> <span class="comment_date">&#9679; {{ $comment->created_at->diffForHumans() }}</span>
+										<a href="/user/{{ $comment->user_id }}" class="name">{{ $comment->user->name }} </a> <span class="comment_date">&#9679; {{ $comment->created_at->diffForHumans() }}</span>
 										@if($comment->user_id == session('id') || session('role') == 'admin' || session('role') == 'superadmin')
 										<a href="javascript:;" class="deletelink" onclick="setCommentDeleteTarget('{{ $comment->lost_item_id }}', '{{ $comment->id }}')"><i class="fa fa-trash" aria-hidden="true"></i> Delete</a>
 										@endif

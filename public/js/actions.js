@@ -170,6 +170,9 @@ $('#deleteFormComment').on('submit', function(e){
 	});
 });
 
+$('.btnMyAccount').click(function(){
+	window.location.assign('/my-account');
+});
 // wew
 
 function bodyDisableScroll(){

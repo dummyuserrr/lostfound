@@ -30,10 +30,8 @@ a, a:hover, a:link, a:visited, a:active{color: #000; text-decoration: none;}
 }
 body{
 	background-image: url('/img/ulit.jpg');
-	// background-size: cover;
-	// background-position: center;
-	// background-repeat: no-repeat;
 }
+button:focus{outline: none;}
 .oxyreg{font-family: 'oxygen-regular';}
 .oxybold{font-family: 'oxygen-bold';}
 .hindreg{font-family: 'hindreg';}
@@ -444,6 +442,11 @@ nav{
 							color: #fff	;
 							margin-top: 3px;
 							width: 100%;
+							transition: 0.3s;
+							&:hover{
+								background: @red;
+								border: 1px solid @red;
+							}
 						}
 					}
 				}

@@ -21,4 +21,9 @@ class PagesController extends Controller
     public function userView(User $user){
     	return view('user_view', compact('user'));
     }
+
+    public function myAccount(){
+    	$user = User::find(session('id'));
+    	return view('my_account', compact('user'));
+    }
 }
