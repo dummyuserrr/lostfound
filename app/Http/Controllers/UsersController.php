@@ -36,4 +36,26 @@ class UsersController extends Controller
 		session()->forget('name');
 		return back();
     }
+
+    public function patch(Request $r){
+        $this->validate($r, [
+            'image' => 'sometimes|mimes:jpeg,bmp,png,jpg',
+            'password' => 'sometimes',
+            'password2' => 'sometimes|same:password',
+            'name' => 'required',
+            'address' => 'required',
+            'email' => 'required|email',
+            'mobile' => 'required',
+        ]);
+
+        $user = User::find(session('id'));
+        $user->update([
+            'name' => $r->name,
+            'address' => $r->address,
+            'email' => $r->email,
+            'mobile' => $r->mobile,
+        ]);
+
+        return back();
+    }
 }

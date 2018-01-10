@@ -37,6 +37,21 @@ button:focus{outline: none;}
 .hindreg{font-family: 'hindreg';}
 
 // helpers
+.validation_error, .success_message{
+	.testborder;
+	padding: 10px 30px;
+	background: #fbbebe;
+	border-radius: 4px;
+	border: 1px solid @red;
+	color: @red;
+	.oxyreg;
+	font-size: 14px;
+}
+.success_message{
+	background: #d7e8cf;
+	color: #608553;
+	border: 1px solid #608553;
+}
 .button_disabled{
 	cursor: not-allowed;
 	opacity: 0.6;

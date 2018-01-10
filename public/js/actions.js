@@ -31,6 +31,10 @@ $(document).ready(function(){
 		position: 'top',
 		arrow: true,
 	});
+	tippy('.myaccount_image', {
+		position: 'top',
+		arrow: true,
+	});
 }); // end ready
 
 var commentDeleteTarget = 0;
@@ -173,6 +177,10 @@ $('#deleteFormComment').on('submit', function(e){
 $('.btnMyAccount').click(function(){
 	window.location.assign('/my-account');
 });
+
+$('#myaccount_image').change(function(){
+	changeImagePreview(this);
+})
 // wew
 
 function bodyDisableScroll(){
@@ -205,4 +213,14 @@ function initiateDelete(){
 function closeModal(){
 	$('.mymodal').removeClass('modal-active');
 	bodyEnableScroll();
+}
+
+function changeImagePreview(input) {
+    if(input.files && input.files[0]){
+        var reader = new FileReader();
+        reader.onload = function (e) {
+            $('.myaccount_image').attr('src', e.target.result);
+        }
+        reader.readAsDataURL(input.files[0]);
+    }
 }

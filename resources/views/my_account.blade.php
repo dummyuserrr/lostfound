@@ -18,41 +18,53 @@
 		@endif
 		<div class="right">
 			<div class="box">
+				<div class="header" style="text-align: center;">
+					Edit Account (Optional)
+				</div>
 				<div class="userprofile">
-					<div class="form_group">
-						<label for="myaccount_image">
-							<img src="{{ $user->image }}" class="image myaccount_image">
-						</label>
-						<input type="file" name="image" id="myaccount_image" style="display:none">
-					</div>
-					<div class="form_group">
-						<label>Username:</label>
-						<input required type="text" disabled name="name" value="{{ $user->username }}">
-					</div>
-					<div class="form_group">
-						<label>New Password: (Optional. You can leave this blank)</label>
-						<input type="password" name="password">
-					</div>
-					<div class="form_group">
-						<label>Re-enter New Password:</label>
-						<input type="password" name="password2">
-					</div>
-					<div class="form_group">
-						<label>Name:</label>
-						<input required type="text" name="name" value="{{ $user->name }}">
-					</div>
-					<div class="form_group">
-						<label>Address:</label>
-						<input required type="text" name="address" value="{{ $user->address }}">
-					</div>
-					<div class="form_group">
-						<label>Email:</label>
-						<input required type="text" name="email" value="{{ $user->email }}">
-					</div>
-					<div class="form_group">
-						<label>Mobile:</label>
-						<input required type="text" name="mobile" value="{{ $user->mobile }}">
-					</div>
+					@include('prompts.validation_errors')
+					@include('prompts.success')
+					<form method="post" action="/my-account" enctype="multipart/form-data">
+						{{ csrf_field() }}
+						{{ method_field('patch') }}
+						<div class="form_group">
+							<label for="myaccount_image" style="cursor:pointer; text-align: center;">
+								<img src="{{ $user->image }}" class="image myaccount_image" title="Click to edit image">
+							</label>
+							<input type="file" name="image" id="myaccount_image" style="display:none">
+						</div>
+						<div class="form_group">
+							<label>Username:</label>
+							<input required type="text" disabled value="{{ $user->username }}">
+						</div>
+						<div class="form_group">
+							<label>New Password: (Optional. You can leave this blank)</label>
+							<input type="password" name="password">
+						</div>
+						<div class="form_group">
+							<label>Re-enter New Password:</label>
+							<input type="password" name="password2">
+						</div>
+						<div class="form_group">
+							<label>Name:</label>
+							<input required type="text" name="name" value="{{ $user->name }}">
+						</div>
+						<div class="form_group">
+							<label>Address:</label>
+							<input required type="text" name="address" value="{{ $user->address }}">
+						</div>
+						<div class="form_group">
+							<label>Email:</label>
+							<input required type="text" name="email" value="{{ $user->email }}">
+						</div>
+						<div class="form_group">
+							<label>Mobile:</label>
+							<input required type="text" name="mobile" value="{{ $user->mobile }}">
+						</div>
+						<div class="form_group">
+							<button>Save Changes</button>
+						</div>
+					</form>
 				</div>
 			</div>
 		</div>

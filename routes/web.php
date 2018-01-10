@@ -8,6 +8,7 @@ Route::post('/login', 'UsersController@login');
 Route::post('/logout', 'UsersController@logout');
 Route::get('/user/{user}', 'PagesController@userView');
 Route::get('/my-account', 'PagesController@myAccount')->middleware('checkUserSession');
+Route::patch('/my-account', 'UsersController@patch')->middleware('checkUserSession');
 
 // lost items
 Route::post('/lost-something/add', 'LostItemsController@store')->middleware('checkUserSession');
