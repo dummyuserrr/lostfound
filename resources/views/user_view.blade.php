@@ -38,10 +38,10 @@
 					</div>
 				</div>
 			</div>
-			@if($user->lost_items)
+			@if($user->lost_items->where('status', 0)->orderBy('created_at', 'desc')->get()->count() > 0)
 			<p class="mini_title">Lost Items Posted by this User:</p>
 			@endif
-			@foreach($user->lost_items as $l)
+			@foreach($user->lost_items->where('status', 0)->orderBy('created_at', 'desc')->get() as $l)
 			<div class="box">
 				@if($l->user_id == session('id') || session('role') == 'admin' || session('role') == 'superadmin')
 				<div class="deletebutton" title="Delete this post" onclick="setDeleteTarget('{{ $l->id }}')">

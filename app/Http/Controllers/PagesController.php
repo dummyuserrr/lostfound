@@ -14,7 +14,7 @@ class PagesController extends Controller
 
     public function lost(){
     	$li = new LostItem;
-    	$lostItems = $li->orderBy('created_at', 'desc')->get();
+    	$lostItems = $li->where('status', 0)->orderBy('created_at', 'desc')->get();
     	return view('lost', compact('lostItems'));
     }
 
