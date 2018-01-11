@@ -22,3 +22,4 @@ Route::delete('lost-something/{lostitem}/comment/{item}/delete', 'LostItemCommen
 
 // messages
 Route::get('messages/{user}', 'PagesController@messages');
+Route::post('messages/{user}', 'ConversationsController@store');
