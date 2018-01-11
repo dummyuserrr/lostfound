@@ -53,10 +53,10 @@
 					</form>
 				</div>
 			</div>
-			@if($user->lost_items->where('status', 0)->orderBy('created_at', 'desc')->count() > 0)
+			@if($user->lost_items()->where('status', 0)->orderBy('created_at', 'desc')->count() > 0)
 			<p class="mini_title">Your Lost Items:</p>
 			@endif
-			@foreach($user->lost_items->where('status', 0)->orderBy('created_at', 'desc')->get() as $l)
+			@foreach($user->lost_items()->where('status', 0)->orderBy('created_at', 'desc')->get() as $l)
 			<div class="box">
 				@if($l->user_id == session('id') || session('role') == 'admin' || session('role') == 'superadmin')
 				<div class="deletebutton" title="Delete this post" onclick="setDeleteTarget('{{ $l->id }}')">

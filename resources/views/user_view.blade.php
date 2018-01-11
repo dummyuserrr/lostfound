@@ -10,7 +10,7 @@
 				</div>
 				<div class="body">
 					<div class="form_group">
-						<button style="max-width: 300px; font-size: 14px; padding: 10px;">Send a message</button>
+						<button style="max-width: 300px; font-size: 14px; padding: 10px;" onclick="redirect('/messages/{{ $user->id }}')">Send a message</button>
 					</div>
 				</div>
 			</div>
@@ -38,10 +38,10 @@
 					</div>
 				</div>
 			</div>
-			@if($user->lost_items->where('status', 0)->orderBy('created_at', 'desc')->get()->count() > 0)
+			@if($user->lost_items()->where('status', 0)->orderBy('created_at', 'desc')->count() > 0)
 			<p class="mini_title">Lost Items Posted by this User:</p>
 			@endif
-			@foreach($user->lost_items->where('status', 0)->orderBy('created_at', 'desc')->get() as $l)
+			@foreach($user->lost_items()->where('status', 0)->orderBy('created_at', 'desc')->get() as $l)
 			<div class="box">
 				@if($l->user_id == session('id') || session('role') == 'admin' || session('role') == 'superadmin')
 				<div class="deletebutton" title="Delete this post" onclick="setDeleteTarget('{{ $l->id }}')">

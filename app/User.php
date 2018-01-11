@@ -15,4 +15,12 @@ class User extends Model
     public function lost_item_comments(){
     	return $this->hasMany(LostItemComment::class);
     }
+
+    public function conversations(){
+    	return $this->hasMany(Conversation::class);
+    }
+
+    public function messages(){
+    	return $this->hasMany(Message::class);
+    }
 }

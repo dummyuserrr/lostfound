@@ -220,6 +220,10 @@ $('#registerForm').on('submit', function(e){
 });
 // wew
 
+function redirect(path){
+	window.location.assign(path);
+}
+
 function bodyDisableScroll(){
 	$('body').addClass('modal-opened');
 }

@@ -14,7 +14,7 @@ class PagesController extends Controller
 
     public function lost(){
     	$li = new LostItem;
-    	$lostItems = $li->where('status', 0)->orderBy('created_at', 'desc')->get();
+    	$lostItems = $li->where('status', 0)->orderBy('created_at', 'desc')->paginate(1);
     	return view('lost', compact('lostItems'));
     }
 
@@ -25,5 +25,9 @@ class PagesController extends Controller
     public function myAccount(){
     	$user = User::find(session('id'));
     	return view('my_account', compact('user'));
+    }
+
+    public function messages(User $user){
+        return $user;
     }
 }
