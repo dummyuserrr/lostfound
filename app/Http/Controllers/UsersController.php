@@ -12,12 +12,16 @@ class UsersController extends Controller
     	$password = md5(hash('sha512', $r->password).hash('ripemd160', $r->password).md5("strongest"));
     	$user = $u->where('username', $r->username)->where('password', $password)->first();
     	if($user){
-            session()->put('status', 1);
-            session()->put('id', $user->id);
-            session()->put('username', $user->username);
-            session()->put('role', $user->role);
-    		session()->put('name', $user->name);
-    		return 1;
+            if($user->approved == 0){
+                return 2;
+            }else{
+                session()->put('status', 1);
+                session()->put('id', $user->id);
+                session()->put('username', $user->username);
+                session()->put('role', $user->role);
+                session()->put('name', $user->name);
+                return 1;
+            }
     	}else{
     		session()->forget('status');
             session()->forget('id');
@@ -99,6 +103,6 @@ class UsersController extends Controller
         $u->image = $image;
         $u->save();
 
-        return back();
+        return 1;
     }
 }

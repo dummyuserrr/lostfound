@@ -74,7 +74,11 @@ $('#frmLogin').on('submit', function(e){
 		success: function(data){
 			if(request.responseText == 1){
 				location.reload();
+			}else if(request.responseText == 2){
+				$('.loginerror').css('display', 'block');
+				$('.loginerror').find('.prompt').html('Sorry. Your account has not been verified yet');
 			}else{
+				$('.loginerror').find('.prompt').html('Wrong username or password. Please try again.');
 				$('.loginerror').css('display', 'block');
 			}
 			$('.loginbutton').removeClass('button_disabled');
@@ -184,6 +188,36 @@ $('.btnMyAccount').click(function(){
 $('#myaccount_image').change(function(){
 	changeImagePreview(this);
 })
+
+$('#registerForm').on('submit', function(e){
+	e.preventDefault();
+	var me = $(this);
+	var request = $.ajax({
+		url: $(this).attr('action'),
+		type: "POST",           
+		data: new FormData(this),
+		contentType: false,       
+		cache: false,      
+		processData:false,       
+		beforeSend: function(data){
+
+		},	
+		success: function(data){
+			if(request.responseText == 1){
+				$('.prompt_message').css('display', 'block');
+				$('.prompt_message').find('li').html('Thank you for signing up. Please wait at least 24 hours for the administrator to confirm your account.');
+				$('#registerForm')[0].reset();
+			}
+		},
+		error: function(data){
+			var errors = "";
+			for(datos in data.responseJSON){
+				errors += data.responseJSON[datos]+'\n';
+			}
+			alert(errors);
+		}
+	});
+});
 // wew
 
 function bodyDisableScroll(){

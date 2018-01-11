@@ -58,7 +58,7 @@
 				<div class="header">Register</div>
 				<div class="body">
 					@include('prompts.prompt_message')
-					<form method="post" action="/register" enctype="multipart/form-data">
+					<form method="post" action="/register" enctype="multipart/form-data" id="registerForm">
 						{{ csrf_field() }}
 						<div class="form_group">
 							<label>Name: <i>*</i></label>

@@ -1,7 +1,5 @@
-@if(session()->has('promptMessage'))
-<div class="success_message prompt_message">
+<div class="success_message prompt_message" style="display: none;">
 	<ul style="list-style: none;">
-		<li>{{ session('promptMessage')}}</li>
+		<li></li>
 	</ul>
 </div>
-@endif
