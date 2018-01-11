@@ -28,6 +28,6 @@ class PagesController extends Controller
     }
 
     public function messages(User $user){
-        return $user;
+        return view('messages');
     }
 }
