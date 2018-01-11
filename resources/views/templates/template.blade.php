@@ -57,7 +57,8 @@
 				<button class="modal-closer"><i class="fa fa-times" aria-hidden="true"></i></button>
 				<div class="header">Register</div>
 				<div class="body">
-					<form method="post" action="/register">
+					<form method="post" action="/register" enctype="multipart/form-data">
+						{{ csrf_field() }}
 						<div class="form_group">
 							<label>Name: <i>*</i></label>
 							<input required type="text" name="name" placeholder="John Doe" id="register_name">
@@ -91,7 +92,7 @@
 						<div class="column">
 							<div class="form_group">
 								<label>Re-enter Password: <i>*</i></label>
-								<input required type="password" placeholder="Password" name="password2">
+								<input required type="password2" placeholder="Password" name="password2">
 							</div>
 						</div>
 						<div class="form_group">

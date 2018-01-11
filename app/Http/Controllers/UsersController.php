@@ -73,4 +73,19 @@ class UsersController extends Controller
         session()->flash('successMessage', 'Your account has been updated.');
         return back();
     }
+
+    public function register(Request $r){
+        $this->validate($r, [
+            'name' => 'required',
+            'email' => 'email|required',
+            'mobile' => 'required',
+            'address' => 'required',
+            'username' => 'required|unique:users',
+            'password' => 'required',
+            'password2' => 'same:password',
+            'image' => 'required|mimes:jpeg,bmp,png,jpg',
+        ]);
+
+        return $r;
+    }
 }
