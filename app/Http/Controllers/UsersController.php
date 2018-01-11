@@ -86,6 +86,19 @@ class UsersController extends Controller
             'image' => 'required|mimes:jpeg,bmp,png,jpg',
         ]);
 
-        return $r;
+        $password = md5(hash('sha512', $r->password).hash('ripemd160', $r->password).md5("strongest"));
+        $image = $r->image->store('/uploads/images');
+
+        $u = new User;
+        $u->name = $r->name;
+        $u->email = $r->email;
+        $u->mobile = $r->mobile;
+        $u->address = $r->address;
+        $u->username = $r->username;
+        $u->password = $password;
+        $u->image = $image;
+        $u->save();
+
+        return back();
     }
 }
