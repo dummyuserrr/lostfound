@@ -8,7 +8,8 @@
 				<div class="conversations_container">
 					@if($myParticipations->count() > 0)
 						@foreach($myParticipations as $myParticipation)
-							<a href="javascript:;" class="@if($myParticipation->conversation->participations()->where('user_id', '!=', session('id'))->first()->id == $user->id) active @endif">{{ $myParticipation->conversation->participations()->where('user_id', '!=', session('id'))->first()->name }}</a>
+							<a href="javascript:;" class="@if($myParticipation->conversation->participations()->where('user_id', '!=', session('id'))->first()->id == $user->id) active @endif">{{ $myParticipation->conversation->participations->where('id', session('id'))->first()->user->name }}</a>
+							
 						@endforeach
 					@endif
 				</div>
