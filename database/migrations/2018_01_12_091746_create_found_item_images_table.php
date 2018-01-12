@@ -15,7 +15,7 @@ class CreateFoundItemImagesTable extends Migration
     {
         Schema::create('found_item_images', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('lost_item_id');
+            $table->integer('found_item_id');
             $table->text('image');
             $table->softDeletes();
             $table->timestamps();

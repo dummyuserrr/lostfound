@@ -15,7 +15,7 @@ class CreateFoundItemCommentsTable extends Migration
     {
         Schema::create('found_item_comments', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('lost_item_id')->unsigned();
+            $table->integer('found_item_id')->unsigned();
             $table->integer('user_id')->unsigned();
             $table->text('comment');
             $table->softDeletes();
