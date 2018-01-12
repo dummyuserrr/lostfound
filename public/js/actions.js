@@ -112,9 +112,10 @@ $('.deletebutton').click(function(){
 	bodyDisableScroll();
 });
 
-$('.deletelink').click(function(){
-	$('.deleteModal').addClass('modal-active');
-	bodyDisableScroll();
+$('body').on('click','.deletelink', function(){
+	// $('.deleteModal').addClass('modal-active');
+	// bodyDisableScroll();
+	alert(1)
 });
 
 $('.comment_form').on('submit', function(e){
@@ -138,6 +139,7 @@ $('.comment_form').on('submit', function(e){
 			me.find('textarea').removeAttr('disabled');
 			me.find('.comment_submit_button').removeClass('button_disabled');
 			me.find('textarea').val('');
+			// me.closest('.posts').find('.post_comments').css('maxHeight', '99999px');
 		},
 		error: function(data){
 			var errors = "";
