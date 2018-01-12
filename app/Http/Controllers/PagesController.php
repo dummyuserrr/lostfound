@@ -21,6 +21,10 @@ class PagesController extends Controller
     	return view('lost', compact('lostItems'));
     }
 
+    public function found(){
+        return view('found');
+    }
+
     public function userView(User $user){
     	return view('user_view', compact('user'));
     }
