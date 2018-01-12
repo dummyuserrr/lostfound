@@ -15,6 +15,14 @@ class CreateFoundItemsTable extends Migration
     {
         Schema::create('found_items', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('user_id')->unsigned();
+            $table->string('name');
+            $table->string('category');
+            $table->text('place');
+            $table->date('datefound');
+            $table->text('otherdetails');
+            $table->integer('status')->default(0);
+            $table->softDeletes();
             $table->timestamps();
         });
     }

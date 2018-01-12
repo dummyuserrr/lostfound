@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\LostItem;
+use App\FoundItem;
 use App\User;
 use App\Message;
 use App\Participation;
@@ -17,12 +18,14 @@ class PagesController extends Controller
 
     public function lost(){
     	$li = new LostItem;
-    	$lostItems = $li->where('status', 0)->orderBy('created_at', 'desc')->paginate(1);
+    	$lostItems = $li->where('status', 0)->orderBy('created_at', 'desc')->get();
     	return view('lost', compact('lostItems'));
     }
 
     public function found(){
-        return view('found');
+        $fi = new FoundItem;
+        $foundItems = $fi->where('status', 0)->orderBy('created_at', 'desc')->get();
+        return view('found', compact('foundItems'));
     }
 
     public function userView(User $user){
