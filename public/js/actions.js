@@ -185,6 +185,10 @@ $('.btnMyAccount').click(function(){
 	window.location.assign('/my-account');
 });
 
+$('.btnMessages').click(function(){
+	window.location.assign('/messages');
+});
+
 $('#myaccount_image').change(function(){
 	changeImagePreview(this);
 })

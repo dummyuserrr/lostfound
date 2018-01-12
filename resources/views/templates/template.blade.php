@@ -18,6 +18,7 @@
 			<div class="top">
 				<div class="container">
 					@if(session()->has('status'))
+					<div class="options btnMessages"><i class="fa fa-envelope" aria-hidden="true"></i> Messages</div>
 					<div class="options btnMyAccount"><i class="fa fa-sign-out" aria-hidden="true"></i> My Account</div>
 					<div class="options btnLogout"><i class="fa fa-sign-out" aria-hidden="true"></i> Log Out</div>
 					<form id="frmLogout" method="post" action="/logout">
