@@ -22,7 +22,7 @@
 			@else
 			<div class="box">
 				<div class="header">
-					John Doe
+					{{ $user->name }}
 				</div>
 				<div class="messages_container">
 					@if(count($messages) < 1 || empty($messages))
@@ -31,11 +31,11 @@
 						@foreach($messages as $message)
 							@if($message->user_id == session('id'))
 								<div class="mymessage">
-									<p><b>You:</b> gago</p>
+									<p><b>You:</b> {{ $message->body }}</p>
 								</div>
 							@else
 								<div class="theirmessage">
-									<p><b>John Doe:</b> tangina mo. You are currently employed and/or have a stable source of income, such as your own business. You are currently employed and/or have a stable source of income, such as your own business . You are currently employed and/or have a stable source of income, such as your own business. You are currently employed and/or have a stable source of income, such as your own business</p>
+									<p><b>{{ $message->user->name }}:</b> {{ $message->body }}</p>
 								</div>
 							@endif
 						@endforeach
