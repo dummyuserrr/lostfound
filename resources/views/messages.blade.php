@@ -25,22 +25,31 @@
 					John Doe
 				</div>
 				<div class="messages_container">
-					@if(count($myParticipations) < 1)
+					@if(count($messages) < 1 || empty($messages))
 					You have no conversation
 					@else
-					<div class="mymessage">
-						<p><b>You:</b> gago</p>
-					</div>
-					<div class="theirmessage">
-						<p><b>John Doe:</b> tangina mo. You are currently employed and/or have a stable source of income, such as your own business. You are currently employed and/or have a stable source of income, such as your own business . You are currently employed and/or have a stable source of income, such as your own business. You are currently employed and/or have a stable source of income, such as your own business</p>
-					</div>
+						@foreach($messages as $message)
+							@if($message->user_id == session('id'))
+								<div class="mymessage">
+									<p><b>You:</b> gago</p>
+								</div>
+							@else
+								<div class="theirmessage">
+									<p><b>John Doe:</b> tangina mo. You are currently employed and/or have a stable source of income, such as your own business. You are currently employed and/or have a stable source of income, such as your own business . You are currently employed and/or have a stable source of income, such as your own business. You are currently employed and/or have a stable source of income, such as your own business</p>
+								</div>
+							@endif
+						@endforeach
 					@endif
 				</div>
 				<div class="message_form">
-					<form method="post" action="/messages/1">
+					@if(empty($conversation))
+					<form method="post" action="/messages/0/{{ $user->id }}">
+					@else
+					<form method="post" action="/messages/{{ $conversation->id }}/{{ $user->id }}">
+					@endif
 						{{ csrf_field() }}
-						<textarea rows="3" placeholder="Enter your message here ..." name="message" autofocus="on"></textarea>
-						<button>Send Message</button>
+						<textarea rows="3" required placeholder="Enter your message here ..." name="message" autofocus="on"></textarea>
+						<button type="submit">Send Message</button>
 					</form>
 				</div>
 			</div>
