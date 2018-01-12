@@ -30,6 +30,15 @@ class PagesController extends Controller
     	return view('my_account', compact('user'));
     }
 
+    public function messages_empty(){
+        $p = new Participation;
+        $myParticipations = $p->where('user_id', session('id'))->orderBy('updated_at', 'desc')->get();
+        $messages = NULL;
+        $conversation = NULL;
+        $user = NULL;
+        return view('messages', compact('myParticipations', 'user', 'messages', 'conversation'));
+    }
+
     public function messages(User $user){
         // retrieve all your conversations
         $p = new Participation;

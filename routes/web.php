@@ -21,5 +21,6 @@ Route::post('lost-something/{item}/comment/add', 'LostItemCommentsController@sto
 Route::delete('lost-something/{lostitem}/comment/{item}/delete', 'LostItemCommentsController@destroy')->middleware('checkUserSession');
 
 // messages
+Route::get('messages/', 'PagesController@messages_empty');
 Route::get('messages/{user}', 'PagesController@messages');
 Route::post('messages/{conversation}/{user}', 'ConversationsController@store');
