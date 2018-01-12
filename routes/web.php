@@ -21,7 +21,11 @@ Route::delete('lost-something/{lostitem}/comment/{item}/delete', 'LostItemCommen
 
 // found items
 Route::get('found-something', 'PagesController@found');
-Route::delete('lost-something/{item}/delete', 'FoundItemsController@destroy')->middleware('checkUserSession');
+Route::delete('found-something/{item}/delete', 'FoundItemsController@destroy')->middleware('checkUserSession');
+Route::get('found-something/search', 'FoundItemsController@search');
+// lost items comments
+Route::post('found-something/{item}/comment/add', 'FoundItemCommentsController@store')->middleware('checkUserSession');
+Route::delete('found-something/{lostitem}/comment/{item}/delete', 'FoundItemCommentsController@destroy')->middleware('checkUserSession');
 
 // messages
 Route::get('messages/', 'PagesController@messages_empty');
