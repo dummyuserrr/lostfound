@@ -139,7 +139,7 @@ $('.comment_form').on('submit', function(e){
 			me.find('textarea').removeAttr('disabled');
 			me.find('.comment_submit_button').removeClass('button_disabled');
 			me.find('textarea').val('');
-			// me.closest('.posts').find('.post_comments').css('maxHeight', '99999px');
+			me.closest('.posts').find('.post_comments').css('max-height', '99999px');
 		},
 		error: function(data){
 			var errors = "";
