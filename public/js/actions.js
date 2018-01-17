@@ -113,9 +113,11 @@ $('.deletebutton').click(function(){
 });
 
 $('body').on('click','.deletelink', function(){
-	// $('.deleteModal').addClass('modal-active');
-	// bodyDisableScroll();
-	alert(1)
+	var itemID = $(this).attr('data-itemID');
+	var commentID = $(this).attr('data-commentID');
+	setCommentDeleteTarget(itemID, commentID);
+	$('.deleteModal').addClass('modal-active');
+	bodyDisableScroll();
 });
 
 $('.comment_form').on('submit', function(e){
