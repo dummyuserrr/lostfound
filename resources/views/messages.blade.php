@@ -9,7 +9,7 @@
 					@if($myParticipations->count() > 0)
 						@foreach($myParticipations as $myParticipation)
 							@if($user == NULL)
-								<a href="/messages/{{ $myParticipation->conversation->participations->where('id', session('id'))->first()->user->id }}">{{ $myParticipation->conversation->participations->where('id', '!=', session('id'))->first()->user->name }}</a>
+								<a href="/messages/{{ $myParticipation->conversation->participations->where('id', '!=', session('id'))->first()->user->id }}">{{ $myParticipation->conversation->participations->where('id', '!=', session('id'))->first()->user->name }}</a>
 							@else
 								<a href="/messages/{{ $myParticipation->conversation->participations->where('id', '!=', session('id'))->first()->user->id }}" class="@if($myParticipation->conversation->participations->where('id', '!=', session('id'))->first()->user->id == $user->id) active @endif">{{ $myParticipation->conversation->participations->where('id', '!=', session('id'))->first()->user->name }}</a>
 							@endif
