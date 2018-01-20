@@ -1,4 +1,4 @@
-<h3>Notes for system</h3>
+<h3>TODO LIST</h3>
 <ul>
 	<li>(/) Make searching of found items work</li>
 	<li>(/) Fix the bug when deleting a found item's comment</li>
@@ -10,4 +10,18 @@
 	<li>(/) Add max height of the comment container if a comment is added</li>
 	<li>(/) Fix the bug where the delete button doesn't work on a newly prepended comment</li>
 	<li>(/) Will use data tag on prepended items</li>
+</ul>
+
+<h3>NOTES</h3>
+<ul>
+	<li>There are three user roles: 
+		<ol>
+			<li>Superadmin</li>
+			<li>Admin</li>
+			<li>User</li>
+		</ol>
+	</li>
+	<li>Everytime a user registers, the superadmin/admin needs to verify that user first</li>
+	<li>The only difference between the superadmin and admin is that the superadmin can add/edit/delete admin accounts</li>
+	<li>The superadmin/admin can delete any posts and comments while the user can only delete his/her own post/comment</li>
 </ul>

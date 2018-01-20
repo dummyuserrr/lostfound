@@ -116,7 +116,7 @@
 							</form>
 						</div>
 						@else
-						<p class="prompt">You need to <a class="btnLogin" href="javascript:;">LOGIN</a> or <a href="javascript:;" class="btnRegister">REGISTER</a> to post your lost item</p>
+						<p class="prompt">You need to <a class="btnLogin" href="javascript:;">LOGIN</a> or <a href="javascript:;" class="btnRegister">REGISTER</a> to post a comment</p>
 						@endif
 						<div class="comments_holder">
 							@foreach($l->comments()->orderBy('created_at', 'desc')->get() as $comment)
