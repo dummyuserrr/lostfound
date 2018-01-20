@@ -67,7 +67,7 @@
 			@foreach($foundItems as $l)
 			<div class="box">
 				@if($l->user_id == session('id') || session('role') == 'admin' || session('role') == 'superadmin')
-				<div class="deletebutton" title="Delete this post" onclick="setDeleteTarget('{{ $l->id }}')">
+				<div class="deletebutton" title="Delete this post" onclick="setDeleteTarget_found('{{ $l->id }}')">
 					<i class="fa fa-trash" aria-hidden="true"></i>
 				</div>
 				@endif
@@ -149,7 +149,7 @@
 									<p class="comment">
 										<a href="/user/{{ $comment->user_id }}" class="name">{{ $comment->user->name }} </a> <span class="comment_date">&#9679; {{ $comment->created_at->diffForHumans() }}</span>
 										@if($comment->user_id == session('id') || session('role') == 'admin' || session('role') == 'superadmin')
-										<a href="javascript:;" class="deletelink" data-itemID="{{ $comment->found_item_id }}" data-commentID="{{ $comment->id }}"><i class="fa fa-trash" aria-hidden="true"></i> Delete</a>
+										<a href="javascript:;" class="deletelink" data-itemID="{{ $comment->found_item_id }}" data-commentID="{{ $comment->id }}" data-type="found"><i class="fa fa-trash" aria-hidden="true"></i> Delete</a>
 										@endif
 										<span class="comment_content">
 											{{ $comment->comment }}

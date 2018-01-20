@@ -115,7 +115,12 @@ $('.deletebutton').click(function(){
 $('body').on('click','.deletelink', function(){
 	var itemID = $(this).attr('data-itemID');
 	var commentID = $(this).attr('data-commentID');
-	setCommentDeleteTarget(itemID, commentID);
+	if($(this).attr('data-type') == 'found'){
+		setCommentDeleteTarget_found(itemID, commentID);
+	}else{
+		setCommentDeleteTarget(itemID, commentID);
+
+	}
 	$('.deleteModal').addClass('modal-active');
 	bodyDisableScroll();
 });
@@ -250,10 +255,19 @@ function setDeleteTarget(id){
 	$('#deleteForm').attr('action', '/lost-something/'+id+'/delete');
 	activeDeleteForm = $('#deleteForm');
 }
+function setDeleteTarget_found(id){
+	$('#deleteForm').attr('action', '/found-something/'+id+'/delete');
+	activeDeleteForm = $('#deleteForm');
+}
 
 function setCommentDeleteTarget(lostItemID, commentID){
 	commentDeleteTarget = commentID;
 	$('#deleteFormComment').attr('action', '/lost-something/'+lostItemID+'/comment/'+commentID+'/delete'); 
+	activeDeleteForm = $('#deleteFormComment');
+}
+function setCommentDeleteTarget_found(foundItemID, commentID){
+	commentDeleteTarget = commentID;
+	$('#deleteFormComment').attr('action', '/found-something/'+foundItemID+'/comment/'+commentID+'/delete'); 
 	activeDeleteForm = $('#deleteFormComment');
 }
 
