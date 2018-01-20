@@ -4,66 +4,7 @@
 	<div class="container">
 		@include('templates.found_items_left')
 		<div class="right">
-			@if(!session()->has('status'))
-			<div class="box">
-				<p class="prompt">You need to <a class="btnLogin" href="javascript:;">LOGIN</a> or <a href="javascript:;" class="btnRegister">REGISTER</a> to post your found item</p>
-			</div>
-			@else
-			<div class="box">
-				<div class="header">
-					POST YOUR FOUND ITEM:
-					<button class="toggle postToggler"><i class="fa fa-chevron-up" aria-hidden="true"></i></button>
-				</div>
-				<form method="post" action="/found-something/add" enctype="multipart/form-data" class="form">
-					{{ csrf_field() }}
-					@include('prompts.validation_errors')
-					<div class="column">
-						<div class="form_group">
-							<label>Item Name: <i>*</i></label>
-							<input required type="text" name="name" autofocus>
-						</div>
-					</div>
-					<div class="column">
-						<div class="form_group">
-							<label>Date Found: <i>*</i></label>
-							<input required type="date" name="datefound" style="padding: 5px;" max="{{ date('Y-m-d') }}">
-						</div>
-					</div>
-					<div class="column">
-						<div class="form_group">
-							<label>Category: <i>*</i></label>
-							<select name="category" required>
-								<option selected disabled>Select Category</option>
-								<option>Gadget</option>
-								<option>License (ID, Passport, etc)</option>
-								<option>Pet</option>
-								<option>Jewelry</option>
-								<option>Person</option>
-								<option>Others</option>
-							</select>
-						</div>
-					</div>
-					<div class="column">
-						<div class="form_group">
-							<label>Photo/s (You can upload multiple): <i>*</i></label>
-							<input required type="file" name="images[]" multiple>
-						</div>
-					</div>
-					<div class="form_group">
-						<label>Place Where You Found It: <i>*</i></label>
-						<input required type="text" name="place">
-					</div>
-					<div class="form_group">
-						<label>Other Details: <i>*</i></label>
-						<textarea name="otherdetails" rows="4" required></textarea>
-					</div>
-					<div class="form_group" style="text-align: left; margin-top: -10px;">
-						<button style="max-width: 100px; font-size: 14px;">Post</button>
-					</div>
-				</form>
-			</div>
-			@endif
-			<p class="mini_title">Found Items by Other People</p>
+			<p class="mini_title" style="margin-top: 0">{{ $foundItems->count() }} Result(s) Found </p>
 			@foreach($foundItems as $l)
 			<div class="box">
 				@if($l->user_id == session('id') || session('role') == 'admin' || session('role') == 'superadmin')
@@ -75,7 +16,7 @@
 					<div class="left">
 						<div class="content">
 							@if($l->images)
-							<img src="/{{ $l->images->first()->image }}" title="Click to view photo" class="post_photos" onclick="viewImage('/{{ $l->images->first()->image }}')">
+							<img src="/{{ $l->images->first()->image }}" class="post_photos" onclick="viewImage('/{{ $l->images->first()->image }}')">
 							@else
 							<p class="prompt">
 								No Image(s) Uploaded
@@ -107,7 +48,7 @@
 						</p>
 						<p class="texts">
 							<span class="label">Posted by: </span>
-							<span class="name"><a href="/user/{{ $l->user_id }}"><b>{{ $l->user->name }}</b></a></span>
+							<span class="name">{{ $l->user->name }}</span>
 						</p>
 						<p class="texts">
 							<span class="label">Posted On: </span>
@@ -121,7 +62,7 @@
 							@foreach($l->images as $image)
 							@if ($loop->first) @continue @endif
 							<div class="boxes">
-								<div title="Click to view photo" class="post_photos morephotos" style="background-image: url('/{{ $image->image }}');" onclick="viewImage('/{{ $image->image }}')"></div>
+								<div class="post_photos morephotos" style="background-image: url('/{{ $image->image }}');" onclick="viewImage('/{{ $image->image }}')"></div>
 							</div>
 							@endforeach
 						</div>
@@ -147,9 +88,9 @@
 								<div class="post_comments_left" style="background-image: url('{{ $comment->user->image }}');"></div>
 								<div class="post_comments_right">
 									<p class="comment">
-										<a href="/user/{{ $comment->user_id }}" class="name">{{ $comment->user->name }} </a> <span class="comment_date">&#9679; {{ $comment->created_at->diffForHumans() }}</span>
+										<a href="#!" class="name">{{ $comment->user->name }} </a> <span class="comment_date">&#9679; {{ $comment->created_at->diffForHumans() }}</span>
 										@if($comment->user_id == session('id') || session('role') == 'admin' || session('role') == 'superadmin')
-										<a href="javascript:;" class="deletelink" data-itemID="{{ $comment->found_item_id }}" data-commentID="{{ $comment->id }}"><i class="fa fa-trash" aria-hidden="true"></i> Delete</a>
+										<a href="javascript:;" class="deletelink" onclick="setCommentDeleteTarget('{{ $comment->found_item_id }}', '{{ $comment->id }}')"><i class="fa fa-trash" aria-hidden="true"></i> Delete</a>
 										@endif
 										<span class="comment_content">
 											{{ $comment->comment }}
