@@ -90,5 +90,8 @@ class PagesController extends Controller
 
     public function retrievedItemsSearch(Request $r){
         // dito na
+        $li = new LostItem;
+        $fi = new FoundItem;
+        
     } 
 }
