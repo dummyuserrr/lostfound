@@ -2,7 +2,7 @@
 @section('content')
 <div class="lost_container">
 	<div class="container">
-		@include('templates.lost_items_left')
+		@include('templates.retrieved_items_left')
 		<div class="right">
 			<p class="mini_title" style="margin-top: -5px;">Retrieved Items</p>
 			@foreach($lostItems as $l)
