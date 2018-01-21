@@ -79,7 +79,7 @@
 						<!-- <p class="texts"><span class="found"><i class="fa fa-check" aria-hidden="true"></i> This has been marked as found</span></p> -->
 						@if($l->status == 1)
 						<p class="texts">
-							<span class="label"><h3>This item has been marked as found</h3></span>
+							<span class="label"><h3>This item has been retrieved</h3></span>
 						</p>
 						@endif
 						<p class="texts">
