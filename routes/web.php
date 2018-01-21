@@ -36,3 +36,6 @@ Route::post('messages/{conversation}/{user}', 'ConversationsController@store');
 // items
 Route::patch('lost-item/{item}/mark-as-found', 'LostItemsController@markAsFound')->middleware('checkUserSession');
 Route::patch('found-item/{item}/mark-as-found', 'FoundItemsController@markAsFound')->middleware('checkUserSession');
+
+// retrived items
+Route::get('retrieved-items', 'PagesController@retrievedItems');

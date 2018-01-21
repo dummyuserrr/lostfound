@@ -78,4 +78,13 @@ class PagesController extends Controller
             return view('messages', compact('myParticipations', 'user', 'messages', 'conversation'));
         }
     }
+
+    public function retrievedItems(){
+        $li = new LostItem;
+        $fi = new FoundItem;
+
+        $lostItems = $li->where('status', 1)->orderBy('updated_at', 'desc')->get();
+        $lostItems = $fi->where('status', 1)->orderBy('updated_at', 'desc')->get();
+        return view('retrievedItems', compact('lostItems', 'foundItems'));
+    }    
 }
