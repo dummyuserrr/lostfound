@@ -53,10 +53,10 @@
 					</form>
 				</div>
 			</div>
-			@if($user->lost_items()->where('status', 0)->orderBy('created_at', 'desc')->count() > 0)
+			@if($user->lost_items()->orderBy('created_at', 'desc')->count() > 0)
 			<p class="mini_title">Your Lost Items:</p>
 			@endif
-			@foreach($user->lost_items()->where('status', 0)->orderBy('created_at', 'desc')->get() as $l)
+			@foreach($user->lost_items()->orderBy('created_at', 'desc')->get() as $l)
 			<div class="box">
 				@if($l->user_id == session('id') || session('role') == 'admin' || session('role') == 'superadmin')
 				<div class="deletebutton" title="Delete this post" onclick="setDeleteTarget('{{ $l->id }}')">
@@ -77,6 +77,11 @@
 					</div>
 					<div class="right">
 						<!-- <p class="texts"><span class="found"><i class="fa fa-check" aria-hidden="true"></i> This has been marked as found</span></p> -->
+						@if($l->status == 1)
+						<p class="texts">
+							<span class="label"><h3>This item has been marked as found</h3></span>
+						</p>
+						@endif
 						<p class="texts">
 							<span class="label">Item Name: </span>
 							<span class="name">{{ $l->name }}</span>

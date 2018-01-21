@@ -29,6 +29,10 @@ $(document).ready(function(){
 		position: 'top',
 		arrow: true,
 	});
+	tippy('.markAsFound', {
+		position: 'top',
+		arrow: true,
+	});
 	tippy('.post_photos', {
 		position: 'top',
 		arrow: true,
@@ -233,7 +237,15 @@ $('#registerForm').on('submit', function(e){
 });
 
 $('.markAsFound').click(function(){
-	itemID = $(this).attr('data-itemID');
+	var itemID = $(this).attr('data-itemID');
+	var type = $(this).attr('data-type');
+	if(type == 'lost'){
+		$('.frmMarkAsFound').attr('action', '/lost-item/'+itemID+'/mark-as-found');
+		$('.markAsFoundModal').addClass('modal-active');
+		bodyEnableScroll();
+	}else{
+		$('.frmMarkAsFound').attr('action', '/found-item/'+itemID+'/mark-as-found');
+	}
 });
 // wew
 
@@ -277,6 +289,10 @@ function setCommentDeleteTarget_found(foundItemID, commentID){
 
 function initiateDelete(){
 	activeDeleteForm.submit();
+}
+
+function initiateFound(){
+	$('.frmMarkAsFound').submit();
 }
 
 function closeModal(){

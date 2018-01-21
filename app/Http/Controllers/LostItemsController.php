@@ -64,4 +64,12 @@ class LostItemsController extends Controller
             return view('lost_search', compact('lostItems', 'q', 'categorySelected'));
         }
     }
+
+    public function markAsFound(LostItem $item){
+        $item->update([
+            'status' => 1,
+        ]);
+
+        return back();
+    }
 }

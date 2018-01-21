@@ -32,3 +32,7 @@ Route::delete('found-something/{founditem}/comment/{item}/delete', 'FoundItemCom
 Route::get('messages/', 'PagesController@messages_empty');
 Route::get('messages/{user}', 'PagesController@messages');
 Route::post('messages/{conversation}/{user}', 'ConversationsController@store');
+
+// items
+Route::patch('lost-item/{item}/mark-as-found', 'LostItemsController@markAsFound')->middleware('checkUserSession');
+Route::patch('found-item/{item}/mark-as-found', 'FoundItemsController@markAsFound')->middleware('checkUserSession');

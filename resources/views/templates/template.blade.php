@@ -155,6 +155,19 @@
 				</div>
 			</div>
 		</div>
+		<div class="mymodal markAsFoundModal">
+			<div class="modal">
+				<button class="modal-closer"><i class="fa fa-times" aria-hidden="true"></i></button>
+				<div class="header">Confirmation</div>
+				<div class="body">
+					Are you sure that this item has been found?
+					<div class="form_group">
+						<button onclick="initiateFound()" style="background-color: #1a5d1e; border: 1px solid #1a5d1e;">Yes</button>
+						<button style="background: #818181; border: 1px solid #818181;" onclick="closeModal()">No</button>
+					</div>
+				</div>
+			</div>
+		</div>
 		@if(session()->has('status'))
 		<form id="deleteForm" method="post" action="none">
 			{{ csrf_field() }}
