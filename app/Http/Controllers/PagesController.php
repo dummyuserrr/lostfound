@@ -84,7 +84,7 @@ class PagesController extends Controller
         $fi = new FoundItem;
 
         $lostItems = $li->where('status', 1)->orderBy('updated_at', 'desc')->get();
-        $lostItems = $fi->where('status', 1)->orderBy('updated_at', 'desc')->get();
+        $foundItems = $fi->where('status', 1)->orderBy('updated_at', 'desc')->get();
         return view('retrievedItems', compact('lostItems', 'foundItems'));
     }    
 }

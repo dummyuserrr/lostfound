@@ -6,7 +6,8 @@
 	<li>(/) Add user's marking of item as "retrieved"</li>
 	<li>(/) Do the same on on found items</li>
 	<li>Probably show the found items on user profile view</li>
-	<li>Add a page for marked as found items</li>
+	<li>(/) Add a page for marked as retrieved items</li>
+	<li>Create the search function for retrieved items</li>
 	<li>Do the admin-panel</li>
 	<li>(/) MAY BUG PA COUNTER NETO. Add a seen function of messages to check if there are unread messages and show it on the top nav bar</li>
 	<li>(/) Add max height of the comment container if a comment is added</li>
