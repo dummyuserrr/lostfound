@@ -40,7 +40,7 @@
 						<p><a href="/lost-something" class="{{ navSetActive('lost') }}">LOST SOMETHING</a></p>
 						<p><a href="/found-something" class="{{ navSetActive('found') }}">FOUND SOMETHING</a></p>
 						@endif
-						<p><a href="/retrieved-items" style="font-size: 15px;">Total Retrieved Items: <span>3</span></a></p>
+						<p><a href="/retrieved-items" class="{{ navSetActive('retrieved-items') }}" style="font-size: 15px;">Total Retrieved Items: <span>3</span></a></p>
 					</div>
 				</div>
 			</div>

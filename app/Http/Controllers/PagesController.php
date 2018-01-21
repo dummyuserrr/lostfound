@@ -89,9 +89,19 @@ class PagesController extends Controller
     }
 
     public function retrievedItemsSearch(Request $r){
-        // dito na
         $li = new LostItem;
         $fi = new FoundItem;
-        
-    } 
+        $categorySelected = $r->category;
+        if($r->category == 'All'){
+            $foundItems = $fi->where('name', 'like', '%'.$r->q.'%')->where('status', 1)->orderBy('created_at', 'desc')->get();
+            $lostItems = $li->where('name', 'like', '%'.$r->q.'%')->where('status', 1)->orderBy('created_at', 'desc')->get();
+            $q = $r->q;
+            return view('retrieved_search', compact('foundItems', 'lostItems', 'q', 'categorySelected'));
+        }else{
+            $foundItems = $fi->where('name', 'like', '%'.$r->q.'%')->where('status', 1)->where('category', $r->category)->orderBy('created_at', 'desc')->get();
+            $lostItems = $li->where('name', 'like', '%'.$r->q.'%')->where('status', 1)->where('category', $r->category)->orderBy('created_at', 'desc')->get();
+            $q = $r->q;
+            return view('retrieved_search', compact('foundItems', 'lostItems', 'q', 'categorySelected'));
+        }
+    }
 }
