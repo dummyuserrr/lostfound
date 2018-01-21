@@ -40,3 +40,6 @@ Route::patch('found-item/{item}/mark-as-found', 'FoundItemsController@markAsFoun
 // retrived items
 Route::get('retrieved-items', 'PagesController@retrievedItems');
 Route::get('retrieved-items/search', 'PagesController@retrievedItemsSearch');
+
+// adminpanel
+Route::get('adminpanel', 'AdminPagesController@index');
