@@ -64,4 +64,12 @@ class FoundItemsController extends Controller
             return view('found_search', compact('foundItems', 'q', 'categorySelected'));
         }
     }
+
+    public function markAsFound(FoundItem $item){
+        $item->update([
+            'status' => 1,
+        ]);
+
+        return back();
+    }
 }

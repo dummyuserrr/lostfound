@@ -67,6 +67,9 @@
 			@foreach($foundItems as $l)
 			<div class="box">
 				@if($l->user_id == session('id') || session('role') == 'admin' || session('role') == 'superadmin')
+				<div class="markAsFound" data-type="found" title="Mark as Retrieved" data-itemID="{{ $l->id }}">
+					<i class="fa fa-check-circle-o" aria-hidden="true"></i>
+				</div>
 				<div class="deletebutton" title="Delete this post" onclick="setDeleteTarget_found('{{ $l->id }}')">
 					<i class="fa fa-trash" aria-hidden="true"></i>
 				</div>

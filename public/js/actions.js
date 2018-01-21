@@ -245,6 +245,8 @@ $('.markAsFound').click(function(){
 		bodyEnableScroll();
 	}else{
 		$('.frmMarkAsFound').attr('action', '/found-item/'+itemID+'/mark-as-found');
+		$('.markAsFoundModal').addClass('modal-active');
+		bodyEnableScroll();
 	}
 });
 // wew
