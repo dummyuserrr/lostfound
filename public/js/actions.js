@@ -231,6 +231,10 @@ $('#registerForm').on('submit', function(e){
 		}
 	});
 });
+
+$('.markAsFound').click(function(){
+	itemID = $(this).attr('data-itemID');
+});
 // wew
 
 function redirect(path){

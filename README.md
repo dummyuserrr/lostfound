@@ -21,7 +21,7 @@
 			<li>User</li>
 		</ol>
 	</li>
-	<li>Everytime a user registers, the superadmin/admin needs to verify that user first</li>
+	<li>Everytime a user registers, the superadmin/admin needs to verify that user before he/she can access his/her account</li>
 	<li>The only difference between the superadmin and admin is that the superadmin can add/edit/delete admin accounts</li>
 	<li>The superadmin/admin can delete any posts and comments while the user can only delete his/her own post/comment</li>
 	<li>When setting the date on a post, the user cannot set a date which is later than the current date</li>

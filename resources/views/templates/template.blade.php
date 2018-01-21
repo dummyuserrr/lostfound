@@ -165,6 +165,10 @@
 			{{ method_field('delete') }}
 		</form>
 		@endif
+		<form class="frmMarkAsFound" method="post" action="javascript:void(0);">
+			{{ csrf_field() }}
+			{{ method_field('patch') }}
+		</form>
 		<script type="text/javascript" src="/js/jquery-3.2.1.min.js"></script>
 		<script type="text/javascript" src="/js/owl.carousel.min.js"></script>
 		<script type="text/javascript" src="/tippyjs-master/dist/tippy.min.js"></script>
