@@ -1,5 +1,6 @@
 <h3>TODO LIST</h3>
 <ul>
+	<li>Do the admin-panel</li>
 	<li>(/) Make searching of found items work</li>
 	<li>(/) Fix the bug when deleting a found item's comment</li>
 	<li>(/) Fix the bug when deleting a found item </li>
@@ -7,8 +8,7 @@
 	<li>(/) Do the same on on found items</li>
 	<li>Probably show the found items on user profile view</li>
 	<li>(/) Add a page for marked as retrieved items</li>
-	<li>Create the search function for retrieved items</li>
-	<li>Do the admin-panel</li>
+	<li>)/) Create the search function for retrieved items</li>
 	<li>(/) MAY BUG PA COUNTER NETO. Add a seen function of messages to check if there are unread messages and show it on the top nav bar</li>
 	<li>(/) Add max height of the comment container if a comment is added</li>
 	<li>(/) Fix the bug where the delete button doesn't work on a newly prepended comment</li>
