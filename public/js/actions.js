@@ -204,6 +204,9 @@ $('.btnMyAccount').click(function(){
 $('.btnMessages').click(function(){
 	window.location.assign('/messages');
 });
+$('.btnAdminpanel').click(function(){
+	window.location.assign('/admin-panel');
+});
 
 $('#myaccount_image').change(function(){
 	changeImagePreview(this);
