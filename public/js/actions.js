@@ -1,7 +1,4 @@
 $(document).ready(function(){
-	var wew = 2+2*4;
-	alert(wew)
-
 	$.ajaxSetup({
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
