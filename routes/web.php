@@ -42,5 +42,5 @@ Route::get('retrieved-items', 'PagesController@retrievedItems');
 Route::get('retrieved-items/search', 'PagesController@retrievedItemsSearch');
 
 // adminpanel
-Route::get('admin-panel', 'AdminPagesController@index');
+Route::get('admin-panel', 'AdminPagesController@users');
 Route::get('admin-panel/users', 'AdminPagesController@users');

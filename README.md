@@ -1,6 +1,7 @@
 <h3>TODO LIST</h3>
 <ul>
 	<li>Do the admin-panel</li>
+	<li>Do the approving of user's registration</li>
 	<li>(/) Make searching of found items work</li>
 	<li>(/) Fix the bug when deleting a found item's comment</li>
 	<li>(/) Fix the bug when deleting a found item </li>
