@@ -47,3 +47,9 @@ function checkCurrentDirectory($path){
     	return 'true';
     }
 }
+
+function adminSetActive3($path){
+    if(Request::is($path . '*')){
+        return 'active';
+    }
+}

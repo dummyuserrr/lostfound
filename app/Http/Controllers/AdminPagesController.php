@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\User;
 
 class AdminPagesController extends Controller
 {
@@ -11,6 +12,13 @@ class AdminPagesController extends Controller
     }
 
     public function users(){
-    	return view('adminpanel.users');
+    	$u = new User;
+    	if(session('role') == 'superadmin'){
+    		$users = $u->where('id', '!=', session('id'))->where('role', '!=', 'superadmin')->get();
+    		return view('adminpanel.users', compact('users'));
+    	}else{
+
+    	}
+    	
     }
 }
