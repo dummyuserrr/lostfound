@@ -141,4 +141,49 @@ class UsersController extends Controller
         session()->flash('action', 'added');
         return redirect('/admin-panel/users');
     }
+
+    public function changeRole(User $user, $role){
+        $user->update([
+            'role' => $role,
+        ]);
+
+        session()->flash('action', 'updated');
+        return back();
+    }
+
+    public function patch_other(User $user, Request $r){
+        $this->validate($r, [
+            'image' => 'sometimes|mimes:jpeg,bmp,png,jpg',
+            'password' => 'sometimes',
+            'password2' => 'sometimes|same:password',
+            'name' => 'required',
+            'address' => 'required',
+            'email' => 'required|email',
+            'mobile' => 'required',
+        ]);
+
+        $user->update([
+            'name' => $r->name,
+            'address' => $r->address,
+            'email' => $r->email,
+            'mobile' => $r->mobile,
+        ]);
+
+        if($r->image){
+            $image = $r->image->store('/uploads/images');
+            $user->update([
+                'image' => $image,
+            ]);
+        }
+
+        if($r->password){
+            $password = md5(hash('sha512', $r->password).hash('ripemd160', $r->password).md5("strongest"));
+            $user->update([
+                'password' => $password,
+            ]);
+        }
+
+        session()->flash('successMessage', 'Account has been updated.');
+        return back();
+    }
 }

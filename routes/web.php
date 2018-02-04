@@ -47,3 +47,6 @@ Route::get('admin-panel/users', 'AdminPagesController@users')->middleware('check
 Route::delete('admin-panel/users/{item}/delete', 'UsersController@destroy')->middleware('checkUserSession');
 Route::get('admin-panel/users/new', 'AdminPagesController@users_new')->middleware('checkUserSession');
 Route::post('admin-panel/users/new', 'UsersController@store_admin')->middleware('checkUserSession');
+Route::get('admin-panel/users/{user}/change-role/{role}', 'UsersController@changeRole')->middleware('checkUserSession');
+Route::get('users/{user}/edit', 'PagesController@user_edit')->middleware('checkUserSession');
+Route::patch('user/{user}/edit', 'UsersController@patch_other')->middleware('checkUserSession');

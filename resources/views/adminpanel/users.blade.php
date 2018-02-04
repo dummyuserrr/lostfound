@@ -16,7 +16,12 @@
 		<tr>
 			<td>{{ $user->name }}</td>
 			<td>{{ $user->username }}</td>
-			<td>{{ $user->role }}</td>
+			<td>
+				<select class="userRoleSelector" data-id="{{ $user->id }}">
+					<option value="user" @if($user->role == 'user') selected @endif>User</option>
+					<option value="admin" @if($user->role == 'admin') selected @endif>Admin</option>
+				</select>
+			</td>
 			<td>
 				<div class="btn-group">
 					<a type="button" href="/users/{{ $user->id }}/edit" target="_blank" class="btn btn-primary">View or Edit</a>

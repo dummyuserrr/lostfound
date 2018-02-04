@@ -2,7 +2,9 @@
 <ul>
 	<li>Do the admin-panel</li>
 	<li>Do the approving of user's registration</li>
-	<li>Adding of admin user on admin panel</li>
+	<li>(/) Editing of user on admin panel</li>
+	<li>(/) Adding of admin user on admin panel</li>
+	<li>(/) Changing of user role </li>
 	<li>(/) Deleting of users</li>
 	<li>(/) Make searching of found items work</li>
 	<li>(/) Fix the bug when deleting a found item's comment</li>

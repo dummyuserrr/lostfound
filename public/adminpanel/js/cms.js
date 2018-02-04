@@ -10,3 +10,10 @@ $('.btndelete').click(function(){
 $('.initiateDelete').click(function(){
 	$('#formDelete').submit();
 });
+
+$('.userRoleSelector').change(function(){
+	var active = $(this).find(':selected').val();
+	var id = $(this).data('id')
+	var url = '/admin-panel/users/'+id+'/change-role/'+active;
+	window.location.assign(url);
+});

@@ -37,6 +37,10 @@ class PagesController extends Controller
     	return view('my_account', compact('user'));
     }
 
+    public function user_edit(User $user){
+        return view('user_edit', compact('user'));
+    }
+
     public function messages_empty(){
         $p = new Participation;
         $myParticipations = $p->where('user_id', session('id'))->orderBy('updated_at', 'desc')->get();
