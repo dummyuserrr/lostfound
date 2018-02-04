@@ -1,7 +1,7 @@
 <h3>TODO LIST</h3>
 <ul>
 	<li>Do the admin-panel</li>
-	<li>Do the approving of user's registration</li>
+	<li>Do the approving and declining of user's registration</li>
 	<li>(/) Editing of user on admin panel</li>
 	<li>(/) Adding of admin user on admin panel</li>
 	<li>(/) Changing of user role </li>
