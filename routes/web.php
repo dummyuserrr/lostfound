@@ -42,5 +42,5 @@ Route::get('retrieved-items', 'PagesController@retrievedItems');
 Route::get('retrieved-items/search', 'PagesController@retrievedItemsSearch');
 
 // adminpanel
-Route::get('admin-panel', 'AdminPagesController@users');
-Route::get('admin-panel/users', 'AdminPagesController@users');
+Route::redirect('admin-panel', '/admin-panel/users', 301)->middleware('checkUserSession');
+Route::get('admin-panel/users', 'AdminPagesController@users')->middleware('checkUserSession');

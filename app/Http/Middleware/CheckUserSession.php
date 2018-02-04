@@ -17,7 +17,8 @@ class CheckUserSession
         if(session()->has('status')){
             return $next($request);
         }else{
-            abort(404);
+            session()->flash('loginfirst', 1);
+            return redirect('/');
         }
     }
 }

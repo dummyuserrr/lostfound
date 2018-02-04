@@ -111,7 +111,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="mymodal loginModal">
+		<div class="mymodal loginModal @if(session()->has('loginfirst')) modal-active @endif">
 			<div class="modal">
 				<button class="modal-closer"><i class="fa fa-times" aria-hidden="true"></i></button>
 				<div class="header">User Login</div>
