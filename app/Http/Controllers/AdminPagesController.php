@@ -29,4 +29,9 @@ class AdminPagesController extends Controller
         }
     }
 
+    public function registrationRequests(){
+        $u = new User;
+        $users = $u->where('approved', 0)->orderBy('created_at')->get();
+        return view('adminpanel.registrationRequests', compact('users'));
+    }
 }
