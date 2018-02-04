@@ -105,4 +105,40 @@ class UsersController extends Controller
 
         return 1;
     }
+
+    public function destroy(User $item){
+        $item->delete();
+        session()->flash('action', 'deleted');
+        return back();
+    }
+
+    public function store_admin(Request $r){
+        $this->validate($r, [
+            'name' => 'required',
+            'email' => 'email|required',
+            'mobile' => 'required',
+            'address' => 'required',
+            'username' => 'required|unique:users',
+            'password' => 'required',
+            'password2' => 'same:password',
+            'image' => 'required|mimes:jpeg,bmp,png,jpg',
+        ]);
+
+        $password = md5(hash('sha512', $r->password).hash('ripemd160', $r->password).md5("strongest"));
+        $image = $r->image->store('/uploads/images');
+
+        $u = new User;
+        $u->name = $r->name;
+        $u->email = $r->email;
+        $u->mobile = $r->mobile;
+        $u->address = $r->address;
+        $u->username = $r->username;
+        $u->password = $password;
+        $u->image = $image;
+        $u->role = 'admin';
+        $u->save();
+
+        session()->flash('action', 'added');
+        return redirect('/admin-panel/users');
+    }
 }

@@ -19,6 +19,14 @@ class AdminPagesController extends Controller
     	}else{
             return 'Error. You are not an admin';
     	}
-    	
     }
+
+    public function users_new(){
+        if(session('role') == 'superadmin' || session('role') == 'admin'){
+            return view('adminpanel.users_new');
+        }else{
+            return 'Error. You are not an admin';
+        }
+    }
+
 }

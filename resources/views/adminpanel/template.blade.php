@@ -35,16 +35,34 @@
                 </div>
             </div>
             <div class="col-lg-9">
+                @if(session()->has('action'))
+                    @if(session('action') == 'deleted')
+                    <div class="alert alert-success alert-dismissable fade in text-center">
+                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                        <strong>Success!</strong> Data has been deleted.
+                    </div>
+                    @elseif(session('action') == 'updated')
+                    <div class="alert alert-success alert-dismissable fade in text-center">
+                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                        <strong>Success!</strong> Data has been updated.
+                    </div>
+                    @elseif(session('action') == 'added')
+                    <div class="alert alert-success alert-dismissable fade in text-center">
+                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                        <strong>Success!</strong> Data has been added.
+                    </div>
+                    @endif
+                @endif
                 @yield('content')
             </div>
         </div>
         <form id="formLogout" method="post" action="/logout">
-            {{ csrf_field() }}            
+            {{ csrf_field() }}
         </form>
         @else
-            <div class="container">
-                <h3 class="text-center">You are not logged in.</h3>
-            </div>
+        <div class="container">
+            <h3 class="text-center">You are not logged in.</h3>
+        </div>
         @endif
         <script type="text/javascript" src="/adminpanel/js/cms.js"></script>
     </body>

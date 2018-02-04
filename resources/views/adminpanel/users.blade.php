@@ -1,7 +1,7 @@
 @extends('adminpanel.template')
 @section('content')
-<h2>Users (3)</h2>
-<button type="button" class="btn btn-primary">Add Admin User</button>
+<h2>Users ({{ $users->count() }})</h2>
+<a type="button" class="btn btn-primary" href="/admin-panel/users/new">Add Admin User</a>
 <table class="table table-hover">
 	<thead>
 		<tr>
@@ -20,7 +20,7 @@
 			<td>
 				<div class="btn-group">
 					<a type="button" href="/users/{{ $user->id }}/edit" target="_blank" class="btn btn-primary">View or Edit</a>
-					<button type="button" class="btn btn-danger" data-target="#deleteModal" data-toggle="modal">Delete</button>
+					<button type="button" class="btndelete btn btn-danger" data-target="#deleteModal" data-toggle="modal" data-url="/admin-panel/users/{{ $user->id }}/delete">Delete</button>
 				</div>
 			</td>
 		</tr>
@@ -38,7 +38,7 @@
 				<p>Are you sure you want to delete this user?</p>
 			</div>
 			<div class="modal-footer">
-				<button type="button" class="btn btn-danger" data-dismiss="modal">Yes</button>
+				<button type="button" class="initiateDelete btn btn-danger" data-dismiss="modal">Yes</button>
 				<button type="button" class="btn btn-default" data-dismiss="modal">No</button>
 			</div>
 		</div>

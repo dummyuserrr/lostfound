@@ -44,3 +44,6 @@ Route::get('retrieved-items/search', 'PagesController@retrievedItemsSearch');
 // adminpanel
 Route::redirect('admin-panel', '/admin-panel/users', 301)->middleware('checkUserSession');
 Route::get('admin-panel/users', 'AdminPagesController@users')->middleware('checkUserSession');
+Route::delete('admin-panel/users/{item}/delete', 'UsersController@destroy')->middleware('checkUserSession');
+Route::get('admin-panel/users/new', 'AdminPagesController@users_new')->middleware('checkUserSession');
+Route::post('admin-panel/users/new', 'UsersController@store_admin')->middleware('checkUserSession');
