@@ -17,7 +17,7 @@
 			<td>
 				<div class="btn-group">
 					<button type="button" class="btn btn-warning" data-toggle="modal" data-target="#viewModal">View</button>
-					<button type="button" class="btn btn-primary">Approve</button>
+					<button type="button" class="btn btn-primary btnApproveUser" data-url="/admin-panel/registration-requests/{{ $user->id }}/approve">Approve</button>
 					<button type="button" class="btndelete btn btn-danger" data-target="#deleteModal" data-toggle="modal" data-url="/admin-panel/users/{{ $user->id }}/delete">Decline</button>
 				</div>
 			</td>
@@ -61,5 +61,9 @@
 <form method="post" action="" id="formDelete">
 	{{ csrf_field() }}
 	{{ method_field('delete') }}
+</form>
+<form method="post" action="" id="formUpdateData">
+	{{ csrf_field() }}
+	{{ method_field('patch') }}
 </form>
 @stop

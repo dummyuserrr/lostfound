@@ -17,3 +17,9 @@ $('.userRoleSelector').change(function(){
 	var url = '/admin-panel/users/'+id+'/change-role/'+active;
 	window.location.assign(url);
 });
+
+$('.btnApproveUser').click(function(){
+	var url = $(this).data('url');
+	$('#formUpdateData').attr('action', url);
+	$('#formUpdateData').submit();
+});	

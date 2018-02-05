@@ -186,4 +186,12 @@ class UsersController extends Controller
         session()->flash('successMessage', 'Account has been updated.');
         return back();
     }
+
+    public function approve(User $user){
+        $user->update([
+            'approved' => 1,
+        ]);
+
+        return back();
+    }
 }

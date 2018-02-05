@@ -7,6 +7,7 @@
 		<tr>
 			<th>Name</th>
 			<th>Username</th>
+			<th>Approved</th>
 			<th>Role</th>
 			<th>Actions</th>
 		</tr>
@@ -16,6 +17,13 @@
 		<tr>
 			<td>{{ $user->name }}</td>
 			<td>{{ $user->username }}</td>
+			<td>
+				@if($user->approved == 1)
+					Yes
+				@else
+					No
+				@endif
+			</td>
 			<td>
 				<select class="userRoleSelector" data-id="{{ $user->id }}">
 					<option value="user" @if($user->role == 'user') selected @endif>User</option>
