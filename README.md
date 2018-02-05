@@ -2,6 +2,7 @@
 <ul>
 	<li>Do the admin-panel</li>
 	<li>Do the  declining of user's registration</li>
+	<li>User will be notified through email after being approved/declined</li>
 	<li>(/) Do the approving of user's registration</li>
 	<li>(/) Editing of user on admin panel</li>
 	<li>(/) Adding of admin user on admin panel</li>
