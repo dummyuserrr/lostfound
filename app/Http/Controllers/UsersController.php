@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use Mail;
+use App\Mail\DeclinedMail;
 
 class UsersController extends Controller
 {
@@ -191,6 +193,14 @@ class UsersController extends Controller
         $user->update([
             'approved' => 1,
         ]);
+        Mail::to($user->email)->queue(new AcceptedMail($user->name));
+
+        return back();
+    }
+
+    public function decline(User $user){
+        Mail::to($user->email)->queue(new DeclinedMail($user->name));
+        $user->delete();
 
         return back();
     }

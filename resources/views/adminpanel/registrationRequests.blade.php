@@ -16,9 +16,8 @@
 			<td>{{ $user->username }}</td>
 			<td>
 				<div class="btn-group">
-					<button type="button" class="btn btn-warning" data-toggle="modal" data-target="#viewModal">View</button>
 					<button type="button" class="btn btn-primary btnApproveUser" data-url="/admin-panel/registration-requests/{{ $user->id }}/approve">Approve</button>
-					<button type="button" class="btndelete btn btn-danger" data-target="#deleteModal" data-toggle="modal" data-url="/admin-panel/users/{{ $user->id }}/delete">Decline</button>
+					<button type="button" class="btndelete btn btn-danger" data-target="#deleteModal" data-toggle="modal" data-url="/admin-panel/registration-requests/{{ $user->id }}/decline">Decline</button>
 				</div>
 			</td>
 		</tr>
@@ -33,7 +32,7 @@
 				<h4 class="modal-title">Confirmation</h4>
 			</div>
 			<div class="modal-body">
-				<p>Are you sure you want to delete this user?</p>
+				<p>This data will be deleted. Are you sure?</p>
 			</div>
 			<div class="modal-footer">
 				<button type="button" class="initiateDelete btn btn-danger" data-dismiss="modal">Yes</button>

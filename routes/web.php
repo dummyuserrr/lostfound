@@ -11,6 +11,7 @@ Route::get('my-account', 'PagesController@myAccount')->middleware('checkUserSess
 Route::patch('my-account', 'UsersController@patch')->middleware('checkUserSession');
 Route::post('register', 'UsersController@register');
 Route::patch('admin-panel/registration-requests/{user}/approve', 'UsersController@approve')->middleware('checkUserSession');
+Route::delete('admin-panel/registration-requests/{user}/decline', 'UsersController@decline')->middleware('checkUserSession');
 
 // lost items
 Route::post('lost-something/add', 'LostItemsController@store')->middleware('checkUserSession');
