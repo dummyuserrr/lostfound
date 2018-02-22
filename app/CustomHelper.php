@@ -20,7 +20,7 @@ function countUnreadMessages(){
             return $messagesCount;
         }
     }else{
-        abort(404);
+        return '';
     }
 }
 

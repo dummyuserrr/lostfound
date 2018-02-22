@@ -18,18 +18,18 @@
 			<div class="top">
 				<div class="container">
 					@if(session()->has('status'))
-					@if(session('role') == 'admin' || session('role') == 'superadmin')
-					<div class="options btnAdminpanel"><i class="fa fa-lock" aria-hidden="true"></i> AdminPanel</div>
-					@endif
-					<div class="options btnMessages"><i class="fa fa-envelope" aria-hidden="true"></i> Messages {{ countUnreadMessages() }}</div>
-					<div class="options btnMyAccount"><i class="fa fa-user" aria-hidden="true"></i> My Account</div>
-					<div class="options btnLogout"><i class="fa fa-sign-out" aria-hidden="true"></i> Log Out</div>
-					<form id="frmLogout" method="post" action="/logout">
-						{{ csrf_field() }}
-					</form>
-					@else
-					<div class="options btnRegister"><i class="fa fa-user" aria-hidden="true"></i> Register</div>
-					<div class="options btnLogin"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</div>
+						@if(session('role') == 'admin' || session('role') == 'superadmin')
+						<div class="options btnAdminpanel"><i class="fa fa-lock" aria-hidden="true"></i> AdminPanel</div>
+						@endif
+						<div class="options btnMessages"><i class="fa fa-envelope" aria-hidden="true"></i> Messages {{ countUnreadMessages() }}</div>
+						<div class="options btnMyAccount"><i class="fa fa-user" aria-hidden="true"></i> My Account</div>
+						<div class="options btnLogout"><i class="fa fa-sign-out" aria-hidden="true"></i> Log Out</div>
+						<form id="frmLogout" method="post" action="/logout">
+							{{ csrf_field() }}
+						</form>
+						@else
+						<div class="options btnRegister"><i class="fa fa-user" aria-hidden="true"></i> Register</div>
+						<div class="options btnLogin"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</div>
 					@endif
 				</div>
 			</div>
