@@ -1,2 +1,2 @@
 Sorry {{ $name }}, <br>
-Your registration has been declined.
+Your registration on missingZ has been declined.

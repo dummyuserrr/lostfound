@@ -1,2 +1,2 @@
 Hello {{ $name }}, <br>
-Your registration has been approved.
+Your registration on missingZ has been approved.

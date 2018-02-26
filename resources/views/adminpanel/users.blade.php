@@ -19,9 +19,9 @@
 			<td>{{ $user->username }}</td>
 			<td>
 				@if($user->approved == 1)
-					Yes
+				Yes
 				@else
-					No
+				No
 				@endif
 			</td>
 			<td>

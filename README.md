@@ -1,5 +1,7 @@
 <h3>TODO LIST</h3>
 <ul>
+	<li>Add an email notification if post has been deleted by admin/superadmin</li>
+	<li>Fix the email blaster</li>
 	<li>(/) Do the admin-panel</li>
 	<li>(/) Do the  declining of user's registration</li>
 	<li>(/) User will be notified through email after being approved/declined</li>
@@ -38,8 +40,8 @@
 </ul>
 
 1. // Change the username of the super admin to: Fhoebe Kates Castillo
-2. Confirmation of the users lost or found posts via text messaging or email.
-3. Posts should match with all the categories given, if it's not, automatically decline.
-4. Same accounts should not be acceptable.
+2. // -- skipped // Confirmation of the users lost or found posts via text messaging or email.
+3. // --skipped // Posts should match with all the categories given, if it's not, automatically decline.
+4. // Same accounts should not be acceptable.
 5. The validation of the said posts is until 3 months only. If it's not claimed or found within 3 months, it will automatically be removed from the system and should notify the one who post it.
 6. The people who can access or use the system are people from Pangasinan only.

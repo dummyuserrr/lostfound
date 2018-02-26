@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\User;
 use Mail;
 use App\Mail\DeclinedMail;
+use App\Mail\AcceptedMail;
 
 class UsersController extends Controller
 {
@@ -83,7 +84,7 @@ class UsersController extends Controller
     public function register(Request $r){
         $this->validate($r, [
             'name' => 'required',
-            'email' => 'email|required',
+            'email' => 'email|required|unique:users',
             'mobile' => 'required',
             'address' => 'required',
             'username' => 'required|unique:users',

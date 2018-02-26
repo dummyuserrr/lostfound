@@ -30,6 +30,6 @@ class AcceptedMail extends Mailable
      */
     public function build()
     {
-        return $this->view('mails.acceptedMail', compact('name'));
+        return $this->view('emails.acceptedMail', compact('name'));
     }
 }

@@ -23,3 +23,18 @@ $('.btnApproveUser').click(function(){
 	$('#formUpdateData').attr('action', url);
 	$('#formUpdateData').submit();
 });	
+
+$('.userView').click(function(){
+	var name = $(this).data('name');
+	var email = $(this).data('email');
+	var mobile = $(this).data('mobile');
+	var address = $(this).data('address');
+	var image = $(this).data('image');
+
+	var v = $('#userViewModal');
+	v.find('#name').val(name);
+	v.find('#email').val(email);
+	v.find('#mobile').val(mobile);
+	v.find('#address').val(address);
+	v.find('#image').attr('src', '/'+image);
+});
