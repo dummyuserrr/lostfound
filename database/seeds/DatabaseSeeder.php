@@ -14,12 +14,12 @@ class DatabaseSeeder extends Seeder
     {
         $password = md5(hash('sha512', 'admin').hash('ripemd160', 'admin').md5("strongest"));
         DB::table('users')->insert([
-            'name' => 'Deither Corpuz',
-            'address' => 'Alaminos City, Pangasinan',
-            'email' => 'dthrcrpz@gmail.com',
-            'mobile' => '09085532912',
+            'name' => 'Fhoebe Kates Castillo',
+            'address' => 'Dagupan City, Pangasinan',
+            'email' => 'fhoebekatescastillo@yahoo.com',
+            'mobile' => '09123456789',
             'image' => '/uploads/earthhub.png',
-            'username' => 'superadmin',
+            'username' => 'fhoebe',
             'password' => $password,
             'role' => 'superadmin',
             'approved' => 1,
