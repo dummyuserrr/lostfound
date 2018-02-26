@@ -36,3 +36,10 @@
 	<li>The superadmin/admin can delete any posts and comments while the user can only delete his/her own post/comment</li>
 	<li>When setting the date on a post, the user cannot set a date which is later than the current date</li>
 </ul>
+
+1. // Change the username of the super admin to: Fhoebe Kates Castillo
+2. Confirmation of the users lost or found posts via text messaging or email.
+3. Posts should match with all the categories given, if it's not, automatically decline.
+4. Same accounts should not be acceptable.
+5. The validation of the said posts is until 3 months only. If it's not claimed or found within 3 months, it will automatically be removed from the system and should notify the one who post it.
+6. The people who can access or use the system are people from Pangasinan only.

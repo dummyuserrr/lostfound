@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class User extends Model
 {
-	protected $fillable = ['address', 'email', 'mobile', 'image', 'password', 'role', 'approved'];
+	protected $fillable = ['name', 'address', 'email', 'mobile', 'image', 'password', 'role', 'approved'];
 
     public function lost_items(){
     	return $this->hasMany(LostItem::class);
