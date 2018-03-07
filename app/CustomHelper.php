@@ -4,6 +4,17 @@ use App\Conversation;
 use App\Participation;
 use App\Message;
 use App\User;
+use App\LostItem;
+use App\FoundItem;
+
+function countRetrievedItems(){
+    $li = new LostItem;
+    $fi = new FoundItem;
+    $count_li = $li->where('status', 1)->count();
+    $count_fi = $fi->where('status', 1)->count();
+    $total = $count_fi + $count_li;
+    return $total;
+}
 
 function countUnreadMessages(){
     $messagesCount = 0;
