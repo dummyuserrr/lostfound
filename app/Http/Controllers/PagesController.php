@@ -44,8 +44,8 @@ class PagesController extends Controller
     public function messages_empty(){
         $p = new Participation;
         $myParticipations = $p->where('user_id', session('id'))->orderBy('updated_at', 'desc')->get();
-        $messages = NULL;
-        $conversation = NULL;
+        $messages = [];
+        $conversation = [];
         $user = NULL;
         return view('messages', compact('myParticipations', 'user', 'messages', 'conversation'));
     }
@@ -54,8 +54,8 @@ class PagesController extends Controller
         // retrieve all your conversations
         $p = new Participation;
         $myParticipations = $p->where('user_id', session('id'))->orderBy('updated_at', 'desc')->get();
-        $messages = NULL;
-        $conversation = NULL;
+        $messages = [];
+        $conversation = [];
         // check if you have participations
         if(count($myParticipations) > 0){
             foreach($myParticipations as $myParticipation){
