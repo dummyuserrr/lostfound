@@ -2,7 +2,7 @@
 @section('content')
 <div class="lost_container">
 	<div class="container">
-		@include('templates.found_items_left')
+		@include('templates.retrieved_items_left')
 		<div class="right">
 			<p class="mini_title" style="margin-top: 0">{{ $foundItems->count() + $lostItems->count() }} Result(s) Found </p>
 			@foreach($foundItems as $l)
