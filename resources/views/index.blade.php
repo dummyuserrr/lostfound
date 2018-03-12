@@ -6,7 +6,7 @@
 			<div class="table">
 				<div class="content">
 					<p class="title">
-						Lost and Found Management Something for Pangasinan I Forgot the Title
+						Lost and Found Monitoring and Management System for People of Pangasinan
 					</p>
 					<div class="columns">
 						<a href="/lost-something" class="lost"><i class="fa fa-frown-o" aria-hidden="true"></i> LOST SOMETHING</a>
