@@ -55,11 +55,11 @@ class FoundItemsController extends Controller
         $li = new FoundItem;
         $categorySelected = $r->category;
         if($r->category == 'All'){
-            $foundItems = $li->where('name', 'like', '%'.$r->q.'%')->orderBy('created_at', 'desc')->get();
+            $foundItems = $li->where('name', 'like', '%'.$r->q.'%')->where('status', 0)->orderBy('created_at', 'desc')->get();
             $q = $r->q;
             return view('found_search', compact('foundItems', 'q', 'categorySelected'));
         }else{
-            $foundItems = $li->where('name', 'like', '%'.$r->q.'%')->where('category', $r->category)->orderBy('created_at', 'desc')->get();
+            $foundItems = $li->where('name', 'like', '%'.$r->q.'%')->where('category', $r->category)->where('status', 0)->orderBy('created_at', 'desc')->get();
             $q = $r->q;
             return view('found_search', compact('foundItems', 'q', 'categorySelected'));
         }
