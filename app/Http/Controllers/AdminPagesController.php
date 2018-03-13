@@ -29,6 +29,14 @@ class AdminPagesController extends Controller
         }
     }
 
+    public function users_view(User $user){
+        if(session('role') == 'superadmin' || session('role') == 'admin'){
+            return view('adminpanel.users_view', compact('user'));
+        }else{
+            return 'Error. You are not an admin';
+        }
+    }
+
     public function registrationRequests(){
         $u = new User;
         $users = $u->where('approved', 0)->orderBy('created_at')->get();

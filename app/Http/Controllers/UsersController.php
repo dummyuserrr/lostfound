@@ -64,7 +64,7 @@ class UsersController extends Controller
         ]);
 
         if($r->image){
-            $image = $r->image->store('/uploads/images');
+            $image = $r->image->store('uploads/images');
             $user->update([
                 'image' => $image,
             ]);
@@ -94,7 +94,7 @@ class UsersController extends Controller
         ]);
 
         $password = md5(hash('sha512', $r->password).hash('ripemd160', $r->password).md5("strongest"));
-        $image = $r->image->store('/uploads/images');
+        $image = $r->image->store('uploads/images');
 
         $u = new User;
         $u->name = $r->name;
@@ -128,7 +128,7 @@ class UsersController extends Controller
         ]);
 
         $password = md5(hash('sha512', $r->password).hash('ripemd160', $r->password).md5("strongest"));
-        $image = $r->image->store('/uploads/images');
+        $image = $r->image->store('uploads/images');
 
         $u = new User;
         $u->name = $r->name;
@@ -173,7 +173,7 @@ class UsersController extends Controller
         ]);
 
         if($r->image){
-            $image = $r->image->store('/uploads/images');
+            $image = $r->image->store('uploads/images');
             $user->update([
                 'image' => $image,
             ]);

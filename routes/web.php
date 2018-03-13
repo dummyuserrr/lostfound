@@ -12,6 +12,7 @@ Route::patch('my-account', 'UsersController@patch')->middleware('checkUserSessio
 Route::post('register', 'UsersController@register');
 Route::patch('admin-panel/registration-requests/{user}/approve', 'UsersController@approve')->middleware('checkUserSession');
 Route::delete('admin-panel/registration-requests/{user}/decline', 'UsersController@decline')->middleware('checkUserSession');
+Route::get('admin-panel/users/{user}/edit', 'AdminPagesController@users_view')->middleware('checkUserSession');
 
 // lost items
 Route::post('lost-something/add', 'LostItemsController@store')->middleware('checkUserSession');

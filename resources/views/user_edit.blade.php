@@ -15,7 +15,7 @@
 						{{ method_field('patch') }}
 						<div class="form_group">
 							<label for="myaccount_image" style="cursor:pointer; text-align: center;">
-								<img src="{{ $user->image }}" class="image myaccount_image" title="Click to edit image">
+								<img src="/{{ $user->image }}" class="image myaccount_image" title="Click to edit image">
 							</label>
 							<input type="file" name="image" id="myaccount_image" style="display:none">
 						</div>
