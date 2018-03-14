@@ -64,6 +64,10 @@
 				<div class="body">
 					<form method="post" action="">
 						{{ csrf_field() }}
+						<p class="slider_value">50%</p>
+						<div class="form_group">
+							<input type="range" min="1" max="100" value="50" name="rating" class="slider">
+						</div>
 						<div class="form_group">
 							<button type="submit">Submit</button>
 						</div>

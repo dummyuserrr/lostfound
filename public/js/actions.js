@@ -263,6 +263,11 @@ $('.markAsFound').click(function(){
 });
 // wew
 
+$('.slider').change(function(e){
+	var value = $(this).val();
+	$('.slider_value').html(value+'%');
+});
+
 function redirect(path){
 	window.location.assign(path);
 }
