@@ -53,7 +53,22 @@
 		</div>
 		<div class="footer">
 			<div class="container">
+				<a href="javascript:void(0);" class="rate-us">Rate Us</a>
 				&copy; Copyright 2018. All Rights Reserved.
+			</div>
+		</div>
+		<div class="mymodal rateUsModal">
+			<div class="modal">
+				<button class="modal-closer"><i class="fa fa-times" aria-hidden="true"></i></button>
+				<div class="header">Rate Us</div>
+				<div class="body">
+					<form method="post" action="">
+						{{ csrf_field() }}
+						<div class="form_group">
+							<button type="submit">Submit</button>
+						</div>
+					</form>
+				</div>
 			</div>
 		</div>
 		<div class="mymodal registerModal">

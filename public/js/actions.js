@@ -46,6 +46,12 @@ $(document).ready(function(){
 var commentDeleteTarget = 0;
 var activeDeleteForm = '';
 
+$('.rate-us').click(function(){
+	$('.rateUsModal').addClass('modal-active');
+	bodyDisableScroll();
+	$('#register_name').focus();
+});
+
 $('.btnRegister').click(function(){
 	$('.registerModal').addClass('modal-active');
 	bodyDisableScroll();
