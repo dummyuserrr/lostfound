@@ -31,6 +31,10 @@
 						@endif
 					</select>
 				</div>
+				<div class="form_group checkbox_form">
+					<input type="checkbox" class="checkbox" id="pang_only" name="pangasinan_only" value="true">
+					<label for="pang_only">Pangasinan Only </label>
+				</div>
 				<div class="form_group">
 					<button type="submit" style="max-width: 100px; font-size: 14px;">Search</button>
 				</div>

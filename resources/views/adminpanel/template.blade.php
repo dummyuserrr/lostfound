@@ -15,7 +15,7 @@
         <nav class="navbar navbar-inverse" style="border-radius: 0;">
             <div class="container-fluid">
                 <div class="navbar-header">
-                    <a class="navbar-brand" target="_blank" href="/">missingZ</a>
+                    <a class="navbar-brand" href="/">missingZ</a>
                 </div>
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="javascript:void(0);" class="btnlogout"><span class="glyphicon glyphicon-log-out"></span> Logout </a></li>

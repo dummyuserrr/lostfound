@@ -105,16 +105,30 @@ class PagesController extends Controller
         $li = new LostItem;
         $fi = new FoundItem;
         $categorySelected = $r->category;
-        if($r->category == 'All'){
-            $foundItems = $fi->where('name', 'like', '%'.$r->q.'%')->where('status', 1)->orderBy('created_at', 'desc')->get();
-            $lostItems = $li->where('name', 'like', '%'.$r->q.'%')->where('status', 1)->orderBy('created_at', 'desc')->get();
-            $q = $r->q;
-            return view('retrieved_search', compact('foundItems', 'lostItems', 'q', 'categorySelected'));
+        if($r->pangasinan_only){
+            if($r->category == 'All'){
+                $foundItems = $fi->where('name', 'like', '%'.$r->q.'%')->where('place', 'like', '%pangasinan%')->where('status', 1)->orderBy('created_at', 'desc')->get();
+                $lostItems = $li->where('name', 'like', '%'.$r->q.'%')->where('place', 'like', '%pangasinan%')->where('status', 1)->orderBy('created_at', 'desc')->get();
+                $q = $r->q;
+                return view('retrieved_search', compact('foundItems', 'lostItems', 'q', 'categorySelected'));
+            }else{
+                $foundItems = $fi->where('name', 'like', '%'.$r->q.'%')->where('place', 'like', '%pangasinan%')->where('status', 1)->where('category', $r->category)->orderBy('created_at', 'desc')->get();
+                $lostItems = $li->where('name', 'like', '%'.$r->q.'%')->where('place', 'like', '%pangasinan%')->where('status', 1)->where('category', $r->category)->orderBy('created_at', 'desc')->get();
+                $q = $r->q;
+                return view('retrieved_search', compact('foundItems', 'lostItems', 'q', 'categorySelected'));
+            }
         }else{
-            $foundItems = $fi->where('name', 'like', '%'.$r->q.'%')->where('status', 1)->where('category', $r->category)->orderBy('created_at', 'desc')->get();
-            $lostItems = $li->where('name', 'like', '%'.$r->q.'%')->where('status', 1)->where('category', $r->category)->orderBy('created_at', 'desc')->get();
-            $q = $r->q;
-            return view('retrieved_search', compact('foundItems', 'lostItems', 'q', 'categorySelected'));
+            if($r->category == 'All'){
+                $foundItems = $fi->where('name', 'like', '%'.$r->q.'%')->where('status', 1)->orderBy('created_at', 'desc')->get();
+                $lostItems = $li->where('name', 'like', '%'.$r->q.'%')->where('status', 1)->orderBy('created_at', 'desc')->get();
+                $q = $r->q;
+                return view('retrieved_search', compact('foundItems', 'lostItems', 'q', 'categorySelected'));
+            }else{
+                $foundItems = $fi->where('name', 'like', '%'.$r->q.'%')->where('status', 1)->where('category', $r->category)->orderBy('created_at', 'desc')->get();
+                $lostItems = $li->where('name', 'like', '%'.$r->q.'%')->where('status', 1)->where('category', $r->category)->orderBy('created_at', 'desc')->get();
+                $q = $r->q;
+                return view('retrieved_search', compact('foundItems', 'lostItems', 'q', 'categorySelected'));
+            }
         }
     }
 }
