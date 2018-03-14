@@ -11,6 +11,10 @@ use App\Mail\AcceptedMail;
 class UsersController extends Controller
 {
     public function login(Request $r){
+        if(session()->has('status')){
+            return 3;
+            exit();
+        }
     	$u = new User;
     	$password = md5(hash('sha512', $r->password).hash('ripemd160', $r->password).md5("strongest"));
     	$user = $u->where('username', $r->username)->where('password', $password)->first();

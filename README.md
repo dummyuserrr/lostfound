@@ -1,16 +1,16 @@
 <!-- 1. Change background into something that's related to Pangasinan.  -->
 <!-- 2. Add Location (Pangasinan Only) on the Filter. -->
-3. Kuya pano po yung email? Tinry po namin kaso wala pong nagsend ng email confirmation.
+<!-- 3. Kuya pano po yung email? Tinry po namin kaso wala pong nagsend ng email confirmation. -->
 4. Marami pong nagnenew tab kuya kailangan daw po pag-isahin lang yung iba.
-5. Hindi po dapat makapagdelete po yung user.
+<!-- 5. Hindi po dapat makapagdelete po yung user. -->
 <!-- 6. Hindi po dapat nakakaadd ng admin ang mga admins dapat ang superadmin lang daw po. -->
 7. Yung total retrieved items po kailangan daw po palitan ng ratings po tas pag naretrieve na po yung object, kailangan hindi po yun madelete.
 
 <!-- 1) ok -->
 <!-- 2) ok -->
-3) create ka ng gmail account na pwede natin gamiting pangsend ng email tas send mo sa akin
+<!-- 3) create ka ng gmail account na pwede natin gamiting pangsend ng email tas send mo sa akin -->
 4) alin yung mga nagnewnew tab?
-5) nadedelete ng user yung sarili niyang post
+<!-- 5) nadedelete ng user yung sarili niyang post -->
 <!-- 6) ok -->
 7) panong ratings?
 

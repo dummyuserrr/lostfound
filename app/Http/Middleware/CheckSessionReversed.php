@@ -16,6 +16,7 @@ class CheckSessionReversed
     public function handle($request, Closure $next){
         if(session()->has('status')){
             abort(404); // user already logged in
+            return 'Error. A user is already logged in';
         }else{
             return $next($request);
         }

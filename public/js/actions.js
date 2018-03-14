@@ -81,6 +81,9 @@ $('#frmLogin').on('submit', function(e){
 			}else if(request.responseText == 2){
 				$('.loginerror').css('display', 'block');
 				$('.loginerror').find('.prompt').html('Sorry. Your account has not been verified yet');
+			}else if(request.responseText == 3){
+				$('.loginerror').css('display', 'block');
+				$('.loginerror').find('.prompt').html('Error. A user is already logged in');
 			}else{
 				$('.loginerror').find('.prompt').html('Wrong username or password. Please try again.');
 				$('.loginerror').css('display', 'block');
