@@ -1,7 +1,9 @@
 @extends('adminpanel.template')
 @section('content')
 <h2>Users ({{ $users->count() }})</h2>
+@if(session('role') == 'superadmin')
 <a type="button" class="btn btn-primary" href="/admin-panel/users/new">Add Admin User</a>
+@endif
 <table class="table table-hover">
 	<thead>
 		<tr>

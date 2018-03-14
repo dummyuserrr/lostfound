@@ -17,7 +17,7 @@ class AdminPagesController extends Controller
     		$users = $u->where('id', '!=', session('id'))->where('role', '!=', 'superadmin')->get();
     		return view('adminpanel.users', compact('users'));
     	}else{
-            return 'Error. You are not an admin';
+            return 'Error. You are not an admin/superadmin';
     	}
     }
 
@@ -25,7 +25,7 @@ class AdminPagesController extends Controller
         if(session('role') == 'superadmin' || session('role') == 'admin'){
             return view('adminpanel.users_new');
         }else{
-            return 'Error. You are not an admin';
+            return 'Error. You are not an admin/superadmin';
         }
     }
 
@@ -33,7 +33,7 @@ class AdminPagesController extends Controller
         if(session('role') == 'superadmin' || session('role') == 'admin'){
             return view('adminpanel.users_view', compact('user'));
         }else{
-            return 'Error. You are not an admin';
+            return 'Error. You are not an admin/superadmin';
         }
     }
 
