@@ -44,8 +44,9 @@ class PagesController extends Controller
     public function messages_empty(){
         $p = new Participation;
         $myParticipations = $p->where('user_id', session('id'))->orderBy('updated_at', 'desc')->get();
-        $messages = [];
-        $conversation = [];
+        // return $myParticipations;
+        $messages = [''];
+        $conversation = [''];
         $user = NULL;
         return view('messages', compact('myParticipations', 'user', 'messages', 'conversation'));
     }
@@ -56,12 +57,20 @@ class PagesController extends Controller
         $myParticipations = $p->where('user_id', session('id'))->orderBy('updated_at', 'desc')->get();
         $messages = [];
         $conversation = [];
+        $participationMatch = [];
+
         // check if you have participations
         if(count($myParticipations) > 0){
             foreach($myParticipations as $myParticipation){
                 // check if a participation matches the other user's participation
-                $participationMatch = $p->where('user_id', $user->id)->where('conversation_id', $myParticipation->conversation_id)->first();
+                $p = new Participation;
+                // $participationMatch = $p->where('user_id', $user->id)->where('conversation_id', $myParticipation->conversation_id)->first();
+                $match = $p->where('user_id', $user->id)->where('conversation_id', $myParticipation->conversation_id)->first();
+                if($match){
+                    $participationMatch = $match;
+                }
             }
+
             // if a participation with same conversation ID exists (you have messages to each other vv)
             if($participationMatch){
                 $m = new Message;
