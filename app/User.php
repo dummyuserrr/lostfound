@@ -16,6 +16,14 @@ class User extends Model
     	return $this->hasMany(LostItemComment::class);
     }
 
+    public function found_items(){
+        return $this->hasMany(FoundItem::class);
+    }
+
+    public function found_item_comments(){
+        return $this->hasMany(FoundItemComment::class);
+    }
+
     public function conversations(){
     	return $this->hasMany(Conversation::class);
     }
