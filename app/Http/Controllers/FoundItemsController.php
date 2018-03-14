@@ -54,14 +54,26 @@ class FoundItemsController extends Controller
     public function search(Request $r){
         $li = new FoundItem;
         $categorySelected = $r->category;
-        if($r->category == 'All'){
-            $foundItems = $li->where('name', 'like', '%'.$r->q.'%')->where('status', 0)->orderBy('created_at', 'desc')->get();
-            $q = $r->q;
-            return view('found_search', compact('foundItems', 'q', 'categorySelected'));
+        if($r->pangasinan_only){
+            if($r->category == 'All'){
+                $foundItems = $li->where('name', 'like', '%'.$r->q.'%')->where('place', 'like', '%pangasinan%')->where('status', 0)->orderBy('created_at', 'desc')->get();
+                $q = $r->q;
+                return view('found_search', compact('foundItems', 'q', 'categorySelected'));
+            }else{
+                $foundItems = $li->where('name', 'like', '%'.$r->q.'%')->where('place', 'like', '%pangasinan%')->where('category', $r->category)->where('status', 0)->orderBy('created_at', 'desc')->get();
+                $q = $r->q;
+                return view('found_search', compact('foundItems', 'q', 'categorySelected'));
+            }
         }else{
-            $foundItems = $li->where('name', 'like', '%'.$r->q.'%')->where('category', $r->category)->where('status', 0)->orderBy('created_at', 'desc')->get();
-            $q = $r->q;
-            return view('found_search', compact('foundItems', 'q', 'categorySelected'));
+            if($r->category == 'All'){
+                $foundItems = $li->where('name', 'like', '%'.$r->q.'%')->where('status', 0)->orderBy('created_at', 'desc')->get();
+                $q = $r->q;
+                return view('found_search', compact('foundItems', 'q', 'categorySelected'));
+            }else{
+                $foundItems = $li->where('name', 'like', '%'.$r->q.'%')->where('category', $r->category)->where('status', 0)->orderBy('created_at', 'desc')->get();
+                $q = $r->q;
+                return view('found_search', compact('foundItems', 'q', 'categorySelected'));
+            }
         }
     }
 
