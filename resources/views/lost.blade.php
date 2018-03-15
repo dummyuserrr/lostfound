@@ -110,7 +110,11 @@
 						</p>
 						<p class="texts">
 							<span class="label">Posted by: </span>
+							@if($l->user)
 							<span class="name"><a href="/user/{{ $l->user_id }}"><b>{{ $l->user->name }}</b></a></span>
+							@else
+							User has been deleted
+							@endif
 						</p>
 						<p class="texts">
 							<span class="label">Posted On: </span>

@@ -19,7 +19,7 @@ class DatabaseSeeder extends Seeder
             'email' => 'fhoebekatescastillo@yahoo.com',
             'mobile' => '09123456789',
             'image' => 'uploads/earthhub.png',
-            'username' => 'fhoebe',
+            'username' => 'superadmin',
             'password' => $password,
             'role' => 'superadmin',
             'approved' => 1,

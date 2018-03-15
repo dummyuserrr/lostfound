@@ -21,17 +21,17 @@
 
 
 1) Pahingi ng mga words na iblablock
-2) Nope
-3) Free sila lahat magmessage sa kahit sino. Tsaka di naman nila malalaman kung admin yung minessage nila. Kasi admin account can act as a normal user account
-4) Pang-general na yung fields e. Tsaka may Other Details naman dun. Pwedeng ilagay na lang dun yung ibang info na wala sa fields.
-5) Nope. Pwede naman na silang magsendan ng video through other ways like social media, etc
+<!-- 2) Nope -->
+<!-- 3) Free sila lahat magmessage sa kahit sino. Tsaka di naman nila malalaman kung admin yung minessage nila. Kasi admin account can act as a normal user account -->
+<!-- 4) Pang-general na yung fields e. Tsaka may Other Details naman dun. Pwedeng ilagay na lang dun yung ibang info na wala sa fields. -->
+<!-- 5) Nope. Pwede naman na silang magsendan ng video through other ways like social media, etc -->
 6) I-type na lang niya yung gusto niyang location dun sa Query na textbox
-7) Sige ibalik ko sa superadmin
-8) Pa-run yung php artisan config:cache
-9) Pa-run yung php artisan config:cache
-10) Okay
-11) Hindi pwedeng magmark as retrieved agad pag may nagmatch kasi dapat yung user mismo yung mag mark kung retrieved na ba talaga yung item
-12) Mawawalan ng silbi yung "Pangasinan Only" sa filter
+<!-- 7) Sige ibalik ko sa superadmin -->
+8) Pahingi ng tamang username/password then run php artisan config:cache
+9) Pahingi ng tamang username/password then run php artisan config:cache
+<!-- 10) Okay -->
+<!-- 11) Hindi pwedeng magmark as retrieved agad pag may nagmatch kasi dapat yung user mismo yung mag mark kung retrieved na ba talaga yung item -->
+<!-- 12) Mawawalan ng silbi yung "Pangasinan Only" sa filter -->
 13) Okay
 14) Okay
 15) Okay

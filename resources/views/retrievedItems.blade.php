@@ -48,7 +48,11 @@
 						</p>
 						<p class="texts">
 							<span class="label">Posted by: </span>
+							@if($l->user)
 							<span class="name"><a href="/user/{{ $l->user_id }}"><b>{{ $l->user->name }}</b></a></span>
+							@else
+							User has been deleted
+							@endif
 						</p>
 						<p class="texts">
 							<span class="label">Posted On: </span>
@@ -67,39 +71,6 @@
 							@endforeach
 						</div>
 						@endif
-					</div>
-					<hr>
-					<p class="minititle postcomments_toggler"><a href="javascript:;">VIEW {{ $l->comments->count() }} COMMENT(S) <i class="fa fa-chevron-right" aria-hidden="true"></i></a></p>
-					<div class="post_comments">
-						@if(session()->has('status'))
-						<div class="commentbox">
-							<form method="post" action="/lost-something/{{ $l->id }}/comment/add" class="comment_form">
-								{{ csrf_field() }}
-								<textarea name="comment" rows="3" placeholder="Add a comment..." required></textarea>
-								<button type="submit" class="comment_submit_button">Submit</button>
-							</form>
-						</div>
-						@else
-						<p class="prompt">You need to <a class="btnLogin" href="javascript:;">LOGIN</a> or <a href="javascript:;" class="btnRegister">REGISTER</a> to post a comment</p>
-						@endif
-						<div class="comments_holder">
-							@foreach($l->comments()->orderBy('created_at', 'desc')->get() as $comment)
-							<div class="commentcontainer cc{{ $comment->id }}">
-								<div class="post_comments_left" style="background-image: url('{{ $comment->user->image }}');"></div>
-								<div class="post_comments_right">
-									<p class="comment">
-										<a href="/user/{{ $comment->user_id }}" class="name">{{ $comment->user->name }} </a> <span class="comment_date">&#9679; {{ $comment->created_at->diffForHumans() }}</span>
-										@if($comment->user_id == session('id') || session('role') == 'admin' || session('role') == 'superadmin')
-										<a href="javascript:;" class="deletelink" data-itemID="{{ $comment->lost_item_id }}" data-commentID="{{ $comment->id }}"><i class="fa fa-trash" aria-hidden="true"></i> Delete</a>
-										@endif
-										<span class="comment_content">
-											{{ $comment->comment }}
-										</span>
-									</p>
-								</div>
-							</div>
-							@endforeach
-						</div>
 					</div>
 				</div>
 			</div>
@@ -147,7 +118,11 @@
 						</p>
 						<p class="texts">
 							<span class="label">Posted by: </span>
+							@if($l->user)
 							<span class="name"><a href="/user/{{ $l->user_id }}"><b>{{ $l->user->name }}</b></a></span>
+							@else
+							User has been deleted
+							@endif
 						</p>
 						<p class="texts">
 							<span class="label">Posted On: </span>
@@ -166,39 +141,6 @@
 							@endforeach
 						</div>
 						@endif
-					</div>
-					<hr>
-					<p class="minititle postcomments_toggler"><a href="javascript:;">VIEW {{ $l->comments->count() }} COMMENT(S) <i class="fa fa-chevron-right" aria-hidden="true"></i></a></p>
-					<div class="post_comments">
-						@if(session()->has('status'))
-						<div class="commentbox">
-							<form method="post" action="/found-something/{{ $l->id }}/comment/add" class="comment_form">
-								{{ csrf_field() }}
-								<textarea name="comment" rows="3" placeholder="Add a comment..." required></textarea>
-								<button type="submit" class="comment_submit_button">Submit</button>
-							</form>
-						</div>
-						@else
-						<p class="prompt">You need to <a class="btnLogin" href="javascript:;">LOGIN</a> or <a href="javascript:;" class="btnRegister">REGISTER</a> to post a comment</p>
-						@endif
-						<div class="comments_holder">
-							@foreach($l->comments()->orderBy('created_at', 'desc')->get() as $comment)
-							<div class="commentcontainer cc{{ $comment->id }}">
-								<div class="post_comments_left" style="background-image: url('{{ $comment->user->image }}');"></div>
-								<div class="post_comments_right">
-									<p class="comment">
-										<a href="/user/{{ $comment->user_id }}" class="name">{{ $comment->user->name }} </a> <span class="comment_date">&#9679; {{ $comment->created_at->diffForHumans() }}</span>
-										@if($comment->user_id == session('id') || session('role') == 'admin' || session('role') == 'superadmin')
-										<a href="javascript:;" class="deletelink" data-itemID="{{ $comment->found_item_id }}" data-commentID="{{ $comment->id }}" data-type="found"><i class="fa fa-trash" aria-hidden="true"></i> Delete</a>
-										@endif
-										<span class="comment_content">
-											{{ $comment->comment }}
-										</span>
-									</p>
-								</div>
-							</div>
-							@endforeach
-						</div>
 					</div>
 				</div>
 			</div>
