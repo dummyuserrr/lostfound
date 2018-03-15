@@ -28,8 +28,11 @@
 							{{ csrf_field() }}
 						</form>
 						@else
+						@if(computeRatings() > 0)
+						<div class="options nav-left">System Ratings: {{ computeRatings() }}% by {{ countRaters() }} users</div>
 						<div class="options btnRegister"><i class="fa fa-user" aria-hidden="true"></i> Register</div>
 						<div class="options btnLogin"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</div>
+						@endif
 					@endif
 				</div>
 			</div>
@@ -43,7 +46,7 @@
 						<p><a href="/lost-something" class="{{ navSetActive('lost') }}">LOST <span class="forweb">SOMETHING</span></a></p>
 						<p><a href="/found-something" class="{{ navSetActive('found') }}">FOUND <span class="forweb">SOMETHING</span></a></p>
 						@endif
-						<p><a href="/retrieved-items" class="{{ navSetActive('retrieved-items') }}" style="font-size: 15px;"><span class="forweb">Total</span> Retrieved <span class="forweb">Items</span>: <span>{{ countRetrievedItems() }}</span></a></p>
+						<p><a href="/retrieved-items" class="{{ navSetActive('retrieved-items') }}" style="font-size: 15px;"><font class="forweb">Total</font> Retrieved <font class="forweb">Items</font>: <span>{{ countRetrievedItems() }}</span></a></p>
 					</div>
 				</div>
 			</div>

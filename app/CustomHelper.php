@@ -8,6 +8,24 @@ use App\LostItem;
 use App\FoundItem;
 use App\Rating;
 
+function computeRatings(){
+    $r = new Rating;
+    $count = $r->count();
+    $ratings  = $r->all();
+    $sum = 0;
+    foreach($ratings as $rating){
+        $sum += $rating->rating;
+    }
+    $average = $sum / $count;
+    return $average;
+}
+
+function countRaters(){
+    $r = new Rating;
+    $count = $r->count();
+    return $count;
+}
+
 function countRetrievedItems(){
     $li = new LostItem;
     $fi = new FoundItem;
