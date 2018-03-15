@@ -1,64 +1,20 @@
-<!-- 1. Change background into something that's related to Pangasinan.  -->
-<!-- 2. Add Location (Pangasinan Only) on the Filter. -->
-<!-- 3. Kuya pano po yung email? Tinry po namin kaso wala pong nagsend ng email confirmation. -->
-4. Marami pong nagnenew tab kuya kailangan daw po pag-isahin lang yung iba.
-<!-- 5. Hindi po dapat makapagdelete po yung user. -->
-<!-- 6. Hindi po dapat nakakaadd ng admin ang mga admins dapat ang superadmin lang daw po. -->
-<!-- 7. Yung total retrieved items po kailangan daw po palitan ng ratings po tas pag naretrieve na po yung object, kailangan hindi po yun madelete. -->
-
-<!-- 1) ok -->
-<!-- 2) ok -->
-<!-- 3) create ka ng gmail account na pwede natin gamiting pangsend ng email tas send mo sa akin -->
-4) alin yung mga nagnewnew tab?
-<!-- 5) nadedelete ng user yung sarili niyang post -->
-<!-- 6) ok -->
-<!-- 7) panong ratings? -->
-
-
-<h3>TODO LIST</h3>
-<ul>
-	<li>Add an email notification if post has been deleted by admin/superadmin</li>
-	<li>Fix the email blaster</li>
-	<li>(/) Do the admin-panel</li>
-	<li>(/) Do the  declining of user's registration</li>
-	<li>(/) User will be notified through email after being approved/declined</li>
-	<li>(/) Do the approving of user's registration</li>
-	<li>(/) Editing of user on admin panel</li>
-	<li>(/) Adding of admin user on admin panel</li>
-	<li>(/) Changing of user role </li>
-	<li>(/) Deleting of users</li>
-	<li>(/) Make searching of found items work</li>
-	<li>(/) Fix the bug when deleting a found item's comment</li>
-	<li>(/) Fix the bug when deleting a found item </li>
-	<li>(/) Add user's marking of item as "retrieved"</li>
-	<li>(/) Do the same on on found items</li>
-	<li>Probably show the found items on user profile view</li>
-	<li>(/) Add a page for marked as retrieved items</li>
-	<li>)/) Create the search function for retrieved items</li>
-	<li>(/) MAY BUG PA COUNTER NETO. Add a seen function of messages to check if there are unread messages and show it on the top nav bar</li>
-	<li>(/) Add max height of the comment container if a comment is added</li>
-	<li>(/) Fix the bug where the delete button doesn't work on a newly prepended comment</li>
-	<li>(/) Will use data tag on prepended items</li>
-</ul>
-
-<h3>NOTES</h3>
-<ul>
-	<li>There are three user roles: 
-		<ol>
-			<li>Superadmin</li>
-			<li>Admin</li>
-			<li>User</li>
-		</ol>
-	</li>
-	<li>Everytime a user registers, the superadmin/admin needs to verify that user before he/she can access his/her account</li>
-	<li>The only difference between the superadmin and admin is that the superadmin can add/edit/delete admin accounts</li>
-	<li>The superadmin/admin can delete any posts and comments while the user can only delete his/her own post/comment</li>
-	<li>When setting the date on a post, the user cannot set a date which is later than the current date</li>
-</ul>
-
-1. // Change the username of the super admin to: Fhoebe Kates Castillo
-2. // -- skipped // Confirmation of the users lost or found posts via text messaging or email.
-3. // --skipped // Posts should match with all the categories given, if it's not, automatically decline.
-4. // Same accounts should not be acceptable.
-5. // The validation of the said posts is until 3 months only. If it's not claimed or found within 3 months, it will automatically be removed from the system and should notify the one who post it.
-6. // The people who can access or use the system are people from Pangasinan only.
+1. Badwords, jejemon words or any unnecessary words are not allowed in all the fields in posting and comments. 
+2. Kuya kaya bang itrack ang location kung sakaling may nagcomment na nakahanap? Kunwari parang sa facebook po ‘yong kunwari nagcomment ng “nahanap ko to” tas may nakalagay sa baba na location?
+3. Free po magmessage po yung mga nakaregister sa admins pero anonymous po na admin hindi po ilalagay pangalan nung admin.
+4. Pano po kuya pag gawing per category nalang po ‘yong pagpopost? For example po magpopost po ng lost or found pero pipili po muna siya kung san category po ‘yon tas pag sa person po napunta, ang malalagay po sa taas “Post Missing Person” tas person name ganun ganun po. Ganun din po sa mga gadgets, pets.
+5. Kuya hindi po ba pwedeng videos po ‘yong iupload? Kasi pano po pag video po ang inupload nung user?
+6. Yung sa filter po kuya bale category type din po ‘yong location po. Lahat po ng place sa Pangasinan.
+7. Kuya pano po ibahin username po ng superadmin nakafix po kasi. Ibalik nalang po sa superadmin po na username pero yung password po ganun padin po.
+8. Pag nag-aapprove po ng user kuya may lumalabas padin pong error kahit na may net na.
+9. ‘Yong sa email po na magsesend ng confirmation kuya pano po pala yon? Tinry ko po kanina kuya kaso wala naman pong message doon sa email ko?
+10. Change total retrieved items to Retrieved:
+11. ‘Yong mga post po na nagmamatch po sa lost at found po will be automatically marked as retrieve po. Bale nasa retrieved na po agad tas automatically mawawala sa lost or found something button diretso na po agad sa retrieved.
+12. If the location stated is not from Pangasinan or People of Pangasinan, not accepted.
+13. Kapag po nadelete yung user na nakaretrieve yung ng lost something, dapat hindi pa din po maaalis sa totality ng retrieved items yung pong pinost niya. Madedelete po yung account pero yung naretrieve na account po magstay po pandagdag po sa mga total ng naretrieve. 
+14. Ang superadmin lang po ang pwedeng magpalit ng role ng isang user sa admin panel po.
+15. Nakikita po lahat ng messages ng admin at user po ni superadmin to make sure po na maganda ang sistema ng sytem.
+16. Pag po may nagregister po may malalagay po na notif sa taas po ng admin panel yung parang sa notif po sa facebook kuya yung may number sa taas.
+17. Pag may magreregister po magmemessage po automatically sa messages ng admin para po malaman agad na may nagregister at para maapprove po agad or madecline.
+18. Pag nagpost po sa lost or found sa may “Place Where You Lost It:”, may field po doon po na iseselect ng user which is “Barangay” “Town” pero sa pangasinan lang po.
+19. View lang po dapat ang nakikita ng admin sa mga approved users si superadmin lang po ang pwedeng magview or edit.
+20. Kuya pwede po bang palagyan po ng forgot password? Kasi baka may tendency po na makalimutan ng user yung password niya po. ‘Yong tanong po para sa forgot password po, ‘yong parang sa facebook din po pag nakalimot magtatanong kung, what is the name of your first pet ganern ganern.
