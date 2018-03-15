@@ -18,3 +18,25 @@
 18. Pag nagpost po sa lost or found sa may “Place Where You Lost It:”, may field po doon po na iseselect ng user which is “Barangay” “Town” pero sa pangasinan lang po.
 19. View lang po dapat ang nakikita ng admin sa mga approved users si superadmin lang po ang pwedeng magview or edit.
 20. Kuya pwede po bang palagyan po ng forgot password? Kasi baka may tendency po na makalimutan ng user yung password niya po. ‘Yong tanong po para sa forgot password po, ‘yong parang sa facebook din po pag nakalimot magtatanong kung, what is the name of your first pet ganern ganern.
+
+
+1) Pahingi ng mga words na iblablock
+2) Nope
+3) Free sila lahat magmessage sa kahit sino. Tsaka di naman nila malalaman kung admin yung minessage nila. Kasi admin account can act as a normal user account
+4) Pang-general na yung fields e. Tsaka may Other Details naman dun. Pwedeng ilagay na lang dun yung ibang info na wala sa fields.
+5) Nope. Pwede naman na silang magsendan ng video through other ways like social media, etc
+6) I-type na lang niya yung gusto niyang location dun sa Query na textbox
+7) Sige ibalik ko sa superadmin
+8) Pa-run yung php artisan config:cache
+9) Pa-run yung php artisan config:cache
+10) Okay
+11) Hindi pwedeng magmark as retrieved agad pag may nagmatch kasi dapat yung user mismo yung mag mark kung retrieved na ba talaga yung item
+12) Mawawalan ng silbi yung "Pangasinan Only" sa filter
+13) Okay
+14) Okay
+15) Okay
+16) Okay
+17) Okay. Pero di siya mapupunta sa message. Sa notification na lang
+18) Mas maganda pag itype niya talaga. Kasi baka marami siyang idea kung saan niya nawala. Hindi lang sa iisang lugar
+19) Okay
+20) Okay. Ang mangyayari dito, itype niya email niya tas masesend dun yung new password na pwede niyang gamitin then set na lang niya ulit
