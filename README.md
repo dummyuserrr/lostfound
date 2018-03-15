@@ -4,7 +4,7 @@
 4. Marami pong nagnenew tab kuya kailangan daw po pag-isahin lang yung iba.
 <!-- 5. Hindi po dapat makapagdelete po yung user. -->
 <!-- 6. Hindi po dapat nakakaadd ng admin ang mga admins dapat ang superadmin lang daw po. -->
-7. Yung total retrieved items po kailangan daw po palitan ng ratings po tas pag naretrieve na po yung object, kailangan hindi po yun madelete.
+<!-- 7. Yung total retrieved items po kailangan daw po palitan ng ratings po tas pag naretrieve na po yung object, kailangan hindi po yun madelete. -->
 
 <!-- 1) ok -->
 <!-- 2) ok -->
@@ -12,7 +12,7 @@
 4) alin yung mga nagnewnew tab?
 <!-- 5) nadedelete ng user yung sarili niyang post -->
 <!-- 6) ok -->
-7) panong ratings?
+<!-- 7) panong ratings? -->
 
 
 <h3>TODO LIST</h3>
