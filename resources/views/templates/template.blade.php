@@ -36,14 +36,14 @@
 			<div class="bottom">
 				<div class="container">
 					<div class="left">
-						<a href="/" class="title"><img src="/img/icon.png"> missingZ</a>
+						<a href="/" class="title"><img src="/img/icon.png"> <span>missingZ</span></a>
 					</div>
 					<div class="right">
 						@if(checkCurrentDirectory('/') != 'true')
-						<p><a href="/lost-something" class="{{ navSetActive('lost') }}">LOST SOMETHING</a></p>
-						<p><a href="/found-something" class="{{ navSetActive('found') }}">FOUND SOMETHING</a></p>
+						<p><a href="/lost-something" class="{{ navSetActive('lost') }}">LOST <span class="forweb">SOMETHING</span></a></p>
+						<p><a href="/found-something" class="{{ navSetActive('found') }}">FOUND <span class="forweb">SOMETHING</span></a></p>
 						@endif
-						<p><a href="/retrieved-items" class="{{ navSetActive('retrieved-items') }}" style="font-size: 15px;">Total Retrieved Items: <span>{{ countRetrievedItems() }}</span></a></p>
+						<p><a href="/retrieved-items" class="{{ navSetActive('retrieved-items') }}" style="font-size: 15px;"><span class="forweb">Total</span> Retrieved <span class="forweb">Items</span>: <span>{{ countRetrievedItems() }}</span></a></p>
 					</div>
 				</div>
 			</div>

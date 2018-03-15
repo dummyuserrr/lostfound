@@ -821,3 +821,50 @@ nav{
 	}
 }
 // wew
+
+@media(max-width: 768px){
+	.forweb{display: none;}
+	.home_banner .overlayer .container .table .content .title{
+		font-size: 30px;
+		margin-bottom: 40px;
+	}
+	.home_banner .overlayer .container .table .content .columns{
+		margin: 15px auto;
+		width: 100%;
+		display: block;
+	}
+	nav .bottom .left .title span{display: none}
+	nav .bottom .left{width: 8%;}
+	nav .bottom .right{width: 90%;}
+	.lost_container .container .left, .user_view_container .container .left{
+		width: 100%;
+		.box{
+			margin-right: 0;
+		}
+	}
+	.lost_container .container .right, .user_view_container .container .right{
+		width: 100%;
+		.box{margin-left: 0;}
+	}
+	nav .bottom .right p{
+		padding-left: 10px;
+		a{
+			font-size: 14px;
+		} 
+	}
+	.lost_container .container .right .box .posts .left, .user_view_container .container .right .box .posts .left{
+		width: 100%;
+		min-height: unset;
+	}
+	.lost_container .container .right .box .posts .right, .user_view_container .container .right .box .posts .right{
+		width: 100%;
+	}
+}
+@media(max-width: 480px){
+	.mymodal .modal .body .column{
+		width: 100%;
+	}
+	.mymodal .modal .body{
+		padding: 5px;
+	}
+}
