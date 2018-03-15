@@ -53,8 +53,23 @@
 		</div>
 		<div class="footer">
 			<div class="container">
-				<a href="javascript:void(0);" class="rate-us">Rate Us</a>
+				@if(session()->has('status'))
+					@if(checkIfRated() == 1)
+						
+					@else
+						<a href="javascript:void(0);" class="rate-us">Rate Us</a>
+					@endif
+				@endif
 				&copy; Copyright 2018. All Rights Reserved.
+			</div>
+		</div>
+		<div class="mymodal thankYouModal">
+			<div class="modal">
+				<button class="modal-closer"><i class="fa fa-times" aria-hidden="true"></i></button>
+				<div class="header">missingZ</div>
+				<div class="body">
+					<p>Thank you for rating us!</p>
+				</div>
 			</div>
 		</div>
 		<div class="mymodal rateUsModal">
@@ -62,7 +77,7 @@
 				<button class="modal-closer"><i class="fa fa-times" aria-hidden="true"></i></button>
 				<div class="header">Rate Us</div>
 				<div class="body">
-					<form method="post" action="">
+					<form method="post" action="/rate">
 						{{ csrf_field() }}
 						<p class="slider_value">50%</p>
 						<div class="form_group">
@@ -208,5 +223,13 @@
 		<script type="text/javascript" src="/js/owl.carousel.min.js"></script>
 		<script type="text/javascript" src="/tippyjs-master/dist/tippy.min.js"></script>
 		<script type="text/javascript" src="/js/actions.js"></script>
+		@if(session()->has('rated'))
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$('.thankYouModal').addClass('modal-active');
+				bodyDisableScroll();
+			});
+		</script>
+		@endif
 	</body>
 </html>

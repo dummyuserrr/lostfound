@@ -54,3 +54,6 @@ Route::get('admin-panel/users/{user}/change-role/{role}', 'UsersController@chang
 Route::get('users/{user}/edit', 'PagesController@user_edit')->middleware('checkUserSession');
 Route::patch('user/{user}/edit', 'UsersController@patch_other')->middleware('checkUserSession');
 Route::get('admin-panel/registration-requests', 'AdminPagesController@registrationRequests')->middleware('checkUserSession');
+
+// ratings
+Route::post('rate', 'RatingsController@store')->middleware('checkUserSession');

@@ -6,6 +6,7 @@ use App\Message;
 use App\User;
 use App\LostItem;
 use App\FoundItem;
+use App\Rating;
 
 function countRetrievedItems(){
     $li = new LostItem;
@@ -14,6 +15,13 @@ function countRetrievedItems(){
     $count_fi = $fi->where('status', 1)->count();
     $total = $count_fi + $count_li;
     return $total;
+}
+
+function checkIfRated(){
+    $user = User::find(session('id'));
+    if($user->ratings()->count() > 0){
+        return 1;
+    }
 }
 
 function countUnreadMessages(){
