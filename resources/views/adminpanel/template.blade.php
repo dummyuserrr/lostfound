@@ -29,7 +29,7 @@
                     <div class="panel-body">
                         <div class="list-group">
                             <a href="/admin-panel/users/" class="list-group-item {{ adminSetActive3('admin-panel/users') }}">Users</a>
-                            <a href="/admin-panel/registration-requests/" class="list-group-item {{ adminSetActive3('admin-panel/registration-requests') }}">Registration Requests</a>
+                            <a href="/admin-panel/registration-requests/" class="list-group-item {{ adminSetActive3('admin-panel/registration-requests') }}">Registration Requests {{ countRegistrationRequests() }}</a>
                         </div>
                     </div>
                 </div>

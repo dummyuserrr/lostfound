@@ -8,6 +8,14 @@ use App\LostItem;
 use App\FoundItem;
 use App\Rating;
 
+function countRegistrationRequests(){
+    $u = new User;
+    $count = $u->where('approved', '0')->count();
+    if($count > 0){
+        return '('.$count.')';
+    }
+}
+
 function computeRatings(){
     $r = new Rating;
     $count = $r->count();

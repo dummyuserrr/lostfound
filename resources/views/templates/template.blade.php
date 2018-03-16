@@ -10,7 +10,7 @@
 		<link rel="stylesheet" type="text/css" href="/css/owl.theme.default.min.css">
 		<link rel="stylesheet" type="text/css" href="/font-awesome/css/font-awesome.min.css">
 		<link rel="stylesheet" type="text/css" href="/tippyjs-master/dist/tippy.css">
-		<link rel="stylesheet" type="text/less" href="/css/custom.less">
+		<link rel="stylesheet" type="text/css" href="/css/custom.css">
 		<script type="text/javascript" src="/js/less.min.js"></script>
 	</head>
 	<body>
@@ -19,7 +19,7 @@
 				<div class="container">
 					@if(session()->has('status'))
 						@if(session('role') == 'admin' || session('role') == 'superadmin')
-						<div class="options btnAdminpanel"><i class="fa fa-lock" aria-hidden="true"></i> AdminPanel</div>
+						<div class="options btnAdminpanel"><i class="fa fa-lock" aria-hidden="true"></i> AdminPanel {{ countRegistrationRequests() }}</div>
 						@endif
 						<div class="options btnMessages"><i class="fa fa-envelope" aria-hidden="true"></i> Messages {{ countUnreadMessages() }}</div>
 						<div class="options btnMyAccount"><i class="fa fa-user" aria-hidden="true"></i> My Account</div>

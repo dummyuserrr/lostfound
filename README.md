@@ -13,8 +13,8 @@
 <!-- 13. Kapag po nadelete yung user na nakaretrieve yung ng lost something, dapat hindi pa din po maaalis sa totality ng retrieved items yung pong pinost niya. Madedelete po yung account pero yung naretrieve na account po magstay po pandagdag po sa mga total ng naretrieve.  -->
 <!-- 14. Ang superadmin lang po ang pwedeng magpalit ng role ng isang user sa admin panel po. -->
 15. Nakikita po lahat ng messages ng admin at user po ni superadmin to make sure po na maganda ang sistema ng sytem.
-16. Pag po may nagregister po may malalagay po na notif sa taas po ng admin panel yung parang sa notif po sa facebook kuya yung may number sa taas.
-17. Pag may magreregister po magmemessage po automatically sa messages ng admin para po malaman agad na may nagregister at para maapprove po agad or madecline.
+<!-- 16. Pag po may nagregister po may malalagay po na notif sa taas po ng admin panel yung parang sa notif po sa facebook kuya yung may number sa taas. -->
+<!-- 17. Pag may magreregister po magmemessage po automatically sa messages ng admin para po malaman agad na may nagregister at para maapprove po agad or madecline. -->
 <!-- 18. Pag nagpost po sa lost or found sa may “Place Where You Lost It:”, may field po doon po na iseselect ng user which is “Barangay” “Town” pero sa pangasinan lang po. -->
 <!-- 19. View lang po dapat ang nakikita ng admin sa mga approved users si superadmin lang po ang pwedeng magview or edit. -->
 20. Kuya pwede po bang palagyan po ng forgot password? Kasi baka may tendency po na makalimutan ng user yung password niya po. ‘Yong tanong po para sa forgot password po, ‘yong parang sa facebook din po pag nakalimot magtatanong kung, what is the name of your first pet ganern ganern.
@@ -27,16 +27,16 @@
 <!-- 5) Nope. Pwede naman na silang magsendan ng video through other ways like social media, etc -->
 6) I-type na lang niya yung gusto niyang location dun sa Query na textbox
 <!-- 7) Sige ibalik ko sa superadmin -->
-8) Pahingi ng tamang username/password then run php artisan config:cache
-9) Pahingi ng tamang username/password then run php artisan config:cache
+8) Run php artisan config:cache
+9) Run php artisan config:cache
 <!-- 10) Okay -->
 <!-- 11) Hindi pwedeng magmark as retrieved agad pag may nagmatch kasi dapat yung user mismo yung mag mark kung retrieved na ba talaga yung item -->
 <!-- 12) Mawawalan ng silbi yung "Pangasinan Only" sa filter -->
 <!-- 13) Okay -->
 <!-- 14) Okay -->
 15) Okay
-16) Okay
-17) Okay. Pero di siya mapupunta sa message. Sa notification na lang
+<!-- 16) Okay -->
+<!-- 17) Okay. Pero di siya mapupunta sa message. Sa notification na lang -->
 <!-- 18) Mas maganda pag itype niya talaga. Kasi baka marami siyang idea kung saan niya nawala. Hindi lang sa iisang lugar -->
 <!-- 19) Okay -->
 20) Okay. Ang mangyayari dito, itype niya email niya tas masesend dun yung new password na pwede niyang gamitin then set na lang niya ulit
