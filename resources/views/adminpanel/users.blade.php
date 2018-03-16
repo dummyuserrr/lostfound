@@ -10,8 +10,10 @@
 			<th>Name</th>
 			<th>Username</th>
 			<th>Approved</th>
+			@if(session('role') == 'superadmin')
 			<th>Role</th>
 			<th>Actions</th>
+			@endif
 		</tr>
 	</thead>
 	<tbody>
@@ -26,6 +28,7 @@
 				No
 				@endif
 			</td>
+			@if(session('role') == 'superadmin')
 			<td>
 				<select class="userRoleSelector" data-id="{{ $user->id }}">
 					<option value="user" @if($user->role == 'user') selected @endif>User</option>
@@ -38,6 +41,7 @@
 					<button type="button" class="btndelete btn btn-danger" data-target="#deleteModal" data-toggle="modal" data-url="/admin-panel/users/{{ $user->id }}/delete">Delete</button>
 				</div>
 			</td>
+			@endif
 		</tr>
 		@endforeach
 	</tbody>
