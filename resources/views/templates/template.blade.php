@@ -10,7 +10,7 @@
 		<link rel="stylesheet" type="text/css" href="/css/owl.theme.default.min.css">
 		<link rel="stylesheet" type="text/css" href="/font-awesome/css/font-awesome.min.css">
 		<link rel="stylesheet" type="text/css" href="/tippyjs-master/dist/tippy.css">
-		<link rel="stylesheet" type="text/css" href="/css/custom.css">
+		<link rel="stylesheet" type="text/less" href="/css/custom.less">
 		<script type="text/javascript" src="/js/less.min.js"></script>
 	</head>
 	<body>
@@ -30,9 +30,9 @@
 						@else
 						@if(computeRatings() > 0)
 						<div class="options nav-left">System Ratings: {{ computeRatings() }}% by {{ countRaters() }} users</div>
+						@endif
 						<div class="options btnRegister"><i class="fa fa-user" aria-hidden="true"></i> Register</div>
 						<div class="options btnLogin"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</div>
-						@endif
 					@endif
 				</div>
 			</div>

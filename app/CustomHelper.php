@@ -20,7 +20,7 @@ function computeRatings(){
     $r = new Rating;
     $count = $r->count();
     $ratings  = $r->all();
-    if($ratings->count() > 0){
+    if($count > 0){
         $sum = 0;
         foreach($ratings as $rating){
             $sum += $rating->rating;
