@@ -20,12 +20,16 @@ function computeRatings(){
     $r = new Rating;
     $count = $r->count();
     $ratings  = $r->all();
-    $sum = 0;
-    foreach($ratings as $rating){
-        $sum += $rating->rating;
+    if($ratings->count() > 0){
+        $sum = 0;
+        foreach($ratings as $rating){
+            $sum += $rating->rating;
+        }
+        $average = $sum / $count;
+        return $average;
+    }else{
+        return '';
     }
-    $average = $sum / $count;
-    return $average;
 }
 
 function countRaters(){
