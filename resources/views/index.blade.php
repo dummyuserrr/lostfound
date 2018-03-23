@@ -23,7 +23,7 @@
 	<div class="container">
 		<p class="big"><i class="fa fa-address-book-o" aria-hidden="true"></i></p>
 		<p class="title">About Us</p>
-		<p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+		<p class="description">To ensure every item of lost property is matched and sent back to its lawful owner as quickly and as efficiently as possible. Create an innovative and constantly evolving online ecosystem to enable losers of property to be matched to finders of property for free.</p>
 	</div>
 </div>
 @stop
