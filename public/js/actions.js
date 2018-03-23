@@ -146,7 +146,7 @@ $('.comment_form').on('submit', function(e){
 	var comment = $(this).find('textarea[name="comment"]').val().toLowerCase()
 	var foundBadWord = 0
 	jQuery.each(badwords, function(index, item) {
-		if(otherdetails.includes(item.toLowerCase())){
+		if(comment.includes(item.toLowerCase())){
 			foundBadWord = 1
 		}
 	})
