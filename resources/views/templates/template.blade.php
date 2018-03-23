@@ -17,7 +17,9 @@
 		<nav>
 			<div class="top">
 				<div class="container">
-					<div class="options nav-left">System Ratings: {{ computeRatings() }}% by {{ countRaters() }} users</div>
+					@if(computeRatings() != 0)
+					<div class="options nav-left">System Ratings: {{ computeRatings() }}★ by {{ countRaters() }} users</div>
+					@endif
 					@if(session()->has('status'))
 						@if(session('role') == 'admin' || session('role') == 'superadmin')
 							<div class="options btnAdminpanel"><i class="fa fa-lock" aria-hidden="true"></i> AdminPanel {{ countRegistrationRequests() }}</div>
@@ -77,6 +79,7 @@
 				</div>
 			</div>
 		</div>
+		{{-- ratings modal --}}
 		<div class="mymodal rateUsModal">
 			<div class="modal">
 				<button class="modal-closer"><i class="fa fa-times" aria-hidden="true"></i></button>
@@ -84,10 +87,14 @@
 				<div class="body">
 					<form method="post" action="/rate">
 						{{ csrf_field() }}
-						<p class="slider_value">50%</p>
-						<div class="form_group">
-							<input type="range" min="1" max="100" value="50" name="rating" class="slider">
+						<div class="stars-container">
+							<div data-rating="1" class="star active"></div>
+							<div data-rating="2" class="star"></div>
+							<div data-rating="3" class="star"></div>
+							<div data-rating="4" class="star"></div>
+							<div data-rating="5" class="star"></div>
 						</div>
+						<input type="hidden" name="rating" class="selected_rating" value="1">
 						<div class="form_group">
 							<button type="submit">Submit</button>
 						</div>
@@ -95,6 +102,7 @@
 				</div>
 			</div>
 		</div>
+		{{-- end ratings modal --}}
 		<div class="mymodal registerModal">
 			<div class="modal">
 				<button class="modal-closer"><i class="fa fa-times" aria-hidden="true"></i></button>

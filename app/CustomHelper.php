@@ -28,7 +28,7 @@ function computeRatings(){
         $average = $sum / $count;
         return $average;
     }else{
-        return '';
+        return 0;
     }
 }
 

@@ -49,7 +49,6 @@ var activeDeleteForm = '';
 $('.rate-us').click(function(){
 	$('.rateUsModal').addClass('modal-active');
 	bodyDisableScroll();
-	$('#register_name').focus();
 });
 
 $('.btnRegister').click(function(){
@@ -279,6 +278,15 @@ $('.markAsFound').click(function(){
 });
 
 // wew
+
+$('.star').click(function(){
+	$(this).prevAll('.star').addClass('active');
+	$(this).addClass('active');
+	$(this).nextAll('.star').removeClass('active');
+
+	var rating = $(this).data('rating');
+	$('.selected_rating').val(rating);
+});
 
 const badwords = ['tae', 'Kantot', 'Puki','Putangina', 'puta', 'binibrocha','bruha', 'engot', 'Tamod','susu', 'titi', 'pakshet','pokpok', 'puke', 'tarantado','tanga', 'Gago', 'Ungas','Leche', 'Hudas', 'Ulol','Bwisit', 'Burat', 'Kupal','Punyeta', 'Pucha', 'Hinayupak',
 'Pakshet', 'asshead', 'idiot','asshole', 'asshopper', 'assjacker','asslick', 'asslicker', 'assmonkey','assmunch', 'assmuncher', 'assnigger','asspirate', 'assshit', 'assshole','assshole', 'asswad', 'asswipe','axwound', 'bastard', 'beaner','bitch', 'bitchass', 'bitches','bitchtits', 'bitchy', 'blowjob',
