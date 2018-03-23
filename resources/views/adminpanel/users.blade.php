@@ -37,7 +37,7 @@
 			</td>
 			<td>
 				<div class="btn-group">
-					<a type="button" href="/admin-panel/users/{{ $user->id }}/edit" class="btn btn-primary">View or Edit</a>
+					<!-- <a type="button" href="/admin-panel/users/{{ $user->id }}/edit" class="btn btn-primary">View or Edit</a> -->
 					<button type="button" class="btndelete btn btn-danger" data-target="#deleteModal" data-toggle="modal" data-url="/admin-panel/users/{{ $user->id }}/delete">Delete</button>
 				</div>
 			</td>

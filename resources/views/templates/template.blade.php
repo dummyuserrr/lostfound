@@ -46,7 +46,11 @@
 						<p><a href="/lost-something" class="{{ navSetActive('lost') }}">LOST <span class="forweb">SOMETHING</span></a></p>
 						<p><a href="/found-something" class="{{ navSetActive('found') }}">FOUND <span class="forweb">SOMETHING</span></a></p>
 						@endif
+						@if(session('role') == 'superadmin')
 						<p><a href="/retrieved-items" class="{{ navSetActive('retrieved-items') }}" style="font-size: 15px;"> Retrieved: <span>{{ countRetrievedItems() }}</span></a></p>
+						@else
+						<p><a href="javascript:void(0);" class="{{ navSetActive('retrieved-items') }}" style="font-size: 15px; cursor: default;"> Retrieved: <span>{{ countRetrievedItems() }}</span></a></p>
+						@endif
 					</div>
 				</div>
 			</div>
