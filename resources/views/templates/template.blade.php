@@ -17,20 +17,18 @@
 		<nav>
 			<div class="top">
 				<div class="container">
+					<div class="options nav-left">System Ratings: {{ computeRatings() }}% by {{ countRaters() }} users</div>
 					@if(session()->has('status'))
 						@if(session('role') == 'admin' || session('role') == 'superadmin')
-						<div class="options btnAdminpanel"><i class="fa fa-lock" aria-hidden="true"></i> AdminPanel {{ countRegistrationRequests() }}</div>
+							<div class="options btnAdminpanel"><i class="fa fa-lock" aria-hidden="true"></i> AdminPanel {{ countRegistrationRequests() }}</div>
 						@endif
 						<div class="options btnMessages"><i class="fa fa-envelope" aria-hidden="true"></i> Messages {{ countUnreadMessages() }}</div>
-						<div class="options btnMyAccount"><i class="fa fa-user" aria-hidden="true"></i> My Account</div>
+						<div class="options btnMyAccount"><i class="fa fa-user" aria-hidden="true"></i> {{ session('username') }}</div>
 						<div class="options btnLogout"><i class="fa fa-sign-out" aria-hidden="true"></i> Log Out</div>
 						<form id="frmLogout" method="post" action="/logout">
 							{{ csrf_field() }}
 						</form>
-						@else
-						@if(computeRatings() > 0)
-						<div class="options nav-left">System Ratings: {{ computeRatings() }}% by {{ countRaters() }} users</div>
-						@endif
+					@else
 						<div class="options btnRegister"><i class="fa fa-user" aria-hidden="true"></i> Register</div>
 						<div class="options btnLogin"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</div>
 					@endif
