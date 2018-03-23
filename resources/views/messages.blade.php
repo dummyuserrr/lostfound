@@ -50,9 +50,9 @@
 					</div>
 					<div class="message_form">
 						@if(empty($conversation))
-						<form method="post" action="/messages/0/{{ $user->id }}">
+						<form class="frmMessage" method="post" action="/messages/0/{{ $user->id }}">
 						@else
-						<form method="post" action="/messages/{{ $conversation->id }}/{{ $user->id }}">
+						<form class="frmMessage" method="post" action="/messages/{{ $conversation->id }}/{{ $user->id }}">
 						@endif
 							{{ csrf_field() }}
 							<textarea rows="3" required placeholder="Enter your message here ..." name="message" autofocus="on"></textarea>
