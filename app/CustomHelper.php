@@ -49,7 +49,7 @@ function countRetrievedItems(){
 
 function checkIfRated(){
     $user = User::find(session('id'));
-    if($user->ratings()->count() > 0){
+    if($user && $user->ratings()->count() > 0){
         return 1;
     }
 }
