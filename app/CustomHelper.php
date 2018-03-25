@@ -73,6 +73,25 @@ function countUnreadMessages(){
     }
 }
 
+function countUnreadMessagesOnThisUser($user_id){
+    $messagesCount = 0;
+    $count = 0;
+    $p = new Participation;
+    $myParticipations = $p->where('user_id', session('id'))->get();
+    if(count($myParticipations) > 0){
+        foreach($myParticipations as $myParticipation){
+            $messagesCount = $messagesCount + $myParticipation->conversation->messages->where('user_id', $user_id)->where('seenby', '!=', session('id'))->count();
+        }
+        if($messagesCount == 0){
+            return '';
+        }else{
+            return $messagesCount;
+        }
+    }else{
+        return '';
+    }
+}
+
 function setActive($path){
     if(Request::is($path . '*')){
     	return 'activenavlink';
