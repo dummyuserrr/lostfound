@@ -278,7 +278,11 @@ $('#messageUs').submit(function(e){
 			showLoading();
 		},
 		success: function(data){
-			alert(request.responseText)
+			if(request.responseText == 1){
+				setTimeout(function() {
+					hideLoading()
+				}, 500);
+			}
 		},
 		error: function(data){
 			var errors = "";
