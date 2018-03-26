@@ -62,3 +62,5 @@ Route::post('rate', 'RatingsController@store')->middleware('checkUserSession');
 Route::post('submit-message', 'MessageQueryController@store');
 Route::get('admin-panel/message-queries', 'AdminPagesController@messageQueries')->middleware('checkUserSession');
 Route::delete('admin-panel/message-queries/{item}/delete', 'MessageQueryController@destroy')->middleware('checkUserSession');
+
+Route::post('forgot-password', 'UsersController@forgotPassword');

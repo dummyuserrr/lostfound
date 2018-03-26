@@ -177,8 +177,20 @@
 						<div class="form_group loginerror">
 							<div class="prompt">Wrong username or password. Please try again.</div>
 						</div>
+						<a href="javascript:void(0);" class="forgotPassword">Forgot Password</a>
 						<div class="form_group">
 							<button type="submit" class="loginbutton">Login</button>
+						</div>
+					</form>
+					<form method="post" action="/forgot-password" id="frmForgotPassword">
+						{{ csrf_field() }}
+						<div class="form_group">
+							<label>Your Email Address:</label>
+							<input type="text" name="email" id="email">
+						</div>
+						<a href="javascript:void(0);" class="backToLogin">Back to Login</a>
+						<div class="form_group">
+							<button type="submit" class="loginbutton">Submit</button>
 						</div>
 					</form>
 				</div>

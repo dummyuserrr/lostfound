@@ -265,6 +265,42 @@ $('#registerForm').on('submit', function(e){
 
 // wew
 
+$('#frmForgotPassword').submit(function(e){
+	e.preventDefault()
+	var request = $.ajax({
+		url: "/forgot-password",
+		type: "POST",           
+		data: new FormData(this),
+		contentType: false,       
+		cache: false,      
+		processData:false,       
+		beforeSend: function(data){
+		},
+		success: function(data){
+			alert(request.responseText)
+		},
+		error: function(data){
+			var errors = "";
+			for(datos in data.responseJSON){
+				errors += data.responseJSON[datos]+'\n';
+			}
+			alert(errors);
+			hideLoading()
+		}
+	});
+})
+
+$('.forgotPassword').click(function(){
+	$('#frmLogin').css('display', 'none')	
+	$('#frmForgotPassword').css('display', 'block')	
+})
+
+$('.backToLogin').click(function(){
+	$('#frmLogin').css('display', 'block')	
+	$('#frmForgotPassword').css('display', 'none')	
+})
+
+
 $('#messageUs').submit(function(e){
 	e.preventDefault()
 	var request = $.ajax({

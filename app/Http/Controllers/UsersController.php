@@ -217,4 +217,14 @@ class UsersController extends Controller
 
         return back();
     }
+
+    public function forgotPassword(Request $r){
+        $u = new User;
+        $user = $u->where('email', $r->email)->first();
+        if($user){
+
+        }else{
+            return 'Sorry. We cannot find any account associated with this email.';
+        }
+    }
 }
