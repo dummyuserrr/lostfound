@@ -14,6 +14,7 @@
 		<script type="text/javascript" src="/js/less.min.js"></script>
 	</head>
 	<body>
+		<div class="loadingModal"></div>
 		<nav>
 			<div class="top">
 				<div class="container">

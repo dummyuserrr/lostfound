@@ -57,3 +57,6 @@ Route::get('admin-panel/registration-requests', 'AdminPagesController@registrati
 
 // ratings
 Route::post('rate', 'RatingsController@store')->middleware('checkUserSession');
+
+// message us
+Route::post('submit-message', 'MessageUsController@store');

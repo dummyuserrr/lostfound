@@ -263,6 +263,41 @@ $('#registerForm').on('submit', function(e){
 	});
 });
 
+// wew
+
+$('#messageUs').submit(function(e){
+	e.preventDefault()
+	var request = $.ajax({
+		url: "/submit-message",
+		type: "POST",           
+		data: new FormData(this),
+		contentType: false,       
+		cache: false,      
+		processData:false,       
+		beforeSend: function(data){
+			showLoading();
+		},
+		success: function(data){
+			alert(request.responseText)
+		},
+		error: function(data){
+			var errors = "";
+			for(datos in data.responseJSON){
+				errors += data.responseJSON[datos]+'\n';
+			}
+			alert(errors);
+			hideLoading()
+		}
+	});
+})
+
+function showLoading(){
+    $('.loadingModal').fadeIn();
+}
+function hideLoading(){
+    $('.loadingModal').fadeOut();
+}
+
 $('.markAsFound').click(function(){
 	var itemID = $(this).attr('data-itemID');
 	var type = $(this).attr('data-type');
@@ -276,8 +311,6 @@ $('.markAsFound').click(function(){
 		bodyEnableScroll();
 	}
 });
-
-// wew
 
 $('.star').click(function(){
 	$(this).prevAll('.star').addClass('active');
