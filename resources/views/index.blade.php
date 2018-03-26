@@ -31,6 +31,7 @@
 	<div class="container contact-us-container">
 		<p class="big"><i class="fa fa-envelope" aria-hidden="true"></i></p>
 		<p class="title">Message Us</p>
+		<p class="description messageSent">Message sent. Thank you for contacting us. We will get back to you as soon as we can.</p>
 		<div class="form">
 			<form method="post" action="/submit-message" id="messageUs">
 				{{ csrf_field() }}

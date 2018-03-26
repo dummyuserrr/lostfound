@@ -281,6 +281,8 @@ $('#messageUs').submit(function(e){
 			if(request.responseText == 1){
 				setTimeout(function() {
 					hideLoading()
+					$('#messageUs')[0].reset()
+					$('.messageSent').css('display', 'block')
 				}, 500);
 			}
 		},
