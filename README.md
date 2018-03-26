@@ -13,7 +13,7 @@ Things to be revised:
 <!-- 10. Pag nakalog-in po, may nakalagay na name sa taas para alam kung sino nakalog-in. -->
 <!-- 11. Pag may nagmessage po, kailangan may nakalagay na number para alam kung sino yung nagmessage. Parang notfication din dun sa may conversations po. -->
 <!-- 12. 'Yong sa ratings po, gawin nalang pong star haha. -->
-13. Add Forgot Password feature
+<!-- 13. Add Forgot Password feature -->
 <!-- 14. Send email when deleting a user -->
 
 
@@ -29,5 +29,5 @@ Things to be revised:
 10) Done
 11) Okay
 12) Done
-13) Okay
+13) Done
 14) Done

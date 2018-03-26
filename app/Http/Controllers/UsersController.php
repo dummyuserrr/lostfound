@@ -8,6 +8,7 @@ use Mail;
 use App\Mail\DeclinedMail;
 use App\Mail\AcceptedMail;
 use App\Mail\DeletedMail;
+use App\Mail\NewPasswordMail;
 
 class UsersController extends Controller
 {
@@ -222,7 +223,15 @@ class UsersController extends Controller
         $u = new User;
         $user = $u->where('email', $r->email)->first();
         if($user){
+            $randomPassword = str_random(10);
+            $newPassword = md5(hash('sha512', $randomPassword).hash('ripemd160', $randomPassword).md5("strongest"));
+            $user->update([
+                'password' => $newPassword
+            ]);
 
+            Mail::to($user->email)->queue(new NewPasswordMail($user->name, $randomPassword));
+
+            return 'Password reset done. Please check your email.';
         }else{
             return 'Sorry. We cannot find any account associated with this email.';
         }

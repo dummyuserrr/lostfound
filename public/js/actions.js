@@ -275,9 +275,12 @@ $('#frmForgotPassword').submit(function(e){
 		cache: false,      
 		processData:false,       
 		beforeSend: function(data){
+			showLoading()
 		},
 		success: function(data){
 			alert(request.responseText)
+			hideLoading()
+			$('#frmForgotPassword')[0].reset()
 		},
 		error: function(data){
 			var errors = "";
