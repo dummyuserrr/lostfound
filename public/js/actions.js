@@ -49,7 +49,6 @@ var activeDeleteForm = '';
 $('.rate-us').click(function(){
 	$('.rateUsModal').addClass('modal-active');
 	bodyDisableScroll();
-	$('#register_name').focus();
 });
 
 $('.btnRegister').click(function(){
@@ -139,7 +138,23 @@ $('body').on('click','.deletelink', function(){
 });
 
 $('.comment_form').on('submit', function(e){
+	/**
+	 * Checks if a foul word is submitted on comment
+	 */
 	e.preventDefault();
+	var comment = $(this).find('textarea[name="comment"]').val().toLowerCase()
+	var foundBadWord = 0
+	jQuery.each(badwords, function(index, item) {
+		if(comment.includes(item.toLowerCase())){
+			foundBadWord = 1
+		}
+	})
+	if(foundBadWord == 1){
+		alert('Cannot submit comment. Please avoid using foul words.')
+		return;
+	}
+
+
 	var me = $(this);
 	var request = $.ajax({
 		url: $(this).attr('action'),
@@ -261,7 +276,55 @@ $('.markAsFound').click(function(){
 		bodyEnableScroll();
 	}
 });
+
 // wew
+
+$('.star').click(function(){
+	$(this).prevAll('.star').addClass('active');
+	$(this).addClass('active');
+	$(this).nextAll('.star').removeClass('active');
+
+	var rating = $(this).data('rating');
+	$('.selected_rating').val(rating);
+});
+
+const badwords = ['tae', 'Kantot', 'Puki','Putangina', 'puta', 'binibrocha','bruha', 'engot', 'Tamod','susu', 'titi', 'pakshet','pokpok', 'puke', 'tarantado','tanga', 'Gago', 'Ungas','Leche', 'Hudas', 'Ulol','Bwisit', 'Burat', 'Kupal','Punyeta', 'Pucha', 'Hinayupak',
+'Pakshet', 'asshead', 'idiot','asshole', 'asshopper', 'assjacker','asslick', 'asslicker', 'assmonkey','assmunch', 'assmuncher', 'assnigger','asspirate', 'assshit', 'assshole','assshole', 'asswad', 'asswipe','axwound', 'bastard', 'beaner','bitch', 'bitchass', 'bitches','bitchtits', 'bitchy', 'blowjob',
+'bollocks', 'bollox', 'boner','brotherfucker', 'bullshit', 'bumblefuck','buttplug', 'butt-pirate', 'buttfucka','cameltoe', 'carpetmuncher', 'chesticle','chinc', 'chink', 'choad','chode', 'clit', 'clitface','clitfuck', 'clusterfuck', 'cock','cockass', 'cockbite', 'cockburger','cockface', 'cockfucker', 'cockhead',
+'cockjockey', 'cockknoker', 'cockmaster','cockmongler', 'cockmongruel', 'cockmonkey','cockmuncher', 'cocknose', 'cocknugget','cockshit', 'cocksmith', 'cocksmoke','cocksmoker', 'cocksniffer', 'cocksucker','cockwaffle', 'coochie', 'coochy','coon', 'cooter', 'cracker','cum', 'cumbubble', 'cumdumpster','cumguzzler', 'cumjockey', 'cumslut',
+'cumtart', 'cunnie', 'cunnilingus','cunt', 'cuntass', 'cuntface','cunthole', 'cuntlicker', 'cuntrag','cuntslut', 'buttfucker', 'damn','deggo', 'dick', 'dickbag','dickbeaters', 'dickface', 'dickfuck','dickfucker', 'dickhead', 'dickhole','dickjuice', 'dickmilk', 'dickmonger','dicks', 'dickslap', 'dicksucker',
+'dicksucking', 'dicktickler', 'dickwad','dickweasel', 'dickweed', 'dickwod','dike', 'dildo', 'dipshit','doochbag', 'dookie', 'douche','douche-fag', 'douchewaffle', 'dumass','dumb ass ', 'dumbass', 'dumbfuck','dumbshit', 'dumshit', 'dyke','Amateur', 'Analphabet', 'Anarchist','Ass', 'Bastard', 'Bitch',
+'Butt', 'Cock', 'Cunt','sucker', 'Dogshit'];
+
+$('.frmMessage').submit(function(e){
+	var message = $(this).find('textarea[name="message"]').val().toLowerCase()
+	var foundBadWord = 0
+	jQuery.each(badwords, function(index, item) {
+		if(message.includes(item.toLowerCase())){
+			foundBadWord = 1
+		}
+	})
+	if(foundBadWord == 1){
+		e.preventDefault()
+		alert('Cannot submit message. Please avoid using foul words.')
+	}
+});
+
+$('.form').submit(function(e){
+	var otherdetails = $(this).find('textarea[name="otherdetails"]').val().toLowerCase()
+	var name = $(this).find('input[name="name"]').val().toLowerCase()
+	var place = $(this).find('input[name="place"]').val().toLowerCase()
+	var foundBadWord = 0
+	jQuery.each(badwords, function(index, item) {
+		if(otherdetails.includes(item.toLowerCase()) || name.includes(item.toLowerCase()) || place.includes(item.toLowerCase())){
+			foundBadWord = 1
+		}
+	})
+	if(foundBadWord == 1){
+		e.preventDefault()
+		alert('Cannot submit form. Please avoid using foul words.')
+	}
+});
 
 $('.slider').change(function(e){
 	var value = $(this).val();

@@ -17,20 +17,20 @@
 		<nav>
 			<div class="top">
 				<div class="container">
+					@if(computeRatings() != 0)
+					<div class="options nav-left">System Ratings: {{ computeRatings() }}★ by {{ countRaters() }} users</div>
+					@endif
 					@if(session()->has('status'))
 						@if(session('role') == 'admin' || session('role') == 'superadmin')
-						<div class="options btnAdminpanel"><i class="fa fa-lock" aria-hidden="true"></i> AdminPanel {{ countRegistrationRequests() }}</div>
+							<div class="options btnAdminpanel"><i class="fa fa-lock" aria-hidden="true"></i> AdminPanel {{ countRegistrationRequests() }}</div>
 						@endif
 						<div class="options btnMessages"><i class="fa fa-envelope" aria-hidden="true"></i> Messages {{ countUnreadMessages() }}</div>
-						<div class="options btnMyAccount"><i class="fa fa-user" aria-hidden="true"></i> My Account</div>
+						<div class="options btnMyAccount"><i class="fa fa-user" aria-hidden="true"></i> {{ session('username') }}</div>
 						<div class="options btnLogout"><i class="fa fa-sign-out" aria-hidden="true"></i> Log Out</div>
 						<form id="frmLogout" method="post" action="/logout">
 							{{ csrf_field() }}
 						</form>
-						@else
-						@if(computeRatings() > 0)
-						<div class="options nav-left">System Ratings: {{ computeRatings() }}% by {{ countRaters() }} users</div>
-						@endif
+					@else
 						<div class="options btnRegister"><i class="fa fa-user" aria-hidden="true"></i> Register</div>
 						<div class="options btnLogin"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</div>
 					@endif
@@ -46,7 +46,11 @@
 						<p><a href="/lost-something" class="{{ navSetActive('lost') }}">LOST <span class="forweb">SOMETHING</span></a></p>
 						<p><a href="/found-something" class="{{ navSetActive('found') }}">FOUND <span class="forweb">SOMETHING</span></a></p>
 						@endif
+						@if(session('role') == 'superadmin')
 						<p><a href="/retrieved-items" class="{{ navSetActive('retrieved-items') }}" style="font-size: 15px;"> Retrieved: <span>{{ countRetrievedItems() }}</span></a></p>
+						@else
+						<p><a href="javascript:void(0);" class="{{ navSetActive('retrieved-items') }}" style="font-size: 15px; cursor: default;"> Retrieved: <span>{{ countRetrievedItems() }}</span></a></p>
+						@endif
 					</div>
 				</div>
 			</div>
@@ -75,6 +79,7 @@
 				</div>
 			</div>
 		</div>
+		{{-- ratings modal --}}
 		<div class="mymodal rateUsModal">
 			<div class="modal">
 				<button class="modal-closer"><i class="fa fa-times" aria-hidden="true"></i></button>
@@ -82,10 +87,14 @@
 				<div class="body">
 					<form method="post" action="/rate">
 						{{ csrf_field() }}
-						<p class="slider_value">50%</p>
-						<div class="form_group">
-							<input type="range" min="1" max="100" value="50" name="rating" class="slider">
+						<div class="stars-container">
+							<div data-rating="1" class="star active"></div>
+							<div data-rating="2" class="star"></div>
+							<div data-rating="3" class="star"></div>
+							<div data-rating="4" class="star"></div>
+							<div data-rating="5" class="star"></div>
 						</div>
+						<input type="hidden" name="rating" class="selected_rating" value="1">
 						<div class="form_group">
 							<button type="submit">Submit</button>
 						</div>
@@ -93,6 +102,7 @@
 				</div>
 			</div>
 		</div>
+		{{-- end ratings modal --}}
 		<div class="mymodal registerModal">
 			<div class="modal">
 				<button class="modal-closer"><i class="fa fa-times" aria-hidden="true"></i></button>

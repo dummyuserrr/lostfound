@@ -11,7 +11,11 @@
 							@if($user == NULL)
 								<a href="/messages/{{ $myParticipation->conversation->participations->where('user_id', '!=', session('id'))->first()->user->id }}">{{ $myParticipation->conversation->participations->where('user_id', '!=', session('id'))->first()->user->name }}</a>
 							@else
-								<a href="/messages/{{ $myParticipation->conversation->participations->where('user_id', '!=', session('id'))->first()->user->id }}" class="@if($myParticipation->conversation->participations->where('user_id', '!=', session('id'))->first()->user->id == $user->id) active @endif">{{ $myParticipation->conversation->participations->where('user_id', '!=', session('id'))->first()->user->name }}</a>
+								<a href="/messages/{{ $myParticipation->conversation->participations->where('user_id', '!=', session('id'))->first()->user->id }}" class="@if($myParticipation->conversation->participations->where('user_id', '!=', session('id'))->first()->user->id == $user->id) active @endif">{{ $myParticipation->conversation->participations->where('user_id', '!=', session('id'))->first()->user->name }}
+
+									{{ countUnreadMessagesOnThisUser($user) }}
+
+								</a>
 							@endif
 						@endforeach
 					@endif
@@ -50,9 +54,9 @@
 					</div>
 					<div class="message_form">
 						@if(empty($conversation))
-						<form method="post" action="/messages/0/{{ $user->id }}">
+						<form class="frmMessage" method="post" action="/messages/0/{{ $user->id }}">
 						@else
-						<form method="post" action="/messages/{{ $conversation->id }}/{{ $user->id }}">
+						<form class="frmMessage" method="post" action="/messages/{{ $conversation->id }}/{{ $user->id }}">
 						@endif
 							{{ csrf_field() }}
 							<textarea rows="3" required placeholder="Enter your message here ..." name="message" autofocus="on"></textarea>

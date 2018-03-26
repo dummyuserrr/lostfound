@@ -115,9 +115,9 @@ class UsersController extends Controller
 
     public function destroy(User $item){
         // $item->lost_items()->delete();
-        // $item->lost_item_comments()->delete();
+        $item->lost_item_comments()->delete();
         // $item->found_items()->delete();
-        // $item->found_item_comments()->delete();
+        $item->found_item_comments()->delete();
         // $item->conversations()->delete();
         // $item->messages()->delete();
         $item->delete();

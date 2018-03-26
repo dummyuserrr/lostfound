@@ -831,6 +831,33 @@ nav{
 		width: 200px;
 	}
 }
+.stars-container{
+	border: 1px solid transparent;
+	width: 200px;
+	text-align: center;
+	display: block;
+	margin: 0 auto 30px;
+	.star{
+		display: inline-block;
+		vertical-align: top;
+		float: left;
+		height: 30px;
+		width: 20%;
+		margin: 0;
+		text-align: center;
+		cursor: pointer;
+		&:before{
+			content: '☆';
+			font-size: 20px;
+		}
+	}
+	.active{
+		&:before{
+			content: '★';
+			font-size: 20px;
+		}
+	}
+}
 // wew
 
 @media(max-width: 768px){
