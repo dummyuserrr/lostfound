@@ -7,6 +7,7 @@ use App\User;
 use Mail;
 use App\Mail\DeclinedMail;
 use App\Mail\AcceptedMail;
+use App\Mail\DeletedMail;
 
 class UsersController extends Controller
 {
@@ -120,6 +121,7 @@ class UsersController extends Controller
         $item->found_item_comments()->delete();
         // $item->conversations()->delete();
         // $item->messages()->delete();
+        Mail::to($item->email)->queue(new DeletedMail($item->name));
         $item->delete();
         session()->flash('action', 'deleted');
         return back();
