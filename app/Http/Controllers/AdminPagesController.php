@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\MessageQuery;
 
 class AdminPagesController extends Controller
 {
@@ -41,5 +42,11 @@ class AdminPagesController extends Controller
         $u = new User;
         $users = $u->where('approved', 0)->orderBy('created_at')->get();
         return view('adminpanel.registrationRequests', compact('users'));
+    }
+
+    public function messageQueries(){
+        $mq = new MessageQuery;
+        $mqs = $mq->orderBy('created_at', 'desc')->get();
+        return view('adminpanel.messageQueries', compact('mqs'));
     }
 }

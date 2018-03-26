@@ -24,4 +24,11 @@ class MessageQueryController extends Controller
 
     	return 1;
     }
+
+    public function destroy(MessageQuery $item){
+    	$item->delete();
+
+    	session()->flash('action', 'deleted');
+    	return back();
+    }
 }
