@@ -37,6 +37,7 @@ class FoundItemsController extends Controller
     		$lii->save();
     	}
 
+        sendSMS('found');
     	return back();
     }
 

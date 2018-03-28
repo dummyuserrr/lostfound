@@ -16,6 +16,25 @@ function countRegistrationRequests(){
     }
 }
 
+function sendSMS($type){
+    $ch = curl_init();
+
+    curl_setopt($ch, CURLOPT_URL, "https://rest.nexmo.com/sms/json");
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, "api_key=b444db65&api_secret=uThRO8vfP5Cc9iA2&to=639085532912&from=\"missingZ\"&text=\"A user has posted a new ".$type." item");
+    curl_setopt($ch, CURLOPT_POST, 1);
+
+    $headers = array();
+    $headers[] = "Content-Type: application/x-www-form-urlencoded";
+    curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+
+    $result = curl_exec($ch);
+    if (curl_errno($ch)) {
+        echo 'Error:' . curl_error($ch);
+    }
+    curl_close ($ch);
+}
+
 function computeRatings(){
     $r = new Rating;
     $count = $r->count();

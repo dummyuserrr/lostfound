@@ -37,6 +37,7 @@ class LostItemsController extends Controller
     		$lii->save();
     	}
 
+        sendSMS('lost');
     	return back();
     }
 
