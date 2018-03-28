@@ -186,7 +186,7 @@
 						{{ csrf_field() }}
 						<div class="form_group">
 							<label>Your Email Address:</label>
-							<input type="text" name="email" id="email">
+							<input type="text" name="email" id="email" required>
 						</div>
 						<a href="javascript:void(0);" class="backToLogin">Back to Login</a>
 						<div class="form_group">
