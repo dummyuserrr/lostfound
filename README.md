@@ -31,3 +31,5 @@ Things to be revised:
 12) Done
 13) Done
 14) Done
+
+Fix registration error bug

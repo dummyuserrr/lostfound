@@ -99,18 +99,18 @@ class UsersController extends Controller
             'image' => 'required|mimes:jpeg,bmp,png,jpg',
         ]);
 
-        $password = md5(hash('sha512', $r->password).hash('ripemd160', $r->password).md5("strongest"));
-        $image = $r->image->store('uploads/images');
+        // $password = md5(hash('sha512', $r->password).hash('ripemd160', $r->password).md5("strongest"));
+        // $image = $r->image->store('uploads/images');
 
-        $u = new User;
-        $u->name = $r->name;
-        $u->email = $r->email;
-        $u->mobile = $r->mobile;
-        $u->address = $r->address;
-        $u->username = $r->username;
-        $u->password = $password;
-        $u->image = $image;
-        $u->save();
+        // $u = new User;
+        // $u->name = $r->name;
+        // $u->email = $r->email;
+        // $u->mobile = $r->mobile;
+        // $u->address = $r->address;
+        // $u->username = $r->username;
+        // $u->password = $password;
+        // $u->image = $image;
+        // $u->save();
 
         return 1;
     }
@@ -215,7 +215,7 @@ class UsersController extends Controller
     public function decline(User $user){
         Mail::to($user->email)->queue(new DeclinedMail($user->name));
         $user->delete();
-
+        
         return back();
     }
 
@@ -223,7 +223,7 @@ class UsersController extends Controller
         $u = new User;
         $user = $u->where('email', $r->email)->first();
         if($user){
-            $randomPassword = str_random(10);
+            $randomPassword = str_random(10); 
             $newPassword = md5(hash('sha512', $randomPassword).hash('ripemd160', $randomPassword).md5("strongest"));
             $user->update([
                 'password' => $newPassword

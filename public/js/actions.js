@@ -254,11 +254,11 @@ $('#registerForm').on('submit', function(e){
 			}
 		},
 		error: function(data){
-			var errors = "";
-			for(datos in data.responseJSON){
-				errors += data.responseJSON[datos]+'\n';
-			}
-			alert(errors);
+			var errors = '';
+			$.each(data.responseJSON['errors'], function(index, value){
+				errors += value + '\n'
+			})
+			alert(errors)
 		}
 	});
 });
