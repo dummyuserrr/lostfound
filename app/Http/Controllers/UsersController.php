@@ -243,6 +243,7 @@ class UsersController extends Controller
 
             Mail::to($user->email)->queue(new NewPasswordMail($user->name, $randomPassword));
 
+            storeLog($user->name . " tried to reset his/her password.");
             return 'Password reset done. Please check your email.';
         }else{
             return 'Sorry. We cannot find any account associated with this email.';

@@ -18,6 +18,8 @@ class RatingsController extends Controller
     	$rat->save();
 		
 		session()->flash('rated', '1');
+
+        storeLog(session('name') . " rated the system by ". $r->rating . " stars");
 		return back();
     }
 }

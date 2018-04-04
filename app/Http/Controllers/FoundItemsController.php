@@ -37,6 +37,8 @@ class FoundItemsController extends Controller
     		$lii->save();
     	}
 
+        storeLog(session('name')." added a found item.");
+
         sendSMS('found');
     	return back();
     }
@@ -49,6 +51,7 @@ class FoundItemsController extends Controller
             $comment->delete();
         }
         $item->delete();
+        storeLog(session('name')." deleted a found item.");
         return back();
     }
 
@@ -82,6 +85,8 @@ class FoundItemsController extends Controller
         $item->update([
             'status' => 1,
         ]);
+
+        storeLog(session('name')." marked a found item as retrieved");
 
         return back();
     }

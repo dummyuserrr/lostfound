@@ -37,6 +37,8 @@ class LostItemsController extends Controller
     		$lii->save();
     	}
 
+        storeLog(session('name')." added a new lost item.");
+
         sendSMS('lost');
     	return back();
     }
@@ -49,6 +51,7 @@ class LostItemsController extends Controller
             $comment->delete();
         }
         $item->delete();
+        storeLog(session('name')." deleted a lost item.");
         return back();
     }
 
@@ -82,6 +85,8 @@ class LostItemsController extends Controller
         $item->update([
             'status' => 1,
         ]);
+
+        storeLog(session('name')." marked a found item as retrieved");
 
         return back();
     }
