@@ -27,6 +27,10 @@
 					<div class="right">
 						<!-- <p class="texts"><span class="found"><i class="fa fa-check" aria-hidden="true"></i> This has been marked as found</span></p> -->
 						<p class="texts">
+							<span class="label">Marked As Retrieved On: </span>
+							<span class="name">{{ $l->updated_at }}</span>
+						</p>
+						<p class="texts">
 							<span class="label">Item Name: </span>
 							<span class="name">{{ $l->name }}</span>
 						</p>
@@ -96,6 +100,10 @@
 					</div>
 					<div class="right">
 						<!-- <p class="texts"><span class="found"><i class="fa fa-check" aria-hidden="true"></i> This has been marked as found</span></p> -->
+						<p class="texts">
+							<span class="label">Marked As Retrieved On: </span>
+							<span class="name">{{ $l->updated_at }}</span>
+						</p>
 						<p class="texts">
 							<span class="label">Item Name: </span>
 							<span class="name">{{ $l->name }}</span>
