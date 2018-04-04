@@ -17,16 +17,20 @@
 				<form method="post" action="/found-something/add" enctype="multipart/form-data" class="form">
 					{{ csrf_field() }}
 					@include('prompts.validation_errors')
-					<div class="column">
-						<div class="form_group">
-							<label>Item Name: <i>*</i></label>
-							<input required type="text" name="name" autofocus>
-						</div>
+					<div class="form_group">
+						<label>Item Name: <i>*</i></label>
+						<input required type="text" name="name" autofocus>
 					</div>
 					<div class="column">
 						<div class="form_group">
 							<label>Date Found: <i>*</i></label>
 							<input required type="date" name="datefound" style="padding: 5px;" max="{{ date('Y-m-d') }}">
+						</div>
+					</div>
+					<div class="column">
+						<div class="form_group">
+							<label>Date Found: <i>*</i></label>
+							<input required type="time" name="timefound" style="padding: 5px;">
 						</div>
 					</div>
 					<div class="column">
@@ -103,6 +107,10 @@
 						<p class="texts">
 							<span class="label">Date Found: </span>
 							<span class="name">{{ $l->datefound }}</span>
+						</p>
+						<p class="texts">
+							<span class="label">Time Found: </span>
+							<span class="name">{{ date('g:i A', strtotime($l->timefound)) }}</span>
 						</p>
 						<p class="texts">
 							<span class="label">Other Details: </span>

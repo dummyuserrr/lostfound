@@ -15,6 +15,7 @@ class FoundItemsController extends Controller
     		'category' => 'required',
     		'place' => 'required',
             'datefound' => 'required',
+            'timefound' => 'required',
     		'otherdetails' => 'required',
     		'images' => 'required',
     		'images.*' => 'mimes:jpeg,bmp,png,jpg',
@@ -26,6 +27,7 @@ class FoundItemsController extends Controller
     	$l->category = $r->category;
     	$l->place = $r->place;
         $l->datefound = $r->datefound;
+        $l->timefound = $r->timefound;
     	$l->otherdetails = $r->otherdetails;
     	$l->save();
 

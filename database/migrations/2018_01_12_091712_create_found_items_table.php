@@ -20,6 +20,7 @@ class CreateFoundItemsTable extends Migration
             $table->string('category');
             $table->text('place');
             $table->date('datefound');
+            $table->string('timefound');
             $table->text('otherdetails');
             $table->integer('status')->default(0);
             $table->softDeletes();
