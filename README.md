@@ -37,5 +37,5 @@ New ulit:
 6.	(Magsesend po kami ulit ng picture po) Bale pagkaopen po ng homepage, may makikita pong mga long lost post sa gilid.
 <!-- 7.	Yung sa registration po ulit, Change name to: First Name, Lastname, Middle Name.  --> -- changed to Fullname na lang
 <!-- 8.	Accepts multiple photos in lost or found. -->
-9.	Regarding po sa retrieved, makikita po ulit pala nung user bale lahat po nung mga retrieved. Tapos po pag imamark yung mga posts na retrieved na po, malalagay po yung pangalan kung sino nakaretrieved at kung kalian na mark na retrieve tas pwede po ba maginclude ng photo po pag retrieved na yung items, for proof.
+<!-- 9.	Regarding po sa retrieved, makikita po ulit pala nung user bale lahat po nung mga retrieved. Tapos po pag imamark yung mga posts na retrieved na po, malalagay po yung pangalan kung sino nakaretrieved at kung kalian na mark na retrieve tas pwede po ba maginclude ng photo po pag retrieved na yung items, for proof. -->
 10.	Regarding po sa upload/webcam thingy, pwede po bang dalawa ang choices nung user? Web/cam or upload photos po pero magaactivate lang po pag naverify yung user yung account gamit po ang picture ulit.
