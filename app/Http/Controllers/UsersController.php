@@ -44,13 +44,13 @@ class UsersController extends Controller
     }
 
     public function logout(){
+        storeLog(session('name') . ' has logged out.');
     	session()->forget('status');
         session()->forget('id');
         session()->forget('username');
         session()->forget('role');
 		session()->forget('name');
 
-        storeLog($user->name . ' has logged out.');
 		return redirect('/');
     }
 
