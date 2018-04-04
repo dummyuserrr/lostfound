@@ -25,11 +25,11 @@ New Revisions:
 8. No
 10. Okay 
 
-Note: 
-Reach 90 days then delete na
+<!-- Note:  -->
+<!-- Reach 90 days then delete na -->
 
 New ulit:
-1.	Facebook type about old missing lost or found items or person. ( Magsesend po kami ng screenshot kung papano po yung format. Bale ito po yung alternative po naming sa featured lost and found.)
+1.	Facebook type about old missing lost or found items or person. (Magsesend po kami ng screenshot kung papano po yung format. Bale ito po yung alternative po naming sa featured lost and found.)
 2.	Sa registration field po, okay lang daw po mamili ang user kung phone number po ba or email po. Bale pag email ang hindi nalagyan sa field po as long as may phone number na nailagay, okay lang po.
 3.	Ruling of username and password.
 4.	Pag nagpost po, pag may nagpost po ng parehong picture, description, date and time po, hindi po tatanggapin para maiwasan po ang duplication of posts sa lost lang po.

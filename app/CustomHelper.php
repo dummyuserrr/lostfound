@@ -8,6 +8,22 @@ use App\LostItem;
 use App\FoundItem;
 use App\Rating;
 use App\Log;
+use Carbon\Carbon;
+
+function checkPostsThenDelete(){
+    $losts = LostItem::where('created_at', '<=', Carbon::now()->subDays(90)->toDateTimeString())->get();
+    $founds = FoundItem::where('created_at', '<=', Carbon::now()->subDays(90)->toDateTimeString())->get();
+    if($losts){
+        foreach($losts as $item){
+            $item->delete();
+        }
+    }
+    if($founds){
+        foreach($founds as $item){
+            $item->delete();
+        }
+    }
+}
 
 function storeLog($log){
     $l = new Log;

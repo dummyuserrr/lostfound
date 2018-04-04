@@ -21,6 +21,7 @@
 					@if(computeRatings() != 0)
 					<div class="options nav-left">System Ratings: {{ computeRatings() }}★ by {{ countRaters() }} users</div>
 					@endif
+					{{ checkPostsThenDelete() }}
 					@if(session()->has('status'))
 						@if(session('role') == 'admin' || session('role') == 'superadmin')
 							<div class="options btnAdminpanel"><i class="fa fa-lock" aria-hidden="true"></i> AdminPanel {{ countRegistrationRequests() }}</div>
