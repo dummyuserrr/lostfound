@@ -93,10 +93,10 @@ class PagesController extends Controller
     }
 
     public function retrievedItems(){
-        if(session('role') != 'superadmin'){
-            return 'Sorry. You cannot view this page';
-            exit();
-        }
+        // if(session('role') != 'superadmin'){
+        //     return 'Sorry. You cannot view this page';
+        //     exit();
+        // }
         $li = new LostItem;
         $fi = new FoundItem;
 

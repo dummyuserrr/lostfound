@@ -48,11 +48,7 @@
 						<p><a href="/lost-something" class="{{ navSetActive('lost') }}">LOST <span class="forweb">SOMETHING</span></a></p>
 						<p><a href="/found-something" class="{{ navSetActive('found') }}">FOUND <span class="forweb">SOMETHING</span></a></p>
 						@endif
-						@if(session('role') == 'superadmin')
 						<p><a href="/retrieved-items" class="{{ navSetActive('retrieved-items') }}" style="font-size: 15px;"> Retrieved: <span>{{ countRetrievedItems() }}</span></a></p>
-						@else
-						<p><a href="javascript:void(0);" class="{{ navSetActive('retrieved-items') }}" style="font-size: 15px; cursor: default;"> Retrieved: <span>{{ countRetrievedItems() }}</span></a></p>
-						@endif
 					</div>
 				</div>
 			</div>
@@ -114,7 +110,7 @@
 					<form method="post" action="/register" enctype="multipart/form-data" id="registerForm">
 						{{ csrf_field() }}
 						<div class="form_group">
-							<label>Name: <i>*</i></label>
+							<label>Fullname: <i>*</i></label>
 							<input required type="text" name="name" placeholder="John Doe" id="register_name">
 						</div>
 						<div class="column">
