@@ -47,6 +47,10 @@
 							<span class="name">{{ $l->datelost }}</span>
 						</p>
 						<p class="texts">
+							<span class="label">Time Lost: </span>
+							<span class="name">{{ date('g:i A', strtotime($l->timelost)) }}</span>
+						</p>
+						<p class="texts">
 							<span class="label">Other Details: </span>
 							<span class="name">{{ $l->otherdetails }}</span>
 						</p>
@@ -119,6 +123,10 @@
 						<p class="texts">
 							<span class="label">Date Found: </span>
 							<span class="name">{{ $l->datefound }}</span>
+						</p>
+						<p class="texts">
+							<span class="label">Time Found: </span>
+							<span class="name">{{ date('g:i A', strtotime($l->timefound)) }}</span>
 						</p>
 						<p class="texts">
 							<span class="label">Other Details: </span>
