@@ -40,7 +40,7 @@ Route::post('messages/{conversation}/{user}', 'ConversationsController@store');
 Route::patch('lost-item/{item}/mark-as-found', 'LostItemsController@markAsFound')->middleware('checkUserSession');
 Route::patch('found-item/{item}/mark-as-found', 'FoundItemsController@markAsFound')->middleware('checkUserSession');
 
-// retrived items
+// retrieved items
 Route::get('retrieved-items', 'PagesController@retrievedItems');
 Route::get('retrieved-items/search', 'PagesController@retrievedItemsSearch');
 
@@ -54,6 +54,7 @@ Route::get('admin-panel/users/{user}/change-role/{role}', 'UsersController@chang
 Route::get('users/{user}/edit', 'PagesController@user_edit')->middleware('checkUserSession');
 Route::patch('user/{user}/edit', 'UsersController@patch_other')->middleware('checkUserSession');
 Route::get('admin-panel/registration-requests', 'AdminPagesController@registrationRequests')->middleware('checkUserSession');
+Route::get('admin-panel/system-logs', 'AdminPagesController@systemLogs')->middleware('checkUserSession');
 
 // ratings
 Route::post('rate', 'RatingsController@store')->middleware('checkUserSession');

@@ -29,6 +29,8 @@ class UsersController extends Controller
                 session()->put('username', $user->username);
                 session()->put('role', $user->role);
                 session()->put('name', $user->name);
+
+                storeLog($user->name . ' has logged in.');
                 return 1;
             }
     	}else{
@@ -47,6 +49,8 @@ class UsersController extends Controller
         session()->forget('username');
         session()->forget('role');
 		session()->forget('name');
+
+        storeLog($user->name . ' has logged out.');
 		return redirect('/');
     }
 
@@ -84,6 +88,8 @@ class UsersController extends Controller
         }
 
         session()->flash('successMessage', 'Your account has been updated.');
+
+        storeLog($user->name . "'s profile was updated.");
         return back();
     }
 
@@ -112,6 +118,7 @@ class UsersController extends Controller
         $u->image = $image;
         $u->save();
 
+        storeLog($u->name . " has registered");
         return 1;
     }
 
@@ -123,6 +130,7 @@ class UsersController extends Controller
         // $item->conversations()->delete();
         // $item->messages()->delete();
         Mail::to($item->email)->queue(new DeletedMail($item->name));
+        storeLog($item->name . "'s account was deleted by ".session('name'));
         $item->delete();
         session()->flash('action', 'deleted');
         return back();
@@ -154,6 +162,8 @@ class UsersController extends Controller
         $u->role = 'admin';
         $u->save();
 
+        storeLog($u->name . "'s account was created by ".session('name'));
+
         session()->flash('action', 'added');
         return redirect('/admin-panel/users');
     }
@@ -163,6 +173,7 @@ class UsersController extends Controller
             'role' => $role,
         ]);
 
+        storeLog($user->name . "'s role was changed to ".$user->role." by ".session('name'));
         session()->flash('action', 'updated');
         return back();
     }
@@ -209,13 +220,14 @@ class UsersController extends Controller
         ]);
         Mail::to($user->email)->queue(new AcceptedMail($user->name));
 
+        storeLog($user->name . "'s account was approved by ".session('name'));
         return back();
     }
 
     public function decline(User $user){
         Mail::to($user->email)->queue(new DeclinedMail($user->name));
         $user->delete();
-        
+        storeLog($user->name . "'s account was declined by ".session('name'));
         return back();
     }
 

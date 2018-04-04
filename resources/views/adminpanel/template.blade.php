@@ -31,6 +31,7 @@
                             <a href="/admin-panel/users/" class="list-group-item {{ adminSetActive3('admin-panel/users') }}">Users</a>
                             <a href="/admin-panel/registration-requests/" class="list-group-item {{ adminSetActive3('admin-panel/registration-requests') }}">Registration Requests {{ countRegistrationRequests() }}</a>
                             <a href="/admin-panel/message-queries/" class="list-group-item {{ adminSetActive3('admin-panel/message-queries') }}">Message Queries</a>
+                            <a href="/admin-panel/system-logs/" class="list-group-item {{ adminSetActive3('admin-panel/system-logs') }}">System Logs</a>
                         </div>
                     </div>
                 </div>

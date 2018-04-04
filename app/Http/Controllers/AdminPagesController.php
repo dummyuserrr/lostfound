@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use App\MessageQuery;
+use App\Log;
 
 class AdminPagesController extends Controller
 {
@@ -48,5 +49,11 @@ class AdminPagesController extends Controller
         $mq = new MessageQuery;
         $mqs = $mq->orderBy('created_at', 'desc')->get();
         return view('adminpanel.messageQueries', compact('mqs'));
+    }
+
+    public function systemLogs(){
+        $l = new Log;
+        $logs = $l->orderBy('created_at', 'desc')->get();
+        return view('adminpanel.systemLogs', compact('logs'));
     }
 }

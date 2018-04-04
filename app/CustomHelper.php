@@ -7,6 +7,13 @@ use App\User;
 use App\LostItem;
 use App\FoundItem;
 use App\Rating;
+use App\Log;
+
+function storeLog($log){
+    $l = new Log;
+    $l->body = $log;
+    $l->save();
+}
 
 function countRegistrationRequests(){
     $u = new User;

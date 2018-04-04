@@ -1,20 +1,8 @@
 Things to be revised:
 
-<!-- / 1. Change About Us to: To ensure every item of lost property is matched and sent back to its lawful owner as quickly and as efficiently as possible. Create an innovative and constantly evolving online ecosystem to enable losers of property to be matched to finders of property for free. -->
-<!-- / 2. Nakagawa na ako ng email kuya. Ang gagamitin is fhoebecastillo@gmail.com -->
-<!-- pw: jason101217 -->
-<!-- 3. Pwede bang palagyan ng "Message Us" sa taas kung sakaling may mga suggestions or may sasabihin ang user? -->
-<!-- / 4.Badwords are forbidden in comments and in private conversations. -->
-<!-- 5.Pag nag-aapprove may mga errors pong lumalabas. -->
-<!-- 6.Superadmin can only delete user and admin accounts. Hindi daw dapat nakakapag edit ang admin or superadmin kasi privacy daw yun ng user. -->
 7.Dapat may notification din ang user para kung sakaling may magcomment po, alam niya po.
 8.Tanggalin nalang yung filter na "Pangasinan Only" papalitan nalang mga categories sa mismong pagpopost'an kasi kailangan daw naming maifeature na Pangasinan lang ang cover namin.
-<!-- 9.Ikacount lang yong retrieved. Hindi na maviview. Bale pag naretrieve na 'yong item automatic na yun na magkacount pero hindi na siya mavieview. Bale ang makakapagview nalang is si superadmin. -->
-<!-- 10. Pag nakalog-in po, may nakalagay na name sa taas para alam kung sino nakalog-in. -->
-<!-- 11. Pag may nagmessage po, kailangan may nakalagay na number para alam kung sino yung nagmessage. Parang notfication din dun sa may conversations po. -->
-<!-- 12. 'Yong sa ratings po, gawin nalang pong star haha. -->
-<!-- 13. Add Forgot Password feature -->
-<!-- 14. Send email when deleting a user -->
+
 15. Add Time Lost in fields
 
 1) Done
@@ -37,7 +25,7 @@ Fix registration error bug
 
 New Revisions:
 1.	Ruling in giving password.
-2.	Monitoring of all user activities. ( Kunwari po naglogin si user, nagpost po, nagdelete or nagcomment)
+2.	Monitoring of all user activities. (Kunwari po naglogin si user, nagpost po, nagdelete or nagcomment)
 3.	Identification of dummy accounts.
 4.	Filtering of lost items.
 5.	Verification of rightful owner.
@@ -64,3 +52,15 @@ New Revisions:
 
 Note: 
 Reach 90 days then delete na
+
+New ulit:
+1.	Facebook type about old missing lost or found items or person. ( Magsesend po kami ng screenshot kung papano po yung format. Bale ito po yung alternative po naming sa featured lost and found.)
+2.	Sa registration field po, okay lang daw po mamili ang user kung phone number po ba or email po. Bale pag email ang hindi nalagyan sa field po as long as may phone number na nailagay, okay lang po.
+3.	Ruling of username and password.
+4.	Pag nagpost po, pag may nagpost po ng parehong picture, description, date and time po, hindi po tatanggapin para maiwasan po ang duplication of posts sa lost lang po.
+5.	Users activity log. Para mamonitor po ng mga admins ang mga activity logs po ng users.
+6.	(Magsesend po kami ulit ng picture po) Bale pagkaopen po ng homepage, may makikita pong mga long lost post sa gilid.
+7.	Yung sa registration po ulit, Change name to: First Name, Lastname, Middle Name.
+8.	Accepts multiple photos in lost or found.
+9.	Regarding po sa retrieved, makikita po ulit pala nung user bale lahat po nung mga retrieved. Tapos po pag imamark yung mga posts na retrieved na po, malalagay po yung pangalan kung sino nakaretrieved at kung kalian na mark na retrieve tas pwede po ba maginclude ng photo po pag retrieved na yung items, for proof.
+10.	Regarding po sa upload/webcam thingy, pwede po bang dalawa ang choices nung user? Web/cam or upload photos po pero magaactivate lang po pag naverify yung user yung account gamit po ang picture ulit.
