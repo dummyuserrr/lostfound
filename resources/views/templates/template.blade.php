@@ -135,7 +135,7 @@
 						</div>
 						<div class="form_group">
 							<label>Username: <i>*</i></label>
-							<input required type="text" name="username" placeholder="johndoe">
+							<input required type="text" name="username" placeholder="johndoe (Alpha-numeric)" min="5" pattern="[a-zA-Z0-9]+">
 						</div>
 						<div class="column">
 							<div class="form_group">

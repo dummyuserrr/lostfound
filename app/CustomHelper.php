@@ -16,11 +16,13 @@ function checkPostsThenDelete(){
     if($losts){
         foreach($losts as $item){
             $item->delete();
+            storeLog('A lost item has been automatically deleted because it is older than 90 days');
         }
     }
     if($founds){
         foreach($founds as $item){
             $item->delete();
+            storeLog('A found item has been automatically deleted because it is older than 90 days');
         }
     }
 }

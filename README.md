@@ -9,7 +9,7 @@ Things to be revised:
 8) "Pangasinan Only" filter removed. Ano ipapalit sa categories?
 
 
-Fix registration error bug
+<!-- Fix registration error bug -->
 
 
 New Revisions:
@@ -30,9 +30,9 @@ New Revisions:
 
 New ulit:
 1.	Facebook type about old missing lost or found items or person. (Magsesend po kami ng screenshot kung papano po yung format. Bale ito po yung alternative po naming sa featured lost and found.)
-2.	Sa registration field po, okay lang daw po mamili ang user kung phone number po ba or email po. Bale pag email ang hindi nalagyan sa field po as long as may phone number na nailagay, okay lang po.
+<!-- 2.	Sa registration field po, okay lang daw po mamili ang user kung phone number po ba or email po. Bale pag email ang hindi nalagyan sa field po as long as may phone number na nailagay, okay lang po. -->
 3.	Ruling of username and password.
-4.	Pag nagpost po, pag may nagpost po ng parehong picture, description, date and time po, hindi po tatanggapin para maiwasan po ang duplication of posts sa lost lang po.
+<!-- 4.	Pag nagpost po, pag may nagpost po ng parehong picture, description, date and time po, hindi po tatanggapin para maiwasan po ang duplication of posts sa lost lang po. -->
 5.	Users activity log. Para mamonitor po ng mga admins ang mga activity logs po ng users.
 6.	(Magsesend po kami ulit ng picture po) Bale pagkaopen po ng homepage, may makikita pong mga long lost post sa gilid.
 7.	Yung sa registration po ulit, Change name to: First Name, Lastname, Middle Name.
