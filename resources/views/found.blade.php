@@ -55,7 +55,7 @@
 					</div>
 					<div class="form_group">
 						<label>Other Details: <i>*</i></label>
-						<textarea name="otherdetails" rows="4" required></textarea>
+						<textarea name="otherdetails" rows="8" required></textarea>
 					</div>
 					<div class="form_group" style="text-align: left; margin-top: -10px;">
 						<button style="max-width: 100px; font-size: 14px;">Post</button>

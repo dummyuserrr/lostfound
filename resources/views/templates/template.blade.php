@@ -139,18 +139,18 @@
 						<div class="column">
 							<div class="form_group">
 								<label>Password: <i>*</i></label>
-								<input required type="password" placeholder="Password" name="password">
+								<input required type="password" min="6" placeholder="Uppercase, Lowercase and Number" name="password" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$">
 							</div>
 						</div>
 						<div class="column">
 							<div class="form_group">
 								<label>Re-enter Password: <i>*</i></label>
-								<input required type="password" placeholder="Password" name="password2">
+								<input required type="password" placeholder="Re-enter Password" name="password2" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$">
 							</div>
 						</div>
 						<div class="form_group">
 							<label for="photo">Photo: <i>*</i></label>
-							<input required id="photo" type="file" name="image">
+							<input required id="photo" type="file" name="image" accept="image/*;capture=camera">
 						</div>
 						<div class="form_group">
 							<button type="submit">Register</button>

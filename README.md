@@ -5,50 +5,25 @@ Things to be revised:
 
 15. Add Time Lost in fields
 
-1) Done
-2) Done
-3) Done
-4) Done
-5) Fixed
-6) Done
 7) Okay
 8) "Pangasinan Only" filter removed. Ano ipapalit sa categories?
-9) Okay
-10) Done
-11) Okay
-12) Done
-13) Done
-14) Done
+
 
 Fix registration error bug
 
 
 New Revisions:
-1.	Ruling in giving password.
-2.	Monitoring of all user activities. (Kunwari po naglogin si user, nagpost po, nagdelete or nagcomment)
-3.	Identification of dummy accounts.
 4.	Filtering of lost items.
-5.	Verification of rightful owner.
-6.	Identification of duplicate registration.
 7.	Featured lost.
 8.	View found related items when you register or post lost items.
-9.	In searching for an item, add related items
 
 	Notify user once logged in about found items related to your lost item.
 10.	In registration, replace upload photo to image input from webcam/camera for itegrity of photo.
-11.	Resize textboxes to reasonable sizes.
 
-1. Okay
-2. Okay
-3. Admin na yung bahala dito
 4. Paanong filtering?
-5. Paanong verification?
-6. Admin na yung bahala dito
 7. Pangit. Dapat pantay pantay yung priority ng mga lost items. Sorted lang sila from latest post to old
 8. No
-9. No
 10. Okay 
-11. Okay
 
 Note: 
 Reach 90 days then delete na
