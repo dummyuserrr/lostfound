@@ -10,6 +10,8 @@
 		<link rel="stylesheet" type="text/css" href="/css/owl.theme.default.min.css">
 		<link rel="stylesheet" type="text/css" href="/font-awesome/css/font-awesome.min.css">
 		<link rel="stylesheet" type="text/css" href="/tippyjs-master/dist/tippy.css">
+		<link rel="stylesheet" type="text/css" href="/owl/dist/assets/owl.carousel.min.css">
+		<link rel="stylesheet" type="text/css" href="/owl/dist/assets/owl.theme.green.min.css">
 		<link rel="stylesheet" type="text/less" href="/css/custom.less">
 		<script type="text/javascript" src="/js/less.min.js"></script>
 	</head>
@@ -243,7 +245,7 @@
 			{{ method_field('patch') }}
 		</form>
 		<script type="text/javascript" src="/js/jquery-3.2.1.min.js"></script>
-		<script type="text/javascript" src="/js/owl.carousel.min.js"></script>
+		<script type="text/javascript" src="/owl/dist/owl.carousel.min.js"></script>
 		<script type="text/javascript" src="/tippyjs-master/dist/tippy.min.js"></script>
 		<script type="text/javascript" src="/js/actions.js"></script>
 		@if(session()->has('rated'))
