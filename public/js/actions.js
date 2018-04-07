@@ -8,7 +8,7 @@ $(document).ready(function(){
         dots: true,
         autoplayHoverPause: true,
         nav: true,
-        autoHeight: true,
+        autoHeight: false,
         navText: ["❮", "❯"]
 	});
 
