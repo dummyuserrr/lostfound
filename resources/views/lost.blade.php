@@ -188,7 +188,7 @@
 
 			@if($lostItems->where('category', 'Pet')->count() > 0)
 				<div class="grouper">
-					<p class="mini_title">Lost People</p>
+					<p class="mini_title">Lost Pet</p>
 					<div class="box-carousel owl-carousel owl-theme">				
 						@foreach($lostItems->where('category', 'Pet') as $l)
 						<div class="box">
@@ -306,7 +306,7 @@
 
 			@if($lostItems->where('category', 'Gadget')->count() > 0)
 				<div class="grouper">
-					<p class="mini_title">Lost People</p>
+					<p class="mini_title">Lost Gadget</p>
 					<div class="box-carousel owl-carousel owl-theme">				
 						@foreach($lostItems->where('category', 'Gadget') as $l)
 						<div class="box">
@@ -542,7 +542,7 @@
 
 			@if($lostItems->where('category', 'Jewelry')->count() > 0)
 				<div class="grouper">
-					<p class="mini_title">Lost People</p>
+					<p class="mini_title">Lost Jewelries</p>
 					<div class="box-carousel owl-carousel owl-theme">				
 						@foreach($lostItems->where('category', 'Jewelry') as $l)
 						<div class="box">
@@ -660,7 +660,7 @@
 
 			@if($lostItems->where('category', 'Others')->count() > 0)
 				<div class="grouper">
-					<p class="mini_title">Lost People</p>
+					<p class="mini_title">Other Lost Items</p>
 					<div class="box-carousel owl-carousel owl-theme">				
 						@foreach($lostItems->where('category', 'Others') as $l)
 						<div class="box">
