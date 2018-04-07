@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\FoundItem;
+use App\LostItem;
 use App\FoundItemImage;
 use App\User;
+use App\Notification;
 
 class FoundItemsController extends Controller
 {
@@ -38,6 +40,15 @@ class FoundItemsController extends Controller
     		$lii->found_item_id = $l->id;
     		$lii->save();
     	}
+
+        $li = new LostItem;
+        $lostItems = $li->where('category', $r->category)->get();
+        $users = [];
+        foreach($lostItems as $lostItem){
+            array_push($users, $lostItem->user_id);
+            $body = "A user has posted a found item with the category of ".$r->category;
+            storeNotification($users, $body);
+        }
 
         storeLog(session('name')." added a found item.");
 
