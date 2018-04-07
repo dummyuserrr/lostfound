@@ -25,7 +25,7 @@
 		<div class="right">
 			@if(!session()->has('status'))
 			<div class="box">
-				<p class="prompt">Error. Please <a class="btnLogin" href="javascript:;">LOGIN</a> or <a href="javascript:;" class="btnRegister">REGISTER</a> to proceed.</p>
+				<p class="prompt">Error. Please <a class="btnLogin" href="javascript:void(0);">LOGIN</a> or <a href="javascript:void(0);" class="btnRegister">REGISTER</a> to proceed.</p>
 			</div>
 			@else
 			<div class="box">

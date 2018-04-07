@@ -6,7 +6,7 @@
 		<div class="right">
 			@if(!session()->has('status'))
 			<div class="box">
-				<p class="prompt">You need to <a class="btnLogin" href="javascript:;">LOGIN</a> or <a href="javascript:;" class="btnRegister">REGISTER</a> to post your lost item</p>
+				<p class="prompt">You need to <a class="btnLogin" href="javascript:void(0);">LOGIN</a> or <a href="javascript:void(0);" class="btnRegister">REGISTER</a> to post your lost item</p>
 			</div>
 			@else
 			<div class="box">
@@ -147,7 +147,7 @@
 									@endif
 								</div>
 								<hr>
-								<p class="minititle postcomments_toggler"><a href="javascript:;">VIEW {{ $l->comments->count() }} COMMENT(S) <i class="fa fa-chevron-right" aria-hidden="true"></i></a></p>
+								<p class="minititle postcomments_toggler"><a href="javascript:void(0);">VIEW {{ $l->comments->count() }} COMMENT(S) <i class="fa fa-chevron-right" aria-hidden="true"></i></a></p>
 								<div class="post_comments">
 									@if(session()->has('status'))
 									<div class="commentbox">
@@ -158,7 +158,7 @@
 										</form>
 									</div>
 									@else
-									<p class="prompt">You need to <a class="btnLogin" href="javascript:;">LOGIN</a> or <a href="javascript:;" class="btnRegister">REGISTER</a> to post a comment</p>
+									<p class="prompt">You need to <a class="btnLogin" href="javascript:void(0);">LOGIN</a> or <a href="javascript:void(0);" class="btnRegister">REGISTER</a> to post a comment</p>
 									@endif
 									<div class="comments_holder">
 										@foreach($l->comments()->orderBy('created_at', 'desc')->get() as $comment)
@@ -168,7 +168,7 @@
 												<p class="comment">
 													<a href="/user/{{ $comment->user_id }}" class="name">{{ $comment->user->name }} </a> <span class="comment_date">&#9679; {{ $comment->created_at->diffForHumans() }}</span>
 													@if($comment->user_id == session('id') || session('role') == 'admin' || session('role') == 'superadmin')
-													<a href="javascript:;" class="deletelink" data-itemID="{{ $comment->lost_item_id }}" data-commentID="{{ $comment->id }}"><i class="fa fa-trash" aria-hidden="true"></i> Delete</a>
+													<a href="javascript:void(0);" class="deletelink" data-itemID="{{ $comment->lost_item_id }}" data-commentID="{{ $comment->id }}"><i class="fa fa-trash" aria-hidden="true"></i> Delete</a>
 													@endif
 													<span class="comment_content">
 														{{ $comment->comment }}
@@ -265,7 +265,7 @@
 									@endif
 								</div>
 								<hr>
-								<p class="minititle postcomments_toggler"><a href="javascript:;">VIEW {{ $l->comments->count() }} COMMENT(S) <i class="fa fa-chevron-right" aria-hidden="true"></i></a></p>
+								<p class="minititle postcomments_toggler"><a href="javascript:void(0);">VIEW {{ $l->comments->count() }} COMMENT(S) <i class="fa fa-chevron-right" aria-hidden="true"></i></a></p>
 								<div class="post_comments">
 									@if(session()->has('status'))
 									<div class="commentbox">
@@ -276,7 +276,7 @@
 										</form>
 									</div>
 									@else
-									<p class="prompt">You need to <a class="btnLogin" href="javascript:;">LOGIN</a> or <a href="javascript:;" class="btnRegister">REGISTER</a> to post a comment</p>
+									<p class="prompt">You need to <a class="btnLogin" href="javascript:void(0);">LOGIN</a> or <a href="javascript:void(0);" class="btnRegister">REGISTER</a> to post a comment</p>
 									@endif
 									<div class="comments_holder">
 										@foreach($l->comments()->orderBy('created_at', 'desc')->get() as $comment)
@@ -286,7 +286,7 @@
 												<p class="comment">
 													<a href="/user/{{ $comment->user_id }}" class="name">{{ $comment->user->name }} </a> <span class="comment_date">&#9679; {{ $comment->created_at->diffForHumans() }}</span>
 													@if($comment->user_id == session('id') || session('role') == 'admin' || session('role') == 'superadmin')
-													<a href="javascript:;" class="deletelink" data-itemID="{{ $comment->lost_item_id }}" data-commentID="{{ $comment->id }}"><i class="fa fa-trash" aria-hidden="true"></i> Delete</a>
+													<a href="javascript:void(0);" class="deletelink" data-itemID="{{ $comment->lost_item_id }}" data-commentID="{{ $comment->id }}"><i class="fa fa-trash" aria-hidden="true"></i> Delete</a>
 													@endif
 													<span class="comment_content">
 														{{ $comment->comment }}
@@ -383,7 +383,7 @@
 									@endif
 								</div>
 								<hr>
-								<p class="minititle postcomments_toggler"><a href="javascript:;">VIEW {{ $l->comments->count() }} COMMENT(S) <i class="fa fa-chevron-right" aria-hidden="true"></i></a></p>
+								<p class="minititle postcomments_toggler"><a href="javascript:void(0);">VIEW {{ $l->comments->count() }} COMMENT(S) <i class="fa fa-chevron-right" aria-hidden="true"></i></a></p>
 								<div class="post_comments">
 									@if(session()->has('status'))
 									<div class="commentbox">
@@ -394,7 +394,7 @@
 										</form>
 									</div>
 									@else
-									<p class="prompt">You need to <a class="btnLogin" href="javascript:;">LOGIN</a> or <a href="javascript:;" class="btnRegister">REGISTER</a> to post a comment</p>
+									<p class="prompt">You need to <a class="btnLogin" href="javascript:void(0);">LOGIN</a> or <a href="javascript:void(0);" class="btnRegister">REGISTER</a> to post a comment</p>
 									@endif
 									<div class="comments_holder">
 										@foreach($l->comments()->orderBy('created_at', 'desc')->get() as $comment)
@@ -404,7 +404,7 @@
 												<p class="comment">
 													<a href="/user/{{ $comment->user_id }}" class="name">{{ $comment->user->name }} </a> <span class="comment_date">&#9679; {{ $comment->created_at->diffForHumans() }}</span>
 													@if($comment->user_id == session('id') || session('role') == 'admin' || session('role') == 'superadmin')
-													<a href="javascript:;" class="deletelink" data-itemID="{{ $comment->lost_item_id }}" data-commentID="{{ $comment->id }}"><i class="fa fa-trash" aria-hidden="true"></i> Delete</a>
+													<a href="javascript:void(0);" class="deletelink" data-itemID="{{ $comment->lost_item_id }}" data-commentID="{{ $comment->id }}"><i class="fa fa-trash" aria-hidden="true"></i> Delete</a>
 													@endif
 													<span class="comment_content">
 														{{ $comment->comment }}
@@ -501,7 +501,7 @@
 									@endif
 								</div>
 								<hr>
-								<p class="minititle postcomments_toggler"><a href="javascript:;">VIEW {{ $l->comments->count() }} COMMENT(S) <i class="fa fa-chevron-right" aria-hidden="true"></i></a></p>
+								<p class="minititle postcomments_toggler"><a href="javascript:void(0);">VIEW {{ $l->comments->count() }} COMMENT(S) <i class="fa fa-chevron-right" aria-hidden="true"></i></a></p>
 								<div class="post_comments">
 									@if(session()->has('status'))
 									<div class="commentbox">
@@ -512,7 +512,7 @@
 										</form>
 									</div>
 									@else
-									<p class="prompt">You need to <a class="btnLogin" href="javascript:;">LOGIN</a> or <a href="javascript:;" class="btnRegister">REGISTER</a> to post a comment</p>
+									<p class="prompt">You need to <a class="btnLogin" href="javascript:void(0);">LOGIN</a> or <a href="javascript:void(0);" class="btnRegister">REGISTER</a> to post a comment</p>
 									@endif
 									<div class="comments_holder">
 										@foreach($l->comments()->orderBy('created_at', 'desc')->get() as $comment)
@@ -522,7 +522,7 @@
 												<p class="comment">
 													<a href="/user/{{ $comment->user_id }}" class="name">{{ $comment->user->name }} </a> <span class="comment_date">&#9679; {{ $comment->created_at->diffForHumans() }}</span>
 													@if($comment->user_id == session('id') || session('role') == 'admin' || session('role') == 'superadmin')
-													<a href="javascript:;" class="deletelink" data-itemID="{{ $comment->lost_item_id }}" data-commentID="{{ $comment->id }}"><i class="fa fa-trash" aria-hidden="true"></i> Delete</a>
+													<a href="javascript:void(0);" class="deletelink" data-itemID="{{ $comment->lost_item_id }}" data-commentID="{{ $comment->id }}"><i class="fa fa-trash" aria-hidden="true"></i> Delete</a>
 													@endif
 													<span class="comment_content">
 														{{ $comment->comment }}
@@ -619,7 +619,7 @@
 									@endif
 								</div>
 								<hr>
-								<p class="minititle postcomments_toggler"><a href="javascript:;">VIEW {{ $l->comments->count() }} COMMENT(S) <i class="fa fa-chevron-right" aria-hidden="true"></i></a></p>
+								<p class="minititle postcomments_toggler"><a href="javascript:void(0);">VIEW {{ $l->comments->count() }} COMMENT(S) <i class="fa fa-chevron-right" aria-hidden="true"></i></a></p>
 								<div class="post_comments">
 									@if(session()->has('status'))
 									<div class="commentbox">
@@ -630,7 +630,7 @@
 										</form>
 									</div>
 									@else
-									<p class="prompt">You need to <a class="btnLogin" href="javascript:;">LOGIN</a> or <a href="javascript:;" class="btnRegister">REGISTER</a> to post a comment</p>
+									<p class="prompt">You need to <a class="btnLogin" href="javascript:void(0);">LOGIN</a> or <a href="javascript:void(0);" class="btnRegister">REGISTER</a> to post a comment</p>
 									@endif
 									<div class="comments_holder">
 										@foreach($l->comments()->orderBy('created_at', 'desc')->get() as $comment)
@@ -640,7 +640,7 @@
 												<p class="comment">
 													<a href="/user/{{ $comment->user_id }}" class="name">{{ $comment->user->name }} </a> <span class="comment_date">&#9679; {{ $comment->created_at->diffForHumans() }}</span>
 													@if($comment->user_id == session('id') || session('role') == 'admin' || session('role') == 'superadmin')
-													<a href="javascript:;" class="deletelink" data-itemID="{{ $comment->lost_item_id }}" data-commentID="{{ $comment->id }}"><i class="fa fa-trash" aria-hidden="true"></i> Delete</a>
+													<a href="javascript:void(0);" class="deletelink" data-itemID="{{ $comment->lost_item_id }}" data-commentID="{{ $comment->id }}"><i class="fa fa-trash" aria-hidden="true"></i> Delete</a>
 													@endif
 													<span class="comment_content">
 														{{ $comment->comment }}
@@ -737,7 +737,7 @@
 									@endif
 								</div>
 								<hr>
-								<p class="minititle postcomments_toggler"><a href="javascript:;">VIEW {{ $l->comments->count() }} COMMENT(S) <i class="fa fa-chevron-right" aria-hidden="true"></i></a></p>
+								<p class="minititle postcomments_toggler"><a href="javascript:void(0);">VIEW {{ $l->comments->count() }} COMMENT(S) <i class="fa fa-chevron-right" aria-hidden="true"></i></a></p>
 								<div class="post_comments">
 									@if(session()->has('status'))
 									<div class="commentbox">
@@ -748,7 +748,7 @@
 										</form>
 									</div>
 									@else
-									<p class="prompt">You need to <a class="btnLogin" href="javascript:;">LOGIN</a> or <a href="javascript:;" class="btnRegister">REGISTER</a> to post a comment</p>
+									<p class="prompt">You need to <a class="btnLogin" href="javascript:void(0);">LOGIN</a> or <a href="javascript:void(0);" class="btnRegister">REGISTER</a> to post a comment</p>
 									@endif
 									<div class="comments_holder">
 										@foreach($l->comments()->orderBy('created_at', 'desc')->get() as $comment)
@@ -758,7 +758,7 @@
 												<p class="comment">
 													<a href="/user/{{ $comment->user_id }}" class="name">{{ $comment->user->name }} </a> <span class="comment_date">&#9679; {{ $comment->created_at->diffForHumans() }}</span>
 													@if($comment->user_id == session('id') || session('role') == 'admin' || session('role') == 'superadmin')
-													<a href="javascript:;" class="deletelink" data-itemID="{{ $comment->lost_item_id }}" data-commentID="{{ $comment->id }}"><i class="fa fa-trash" aria-hidden="true"></i> Delete</a>
+													<a href="javascript:void(0);" class="deletelink" data-itemID="{{ $comment->lost_item_id }}" data-commentID="{{ $comment->id }}"><i class="fa fa-trash" aria-hidden="true"></i> Delete</a>
 													@endif
 													<span class="comment_content">
 														{{ $comment->comment }}
