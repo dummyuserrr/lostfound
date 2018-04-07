@@ -15,6 +15,10 @@ class FoundItemCommentsController extends Controller
 		$comment->user_id = session('id');
 		$comment->comment = $r->comment;
 		$comment->save();
+
+		$foundItem_user = $item->user_id;
+		$body = 'A user has commented on your posted item named '.$item->name;
+		storeNotification($foundItem_user, $body);
 		return view('templates.found_items_comments', compact('comment'));
 	}
 

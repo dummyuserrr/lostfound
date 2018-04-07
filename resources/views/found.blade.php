@@ -70,12 +70,12 @@
 			
 			@if($foundItems->where('category', 'Person')->count() > 0)
 				<div class="grouper">
-					<p class="mini_title">Lost People</p>
+					<p class="mini_title">Found People</p>
 					<div class="box-carousel owl-carousel owl-theme">				
 						@foreach($foundItems->where('category', 'Person') as $l)
 						<div class="box">
 							@if($l->user_id == session('id') || session('role') == 'admin' || session('role') == 'superadmin')
-							<div class="markAsFound" data-type="lost" title="Mark as Retrieved" data-itemID="{{ $l->id }}">
+							<div class="markAsFound" data-type="found" title="Mark as Retrieved" data-itemID="{{ $l->id }}">
 								<i class="fa fa-check-circle-o" aria-hidden="true"></i>
 							</div>
 							<div class="deletebutton" title="Delete this post" onclick="setDeleteTarget('{{ $l->id }}')">
@@ -149,7 +149,7 @@
 								<div class="post_comments">
 									@if(session()->has('status'))
 									<div class="commentbox">
-										<form method="post" action="/lost-something/{{ $l->id }}/comment/add" class="comment_form">
+										<form method="post" action="/found-something/{{ $l->id }}/comment/add" class="comment_form">
 											{{ csrf_field() }}
 											<textarea name="comment" rows="3" placeholder="Add a comment..." required></textarea>
 											<button type="submit" class="comment_submit_button">Submit</button>
@@ -166,7 +166,7 @@
 												<p class="comment">
 													<a href="/user/{{ $comment->user_id }}" class="name">{{ $comment->user->name }} </a> <span class="comment_date">&#9679; {{ $comment->created_at->diffForHumans() }}</span>
 													@if($comment->user_id == session('id') || session('role') == 'admin' || session('role') == 'superadmin')
-													<a href="javascript:void(0);" class="deletelink" data-itemID="{{ $comment->lost_item_id }}" data-commentID="{{ $comment->id }}"><i class="fa fa-trash" aria-hidden="true"></i> Delete</a>
+													<a href="javascript:void(0);" class="deletelink" data-itemID="{{ $comment->found_item_id }}" data-commentID="{{ $comment->id }}"><i class="fa fa-trash" aria-hidden="true"></i> Delete</a>
 													@endif
 													<span class="comment_content">
 														{{ $comment->comment }}
@@ -186,12 +186,12 @@
 
 			@if($foundItems->where('category', 'Pet')->count() > 0)
 				<div class="grouper">
-					<p class="mini_title">Lost People</p>
+					<p class="mini_title">Found Pet</p>
 					<div class="box-carousel owl-carousel owl-theme">				
 						@foreach($foundItems->where('category', 'Pet') as $l)
 						<div class="box">
 							@if($l->user_id == session('id') || session('role') == 'admin' || session('role') == 'superadmin')
-							<div class="markAsFound" data-type="lost" title="Mark as Retrieved" data-itemID="{{ $l->id }}">
+							<div class="markAsFound" data-type="found" title="Mark as Retrieved" data-itemID="{{ $l->id }}">
 								<i class="fa fa-check-circle-o" aria-hidden="true"></i>
 							</div>
 							<div class="deletebutton" title="Delete this post" onclick="setDeleteTarget('{{ $l->id }}')">
@@ -265,7 +265,7 @@
 								<div class="post_comments">
 									@if(session()->has('status'))
 									<div class="commentbox">
-										<form method="post" action="/lost-something/{{ $l->id }}/comment/add" class="comment_form">
+										<form method="post" action="/found-something/{{ $l->id }}/comment/add" class="comment_form">
 											{{ csrf_field() }}
 											<textarea name="comment" rows="3" placeholder="Add a comment..." required></textarea>
 											<button type="submit" class="comment_submit_button">Submit</button>
@@ -282,7 +282,7 @@
 												<p class="comment">
 													<a href="/user/{{ $comment->user_id }}" class="name">{{ $comment->user->name }} </a> <span class="comment_date">&#9679; {{ $comment->created_at->diffForHumans() }}</span>
 													@if($comment->user_id == session('id') || session('role') == 'admin' || session('role') == 'superadmin')
-													<a href="javascript:void(0);" class="deletelink" data-itemID="{{ $comment->lost_item_id }}" data-commentID="{{ $comment->id }}"><i class="fa fa-trash" aria-hidden="true"></i> Delete</a>
+													<a href="javascript:void(0);" class="deletelink" data-itemID="{{ $comment->found_item_id }}" data-commentID="{{ $comment->id }}"><i class="fa fa-trash" aria-hidden="true"></i> Delete</a>
 													@endif
 													<span class="comment_content">
 														{{ $comment->comment }}
@@ -302,12 +302,12 @@
 
 			@if($foundItems->where('category', 'Gadget')->count() > 0)
 				<div class="grouper">
-					<p class="mini_title">Lost People</p>
+					<p class="mini_title">Found Gadget</p>
 					<div class="box-carousel owl-carousel owl-theme">				
 						@foreach($foundItems->where('category', 'Gadget') as $l)
 						<div class="box">
 							@if($l->user_id == session('id') || session('role') == 'admin' || session('role') == 'superadmin')
-							<div class="markAsFound" data-type="lost" title="Mark as Retrieved" data-itemID="{{ $l->id }}">
+							<div class="markAsFound" data-type="found" title="Mark as Retrieved" data-itemID="{{ $l->id }}">
 								<i class="fa fa-check-circle-o" aria-hidden="true"></i>
 							</div>
 							<div class="deletebutton" title="Delete this post" onclick="setDeleteTarget('{{ $l->id }}')">
@@ -381,7 +381,7 @@
 								<div class="post_comments">
 									@if(session()->has('status'))
 									<div class="commentbox">
-										<form method="post" action="/lost-something/{{ $l->id }}/comment/add" class="comment_form">
+										<form method="post" action="/found-something/{{ $l->id }}/comment/add" class="comment_form">
 											{{ csrf_field() }}
 											<textarea name="comment" rows="3" placeholder="Add a comment..." required></textarea>
 											<button type="submit" class="comment_submit_button">Submit</button>
@@ -398,7 +398,7 @@
 												<p class="comment">
 													<a href="/user/{{ $comment->user_id }}" class="name">{{ $comment->user->name }} </a> <span class="comment_date">&#9679; {{ $comment->created_at->diffForHumans() }}</span>
 													@if($comment->user_id == session('id') || session('role') == 'admin' || session('role') == 'superadmin')
-													<a href="javascript:void(0);" class="deletelink" data-itemID="{{ $comment->lost_item_id }}" data-commentID="{{ $comment->id }}"><i class="fa fa-trash" aria-hidden="true"></i> Delete</a>
+													<a href="javascript:void(0);" class="deletelink" data-itemID="{{ $comment->found_item_id }}" data-commentID="{{ $comment->id }}"><i class="fa fa-trash" aria-hidden="true"></i> Delete</a>
 													@endif
 													<span class="comment_content">
 														{{ $comment->comment }}
@@ -418,12 +418,12 @@
 
 			@if($foundItems->where('category', 'License (ID, Passport, etc)')->count() > 0)
 				<div class="grouper">
-					<p class="mini_title">Lost Licenses (ID, Passport, etc)</p>
+					<p class="mini_title">Found Licenses (ID, Passport, etc)</p>
 					<div class="box-carousel owl-carousel owl-theme">				
 						@foreach($foundItems->where('category', 'License (ID, Passport, etc)') as $l)
 						<div class="box">
 							@if($l->user_id == session('id') || session('role') == 'admin' || session('role') == 'superadmin')
-							<div class="markAsFound" data-type="lost" title="Mark as Retrieved" data-itemID="{{ $l->id }}">
+							<div class="markAsFound" data-type="found" title="Mark as Retrieved" data-itemID="{{ $l->id }}">
 								<i class="fa fa-check-circle-o" aria-hidden="true"></i>
 							</div>
 							<div class="deletebutton" title="Delete this post" onclick="setDeleteTarget('{{ $l->id }}')">
@@ -497,7 +497,7 @@
 								<div class="post_comments">
 									@if(session()->has('status'))
 									<div class="commentbox">
-										<form method="post" action="/lost-something/{{ $l->id }}/comment/add" class="comment_form">
+										<form method="post" action="/found-something/{{ $l->id }}/comment/add" class="comment_form">
 											{{ csrf_field() }}
 											<textarea name="comment" rows="3" placeholder="Add a comment..." required></textarea>
 											<button type="submit" class="comment_submit_button">Submit</button>
@@ -514,7 +514,7 @@
 												<p class="comment">
 													<a href="/user/{{ $comment->user_id }}" class="name">{{ $comment->user->name }} </a> <span class="comment_date">&#9679; {{ $comment->created_at->diffForHumans() }}</span>
 													@if($comment->user_id == session('id') || session('role') == 'admin' || session('role') == 'superadmin')
-													<a href="javascript:void(0);" class="deletelink" data-itemID="{{ $comment->lost_item_id }}" data-commentID="{{ $comment->id }}"><i class="fa fa-trash" aria-hidden="true"></i> Delete</a>
+													<a href="javascript:void(0);" class="deletelink" data-itemID="{{ $comment->found_item_id }}" data-commentID="{{ $comment->id }}"><i class="fa fa-trash" aria-hidden="true"></i> Delete</a>
 													@endif
 													<span class="comment_content">
 														{{ $comment->comment }}
@@ -534,12 +534,12 @@
 
 			@if($foundItems->where('category', 'Jewelry')->count() > 0)
 				<div class="grouper">
-					<p class="mini_title">Lost People</p>
+					<p class="mini_title">Found Jewelries</p>
 					<div class="box-carousel owl-carousel owl-theme">				
 						@foreach($foundItems->where('category', 'Jewelry') as $l)
 						<div class="box">
 							@if($l->user_id == session('id') || session('role') == 'admin' || session('role') == 'superadmin')
-							<div class="markAsFound" data-type="lost" title="Mark as Retrieved" data-itemID="{{ $l->id }}">
+							<div class="markAsFound" data-type="found" title="Mark as Retrieved" data-itemID="{{ $l->id }}">
 								<i class="fa fa-check-circle-o" aria-hidden="true"></i>
 							</div>
 							<div class="deletebutton" title="Delete this post" onclick="setDeleteTarget('{{ $l->id }}')">
@@ -613,7 +613,7 @@
 								<div class="post_comments">
 									@if(session()->has('status'))
 									<div class="commentbox">
-										<form method="post" action="/lost-something/{{ $l->id }}/comment/add" class="comment_form">
+										<form method="post" action="/found-something/{{ $l->id }}/comment/add" class="comment_form">
 											{{ csrf_field() }}
 											<textarea name="comment" rows="3" placeholder="Add a comment..." required></textarea>
 											<button type="submit" class="comment_submit_button">Submit</button>
@@ -630,7 +630,7 @@
 												<p class="comment">
 													<a href="/user/{{ $comment->user_id }}" class="name">{{ $comment->user->name }} </a> <span class="comment_date">&#9679; {{ $comment->created_at->diffForHumans() }}</span>
 													@if($comment->user_id == session('id') || session('role') == 'admin' || session('role') == 'superadmin')
-													<a href="javascript:void(0);" class="deletelink" data-itemID="{{ $comment->lost_item_id }}" data-commentID="{{ $comment->id }}"><i class="fa fa-trash" aria-hidden="true"></i> Delete</a>
+													<a href="javascript:void(0);" class="deletelink" data-itemID="{{ $comment->found_item_id }}" data-commentID="{{ $comment->id }}"><i class="fa fa-trash" aria-hidden="true"></i> Delete</a>
 													@endif
 													<span class="comment_content">
 														{{ $comment->comment }}
@@ -650,12 +650,12 @@
 
 			@if($foundItems->where('category', 'Others')->count() > 0)
 				<div class="grouper">
-					<p class="mini_title">Lost People</p>
+					<p class="mini_title">Other Found Items</p>
 					<div class="box-carousel owl-carousel owl-theme">				
 						@foreach($foundItems->where('category', 'Others') as $l)
 						<div class="box">
 							@if($l->user_id == session('id') || session('role') == 'admin' || session('role') == 'superadmin')
-							<div class="markAsFound" data-type="lost" title="Mark as Retrieved" data-itemID="{{ $l->id }}">
+							<div class="markAsFound" data-type="found" title="Mark as Retrieved" data-itemID="{{ $l->id }}">
 								<i class="fa fa-check-circle-o" aria-hidden="true"></i>
 							</div>
 							<div class="deletebutton" title="Delete this post" onclick="setDeleteTarget('{{ $l->id }}')">
@@ -729,7 +729,7 @@
 								<div class="post_comments">
 									@if(session()->has('status'))
 									<div class="commentbox">
-										<form method="post" action="/lost-something/{{ $l->id }}/comment/add" class="comment_form">
+										<form method="post" action="/found-something/{{ $l->id }}/comment/add" class="comment_form">
 											{{ csrf_field() }}
 											<textarea name="comment" rows="3" placeholder="Add a comment..." required></textarea>
 											<button type="submit" class="comment_submit_button">Submit</button>
@@ -746,7 +746,7 @@
 												<p class="comment">
 													<a href="/user/{{ $comment->user_id }}" class="name">{{ $comment->user->name }} </a> <span class="comment_date">&#9679; {{ $comment->created_at->diffForHumans() }}</span>
 													@if($comment->user_id == session('id') || session('role') == 'admin' || session('role') == 'superadmin')
-													<a href="javascript:void(0);" class="deletelink" data-itemID="{{ $comment->lost_item_id }}" data-commentID="{{ $comment->id }}"><i class="fa fa-trash" aria-hidden="true"></i> Delete</a>
+													<a href="javascript:void(0);" class="deletelink" data-itemID="{{ $comment->found_item_id }}" data-commentID="{{ $comment->id }}"><i class="fa fa-trash" aria-hidden="true"></i> Delete</a>
 													@endif
 													<span class="comment_content">
 														{{ $comment->comment }}
