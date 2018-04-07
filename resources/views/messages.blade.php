@@ -6,7 +6,6 @@
 			<div class="box">
 				<div class="header">Conversations ({{ $myParticipations->count()}})</div>
 				<div class="conversations_container">
-					<a href="/messages/notifications">missingZ Notifications</a>
 					@if($myParticipations->count() > 0)
 						@foreach($myParticipations as $myParticipation)
 							@if($user == NULL)
