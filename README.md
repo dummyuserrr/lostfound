@@ -3,7 +3,7 @@ Things to be revised:
 7.Dapat may notification din ang user para kung sakaling may magcomment po, alam niya po.
 8.Tanggalin nalang yung filter na "Pangasinan Only" papalitan nalang mga categories sa mismong pagpopost'an kasi kailangan daw naming maifeature na Pangasinan lang ang cover namin.
 
-15. Add Time Lost in fields
+<!-- 15. Add Time Lost in fields -->
 
 7) Okay
 8) "Pangasinan Only" filter removed. Ano ipapalit sa categories?

@@ -52,7 +52,7 @@ class LostItemsController extends Controller
 
         storeLog(session('name')." added a new lost item.");
 
-        sendSMS('lost');
+        // sendSMS('lost');
     	return back();
     }
 

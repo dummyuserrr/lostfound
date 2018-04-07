@@ -52,7 +52,7 @@ class FoundItemsController extends Controller
 
         storeLog(session('name')." added a found item.");
 
-        sendSMS('found');
+        // sendSMS('found');
     	return back();
     }
 
