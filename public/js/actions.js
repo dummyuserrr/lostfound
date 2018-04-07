@@ -1,4 +1,17 @@
 $(document).ready(function(){
+
+	$('.box-carousel').owlCarousel({
+		margin: 10,
+        loop: false,
+        items: 1,
+        autoplay: false,
+        dots: true,
+        autoplayHoverPause: true,
+        nav: true,
+        autoHeight: true,
+        navText: ["❮", "❯"]
+	});
+
 	$.ajaxSetup({
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
