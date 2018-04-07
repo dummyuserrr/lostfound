@@ -6,7 +6,7 @@
 	{{ csrf_field() }}
 	<div class="form-group">
 		<label for="name">Name:</label>
-		<input type="name" class="form-control" id="name" placeholder="Enter name" name="name" required>
+		<input type="name" class="form-control" id="name" placeholder="Enter name" name="name" required >
 	</div>
 	<div class="form-group">
 		<label for="email">Email address:</label>
@@ -22,15 +22,15 @@
 	</div>
 	<div class="form-group">
 		<label for="username">Username:</label>
-		<input type="text" class="form-control" id="username" placeholder="Enter username" name="username" required>
+		<input type="text" class="form-control" id="username" placeholder="johndoe (Alpha-numeric)" name="username" required pattern="[a-zA-Z0-9]+">
 	</div>
 	<div class="form-group">
 		<label for="pwd">Password:</label>
-		<input type="password" class="form-control" id="pwd" placeholder="Enter password" name="password" required>
+		<input type="password" class="form-control" id="pwd" placeholder="Uppercase, Lowercase and Number" name="password" required pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$">
 	</div>
 	<div class="form-group">
 		<label for="pwd2">Retype Password:</label>
-		<input type="password" class="form-control" id="pwd2" placeholder="Retype password" name="password2" required>
+		<input type="password" class="form-control" id="pwd2" placeholder="Retype password" name="password2" required pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$">
 	</div>
 	<div class="form-group">
 		<label for="image">Photo:</label>
