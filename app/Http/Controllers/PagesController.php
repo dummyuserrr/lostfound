@@ -54,7 +54,7 @@ class PagesController extends Controller
 
     public function notifications(){
         $n = new Notification;
-        $notifications = $n->where('user_id', session('id'))->get();
+        $notifications = $n->where('user_id', session('id'))->orderBy('created_at', 'desc')->get();
         if(count($notifications) > 0){
             foreach($notifications as $not){
                 $not->update([

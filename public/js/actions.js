@@ -238,6 +238,9 @@ $('.btnMyAccount').click(function(){
 $('.btnMessages').click(function(){
 	window.location.assign('/messages');
 });
+$('.btnNotifications').click(function(){
+	window.location.assign('/notifications');
+});
 $('.btnAdminpanel').click(function(){
 	window.location.assign('/admin-panel');
 });

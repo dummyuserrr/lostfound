@@ -113,17 +113,25 @@ function countUnreadMessages(){
     $count = 0;
     $p = new Participation;
     $myParticipations = $p->where('user_id', session('id'))->get();
-    $n = new Notification; 
-    $notifications = $n->where('user_id', session('id'))->get();
-    if(count($myParticipations) > 0 || count($notifications) > 0){
+    if(count($myParticipations) > 0){
         foreach($myParticipations as $myParticipation){
             $messagesCount = $messagesCount + $myParticipation->conversation->messages->where('user_id', '!=', session('id'))->where('seenby', '!=', session('id'))->count();
         }
-        if($messagesCount == 0 && count($notifications) == 0){
+        if($messagesCount == 0){
             return '';
         }else{
-            return $messagesCount + count($notifications);
+            return $messagesCount;
         }
+    }else{
+        return '';
+    }
+}
+
+function countNotifications(){
+    $n = new Notification; 
+    $notificationsCount = $n->where('user_id', session('id'))->where('read', 0)->count();
+    if($notificationsCount > 0){
+        return $notificationsCount;
     }else{
         return '';
     }
