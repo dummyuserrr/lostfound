@@ -213,7 +213,7 @@ $('#deleteFormComment').on('submit', function(e){
 		cache: false,      
 		processData:false,       
 		beforeSend: function(data){
-
+			
 		},
 		success: function(data){
 			if(request.responseText == 1){
