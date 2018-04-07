@@ -103,10 +103,12 @@ class UsersController extends Controller
             'password' => 'required',
             'password2' => 'same:password',
             'image' => 'required|mimes:jpeg,bmp,png,jpg',
+            'selfie' => 'required|mimes:jpeg,bmp,png,jpg',
         ]);
 
         $password = md5(hash('sha512', $r->password).hash('ripemd160', $r->password).md5("strongest"));
         $image = $r->image->store('uploads/images');
+        $selfie = $r->selfie->store('uploads/images');
 
         $u = new User;
         $u->name = $r->name;
@@ -116,6 +118,7 @@ class UsersController extends Controller
         $u->username = $r->username;
         $u->password = $password;
         $u->image = $image;
+        $u->selfie = $selfie;
         $u->save();
 
         storeLog($u->name . " has registered");

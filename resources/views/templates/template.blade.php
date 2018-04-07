@@ -148,9 +148,17 @@
 								<input required type="password" placeholder="Re-enter Password" name="password2" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$">
 							</div>
 						</div>
-						<div class="form_group">
-							<label for="photo">Photo: <i>*</i></label>
-							<input required id="photo" type="file" name="image" accept="image/*;capture=camera">
+						<div class="column">
+							<div class="form_group">
+								<label for="photo">Photo: <i>*</i></label>
+								<input required id="photo" type="file" name="image">
+							</div>
+						</div>
+						<div class="column">
+							<div class="form_group">
+								<label for="selfie">Selfie with ID: (for verification) <i>*</i></label>
+								<input required id="selfie" type="file" name="selfie" accept="image/*;capture=camera">
+							</div>
 						</div>
 						<div class="form_group">
 							<button type="submit">Register</button>

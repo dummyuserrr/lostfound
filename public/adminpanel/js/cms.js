@@ -30,6 +30,7 @@ $('.userView').click(function(){
 	var mobile = $(this).data('mobile');
 	var address = $(this).data('address');
 	var image = $(this).data('image');
+	var selfie = $(this).data('selfie');
 
 	var v = $('#userViewModal');
 	v.find('#name').val(name);
@@ -37,4 +38,5 @@ $('.userView').click(function(){
 	v.find('#mobile').val(mobile);
 	v.find('#address').val(address);
 	v.find('#image').attr('src', '/'+image);
+	v.find('#selfie').attr('src', '/'+selfie);
 });

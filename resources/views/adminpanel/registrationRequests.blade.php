@@ -17,7 +17,7 @@
 			<td>
 				<div class="btn-group">
 					<button type="button" class="btn btn-primary btnApproveUser" data-url="/admin-panel/registration-requests/{{ $user->id }}/approve">Approve</button>
-					<button type="button" class="userView btn btn-warning" data-toggle="modal" data-target="#userViewModal" data-name="{{ $user->name }}" data-email="{{ $user->email }}" data-mobile="{{ $user->mobile }}" data-address="{{ $user->address }}" data-image="{{ $user->image }}">View</button>
+					<button type="button" class="userView btn btn-warning" data-toggle="modal" data-target="#userViewModal" data-name="{{ $user->name }}" data-email="{{ $user->email }}" data-mobile="{{ $user->mobile }}" data-address="{{ $user->address }}" data-image="{{ $user->image }}" data-selfie="{{ $user->selfie }}">View</button>
 					<button type="button" class="btndelete btn btn-danger" data-target="#deleteModal" data-toggle="modal" data-url="/admin-panel/registration-requests/{{ $user->id }}/decline">Decline</button>
 				</div>
 			</td>
@@ -77,6 +77,10 @@
 				<div class="form-group">
 					<label for="email">Uploaded Photo:</label>
 					<img id="image" src="/" style="max-width: 100%;">
+				</div>
+				<div class="form-group">
+					<label for="email">Uploaded Selfie:</label>
+					<img id="selfie" src="/" style="max-width: 100%;">
 				</div>
 			</div>
 		</div>
