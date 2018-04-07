@@ -9,6 +9,7 @@ use App\User;
 use App\Message;
 use App\Participation;
 use App\Conversation;
+use App\Notification;
 
 class PagesController extends Controller
 {
@@ -49,6 +50,19 @@ class PagesController extends Controller
         $conversation = [''];
         $user = NULL;
         return view('messages', compact('myParticipations', 'user', 'messages', 'conversation'));
+    }
+
+    public function notifications(){
+        $n = new Notification;
+        $notifications = $n->where('user_id', session('id'))->get();
+        if(count($notifications) > 0){
+            foreach($notifications as $not){
+                $not->update([
+                    'read' => 1
+                ]);
+            }
+        }
+        return view('notifications', compact('notifications'));
     }
 
     public function messages(User $user){

@@ -9,6 +9,7 @@ use App\FoundItem;
 use App\Rating;
 use App\Log;
 use Carbon\Carbon;
+use App\Notification;
 
 function checkPostsThenDelete(){
     $losts = LostItem::where('created_at', '<=', Carbon::now()->subDays(90)->toDateTimeString())->get();
@@ -24,6 +25,15 @@ function checkPostsThenDelete(){
             $item->delete();
             storeLog('A found item has been automatically deleted because it is older than 90 days');
         }
+    }
+}
+
+function storeNotification($users, $body){
+    foreach($users as $user){
+        $n = new Notification;
+        $n->user_id = $user;
+        $n->body = $body;
+        $n->save();
     }
 }
 
