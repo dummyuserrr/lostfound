@@ -21,7 +21,7 @@ New Revisions:
 10.	In registration, replace upload photo to image input from webcam/camera for itegrity of photo.
 
 4. Paanong filtering?
-7. Pangit. Dapat pantay pantay yung priority ng mga lost items. Sorted lang sila from latest post to old
+<!-- 7. Pangit. Dapat pantay pantay yung priority ng mga lost items. Sorted lang sila from latest post to old -->
 8. No
 10. Okay 
 

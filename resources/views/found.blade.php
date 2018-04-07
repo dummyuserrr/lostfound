@@ -112,10 +112,12 @@
 										<span class="label">Time Found: </span>
 										<span class="name">{{ date('g:i A', strtotime($l->timefound)) }}</span>
 									</p>
+									@if($l->user_id == session('id') || session('role') == 'admin' || session('role') == 'superadmin')
 									<p class="texts">
 										<span class="label">Other Details: </span>
 										<span class="name">{{ $l->otherdetails }}</span>
 									</p>
+									@endif
 									<p class="texts">
 										<span class="label">Posted by: </span>
 										@if($l->user)
@@ -226,10 +228,12 @@
 										<span class="label">Time Found: </span>
 										<span class="name">{{ date('g:i A', strtotime($l->timefound)) }}</span>
 									</p>
+									@if($l->user_id == session('id') || session('role') == 'admin' || session('role') == 'superadmin')
 									<p class="texts">
 										<span class="label">Other Details: </span>
 										<span class="name">{{ $l->otherdetails }}</span>
 									</p>
+									@endif
 									<p class="texts">
 										<span class="label">Posted by: </span>
 										@if($l->user)
@@ -340,10 +344,12 @@
 										<span class="label">Time Found: </span>
 										<span class="name">{{ date('g:i A', strtotime($l->timefound)) }}</span>
 									</p>
+									@if($l->user_id == session('id') || session('role') == 'admin' || session('role') == 'superadmin')
 									<p class="texts">
 										<span class="label">Other Details: </span>
 										<span class="name">{{ $l->otherdetails }}</span>
 									</p>
+									@endif
 									<p class="texts">
 										<span class="label">Posted by: </span>
 										@if($l->user)
@@ -454,10 +460,12 @@
 										<span class="label">Time Found: </span>
 										<span class="name">{{ date('g:i A', strtotime($l->timefound)) }}</span>
 									</p>
+									@if($l->user_id == session('id') || session('role') == 'admin' || session('role') == 'superadmin')
 									<p class="texts">
 										<span class="label">Other Details: </span>
 										<span class="name">{{ $l->otherdetails }}</span>
 									</p>
+									@endif
 									<p class="texts">
 										<span class="label">Posted by: </span>
 										@if($l->user)
@@ -568,10 +576,12 @@
 										<span class="label">Time Found: </span>
 										<span class="name">{{ date('g:i A', strtotime($l->timefound)) }}</span>
 									</p>
+									@if($l->user_id == session('id') || session('role') == 'admin' || session('role') == 'superadmin')
 									<p class="texts">
 										<span class="label">Other Details: </span>
 										<span class="name">{{ $l->otherdetails }}</span>
 									</p>
+									@endif
 									<p class="texts">
 										<span class="label">Posted by: </span>
 										@if($l->user)
@@ -682,10 +692,12 @@
 										<span class="label">Time Found: </span>
 										<span class="name">{{ date('g:i A', strtotime($l->timefound)) }}</span>
 									</p>
+									@if($l->user_id == session('id') || session('role') == 'admin' || session('role') == 'superadmin')
 									<p class="texts">
 										<span class="label">Other Details: </span>
 										<span class="name">{{ $l->otherdetails }}</span>
 									</p>
+									@endif
 									<p class="texts">
 										<span class="label">Posted by: </span>
 										@if($l->user)
