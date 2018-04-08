@@ -9,20 +9,20 @@
 			</div>
 			@else
 			<div class="box">
-					<div class="header">
-						missingZ Notifications
-					</div>
-					<div class="messages_container" style="min-height: 64vh;">
-						@if($notifications->count() > 0)
-							@foreach($notifications as $n)
-								<div class="theirmessage">
-									<p><b>{{ $n->created_at->diffForHumans() }}</b> {{ $n->body }}</p>
-								</div>
-							@endforeach
-						@else
-							You have no notifications
-						@endif
-					</div>
+				<div class="header">
+					missingZ Notifications
+				</div>
+				<div class="messages_container" style="min-height: 64vh;">
+					@if($notifications->count() > 0)
+						@foreach($notifications as $n)
+							<div class="theirmessage">
+								<p><b>{{ $n->created_at->diffForHumans() }}</b> {{ $n->body }}</p>
+							</div>
+						@endforeach
+					@else
+						You have no notifications
+					@endif
+				</div>
 			</div>
 			@endif
 		</div>
