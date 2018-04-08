@@ -1,11 +1,11 @@
 Things to be revised:
 
-7.Dapat may notification din ang user para kung sakaling may magcomment po, alam niya po.
+<!-- 7.Dapat may notification din ang user para kung sakaling may magcomment po, alam niya po. -->
 8.Tanggalin nalang yung filter na "Pangasinan Only" papalitan nalang mga categories sa mismong pagpopost'an kasi kailangan daw naming maifeature na Pangasinan lang ang cover namin.
 
 <!-- 15. Add Time Lost in fields -->
 
-7) Okay
+<!-- 7) Okay -->
 8) "Pangasinan Only" filter removed. Ano ipapalit sa categories?
 
 
@@ -23,7 +23,7 @@ New Revisions:
 <!-- 4. Paanong filtering? -->
 <!-- 7. Pangit. Dapat pantay pantay yung priority ng mga lost items. Sorted lang sila from latest post to old -->
 <!-- 8. No -->
-10. Okay 
+<!-- 10. Okay  -->
 
 <!-- Note:  -->
 <!-- Reach 90 days then delete na -->
