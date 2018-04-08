@@ -15,6 +15,10 @@ class LostItemCommentsController extends Controller
 		$comment->user_id = session('id');
 		$comment->comment = $r->comment;
 		$comment->save();
+
+		$lostItem_user = $item->user_id;
+		$body = 'A user has commented on your posted item named '.$item->name;
+		storeNotification($lostItem_user, $body);
 		return view('templates.lost_items_comments', compact('comment'));
 	}
 

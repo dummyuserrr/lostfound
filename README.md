@@ -18,7 +18,7 @@ New Revisions:
 <!-- 8.	View found related items when you register or post lost items. -->
 
 <!-- 9.	Notify user once logged in about found items related to your lost item. -->
-10.	In registration, replace upload photo to image input from webcam/camera for itegrity of photo.
+<!-- 10.	In registration, replace upload photo to image input from webcam/camera for itegrity of photo. -->
 
 <!-- 4. Paanong filtering? -->
 <!-- 7. Pangit. Dapat pantay pantay yung priority ng mga lost items. Sorted lang sila from latest post to old -->

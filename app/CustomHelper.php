@@ -29,9 +29,16 @@ function checkPostsThenDelete(){
 }
 
 function storeNotification($users, $body){
-    foreach($users as $user){
+    if(count($users) > 1){
+        foreach($users as $user){
+            $n = new Notification;
+            $n->user_id = $user;
+            $n->body = $body;
+            $n->save();
+        }
+    }else{
         $n = new Notification;
-        $n->user_id = $user;
+        $n->user_id = $users;
         $n->body = $body;
         $n->save();
     }
@@ -131,7 +138,7 @@ function countNotifications(){
     $n = new Notification; 
     $notificationsCount = $n->where('user_id', session('id'))->where('read', 0)->count();
     if($notificationsCount > 0){
-        return $notificationsCount;
+        return '('.$notificationsCount.')';
     }else{
         return '';
     }
