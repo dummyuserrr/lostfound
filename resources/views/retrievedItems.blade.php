@@ -15,7 +15,7 @@
 				<div class="posts">
 					<div class="left">
 						<div class="content">
-							@if($l->images)
+							@if($l->images->count() > 0)
 							<img src="/{{ $l->images->first()->image }}" title="Click to view photo" class="post_photos" onclick="viewImage('/{{ $l->images->first()->image }}')">
 							@else
 							<p class="prompt">
