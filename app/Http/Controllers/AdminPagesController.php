@@ -48,6 +48,11 @@ class AdminPagesController extends Controller
     public function messageQueries(){
         $mq = new MessageQuery;
         $mqs = $mq->orderBy('created_at', 'desc')->get();
+        foreach($mqs as $m){
+            $m->update([
+                'read' => 1
+            ]);
+        }
         return view('adminpanel.messageQueries', compact('mqs'));
     }
 

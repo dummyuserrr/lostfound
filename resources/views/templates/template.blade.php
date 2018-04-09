@@ -26,7 +26,7 @@
 					{{ checkPostsThenDelete() }}
 					@if(session()->has('status'))
 						@if(session('role') == 'admin' || session('role') == 'superadmin')
-							<div class="options btnAdminpanel"><i class="fa fa-lock" aria-hidden="true"></i> AdminPanel {{ countRegistrationRequests() }}</div>
+							<div class="options btnAdminpanel"><i class="fa fa-lock" aria-hidden="true"></i> AdminPanel {{ (countRegistrationRequests() || countMessageQueries()) ? '('.(countRegistrationRequests() + countMessageQueries()).')' : "" }}</div>
 						@endif
 						<div class="options btnNotifications"><i class="fa fa-warning" aria-hidden="true"></i> Notifications {{ countNotifications() }}</div>
 						<div class="options btnMessages"><i class="fa fa-envelope" aria-hidden="true"></i> Messages {{ countUnreadMessages() }}</div>

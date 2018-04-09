@@ -19,6 +19,7 @@ class CreateMessageQueriesTable extends Migration
             $table->string('email');
             $table->string('number');
             $table->text('message');
+            $table->integer('read')->default(0);
             $table->timestamps();
         });
     }

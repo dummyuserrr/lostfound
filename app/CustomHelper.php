@@ -10,6 +10,13 @@ use App\Rating;
 use App\Log;
 use Carbon\Carbon;
 use App\Notification;
+use App\MessageQuery;
+
+function countMessageQueries(){
+    $mq = new MessageQuery;
+    $mqCount = $mq->where('read', 0)->count();
+    return $mqCount;
+}
 
 function checkPostsThenDelete(){
     $losts = LostItem::where('created_at', '<=', Carbon::now()->subDays(90)->toDateTimeString())->get();
@@ -54,7 +61,7 @@ function countRegistrationRequests(){
     $u = new User;
     $count = $u->where('approved', '0')->count();
     if($count > 0){
-        return '('.$count.')';
+        return $count;
     }
 }
 
