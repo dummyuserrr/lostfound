@@ -43,9 +43,7 @@ class LostItemsController extends Controller
 
         $fi = new FoundItem;
         $foundItems = $fi->where('category', $r->category)->get();
-        // $users = [];
         foreach($foundItems as $foundItem){
-            // array_push($users, $foundItem->user_id);
             $body = "A user has posted a lost item with the category of ".$r->category;
             storeNotification($foundItem->user_id, $body);
         }
