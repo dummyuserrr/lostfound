@@ -172,13 +172,21 @@ class UsersController extends Controller
     }
 
     public function changeRole(User $user, $role){
-        $user->update([
-            'role' => $role,
-        ]);
+        $u = new User;
+        $adminCount = $u->where('role', 'admin')->count();
 
-        storeLog($user->name . "'s role was changed to ".$user->role." by ".session('name'));
-        session()->flash('action', 'updated');
-        return back();
+        if($adminCount <= 10){
+            $user->update([
+                'role' => $role,
+            ]);
+
+            storeLog($user->name . "'s role was changed to ".$user->role." by ".session('name'));
+            session()->flash('action', 'updated');
+            return back();
+        }else{
+            session()->flash('adminCountErrorMessage', 'You can only set 10 admin users');
+            return back();
+        }
     }
 
     public function patch_other(User $user, Request $r){
