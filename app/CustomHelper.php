@@ -29,19 +29,19 @@ function checkPostsThenDelete(){
 }
 
 function storeNotification($users, $body){
-    if(count($users) > 1){
-        foreach($users as $user){
-            $n = new Notification;
-            $n->user_id = $user;
-            $n->body = $body;
-            $n->save();
-        }
-    }else{
+    // if(count($users) > 1){
+    //     foreach($users as $user){
+    //         $n = new Notification;
+    //         $n->user_id = $user;
+    //         $n->body = $body;
+    //         $n->save();
+    //     }
+    // }else{
         $n = new Notification;
         $n->user_id = $users;
         $n->body = $body;
         $n->save();
-    }
+    // }
 }
 
 function storeLog($log){

@@ -43,11 +43,11 @@ class FoundItemsController extends Controller
 
         $li = new LostItem;
         $lostItems = $li->where('category', $r->category)->get();
-        $users = [];
+        // $users = [];
         foreach($lostItems as $lostItem){
-            array_push($users, $lostItem->user_id);
+            // array_push($users, $lostItem->user_id);
             $body = "A user has posted a found item with the category of ".$r->category;
-            storeNotification($users, $body);
+            storeNotification($lostItem->user_id, $body);
         }
 
         storeLog(session('name')." added a found item.");
