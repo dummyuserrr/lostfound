@@ -19,8 +19,8 @@ class LostItemsController extends Controller
             'datelost' => 'required',
             'timelost' => 'required',
     		'otherdetails' => 'required',
-    		'images' => 'required',
-    		'images.*' => 'mimes:jpeg,bmp,png,jpg',
+    		'images' => 'sometimes',
+    		'images.*' => 'sometimes|mimes:jpeg,bmp,png,jpg',
     	]);
 
     	$l = new LostItem;
@@ -33,13 +33,15 @@ class LostItemsController extends Controller
     	$l->otherdetails = $r->otherdetails;
     	$l->save();
 
-    	foreach($r->images as $image){
-    		$lii = new LostItemImage;
-    		$new = $image->store('/uploads/images');
-    		$lii->image = $new;
-    		$lii->lost_item_id = $l->id;
-    		$lii->save();
-    	}
+    	if($r->images){
+            foreach($r->images as $image){
+                $lii = new LostItemImage;
+                $new = $image->store('/uploads/images');
+                $lii->image = $new;
+                $lii->lost_item_id = $l->id;
+                $lii->save();
+            }
+        }
 
         $fi = new FoundItem;
         $foundItems = $fi->where('category', $r->category)->get();

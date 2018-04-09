@@ -39,4 +39,4 @@ New ulit:
 <!-- 8.	Accepts multiple photos in lost or found. -->
 <!-- 9.	Regarding po sa retrieved, makikita po ulit pala nung user bale lahat po nung mga retrieved. Tapos po pag imamark yung mga posts na retrieved na po, malalagay po yung pangalan kung sino nakaretrieved at kung kalian na mark na retrieve tas pwede po ba maginclude ng photo po pag retrieved na yung items, for proof. -->
 <!-- 10.	Regarding po sa upload/webcam thingy, pwede po bang dalawa ang choices nung user? Web/cam or upload photos po pero magaactivate lang po pag naverify yung user yung account gamit po ang picture ulit. -->
-11.	Maximum of 10 admin accounts only
+<!-- 11.	Maximum of 10 admin accounts only -->

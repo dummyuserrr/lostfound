@@ -50,7 +50,7 @@
 					<div class="column">
 						<div class="form_group">
 							<label>Photo/s (You can upload multiple): <i>*</i></label>
-							<input required type="file" name="images[]" multiple>
+							<input type="file" name="images[]" multiple>
 						</div>
 					</div>
 					<div class="form_group">
@@ -85,7 +85,7 @@
 							<div class="posts">
 								<div class="left">
 									<div class="content">
-										@if($l->images)
+										@if($l->images->count() > 0)
 										<img src="/{{ $l->images->first()->image }}" title="Click to view photo" class="post_photos" onclick="viewImage('/{{ $l->images->first()->image }}')">
 										@else
 										<p class="prompt">
@@ -203,7 +203,7 @@
 							<div class="posts">
 								<div class="left">
 									<div class="content">
-										@if($l->images)
+										@if($l->images->count() > 0)
 										<img src="/{{ $l->images->first()->image }}" title="Click to view photo" class="post_photos" onclick="viewImage('/{{ $l->images->first()->image }}')">
 										@else
 										<p class="prompt">
@@ -321,7 +321,7 @@
 							<div class="posts">
 								<div class="left">
 									<div class="content">
-										@if($l->images)
+										@if($l->images->count() > 0)
 										<img src="/{{ $l->images->first()->image }}" title="Click to view photo" class="post_photos" onclick="viewImage('/{{ $l->images->first()->image }}')">
 										@else
 										<p class="prompt">
@@ -439,7 +439,7 @@
 							<div class="posts">
 								<div class="left">
 									<div class="content">
-										@if($l->images)
+										@if($l->images->count() > 0)
 										<img src="/{{ $l->images->first()->image }}" title="Click to view photo" class="post_photos" onclick="viewImage('/{{ $l->images->first()->image }}')">
 										@else
 										<p class="prompt">
@@ -557,7 +557,7 @@
 							<div class="posts">
 								<div class="left">
 									<div class="content">
-										@if($l->images)
+										@if($l->images->count() > 0)
 										<img src="/{{ $l->images->first()->image }}" title="Click to view photo" class="post_photos" onclick="viewImage('/{{ $l->images->first()->image }}')">
 										@else
 										<p class="prompt">
@@ -675,7 +675,7 @@
 							<div class="posts">
 								<div class="left">
 									<div class="content">
-										@if($l->images)
+										@if($l->images->count() > 0)
 										<img src="/{{ $l->images->first()->image }}" title="Click to view photo" class="post_photos" onclick="viewImage('/{{ $l->images->first()->image }}')">
 										@else
 										<p class="prompt">
