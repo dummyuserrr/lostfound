@@ -17,6 +17,10 @@ class PagesController extends Controller
     	return view('index');
     }
 
+    public function termsOfUse(){
+        return view('termsOfUse');
+    }
+
     public function lost(){
     	$li = new LostItem;
     	$lostItems = $li->where('status', 0)->orderBy('created_at', 'desc')->get();

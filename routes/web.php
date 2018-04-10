@@ -68,3 +68,5 @@ Route::get('admin-panel/message-queries', 'AdminPagesController@messageQueries')
 Route::delete('admin-panel/message-queries/{item}/delete', 'MessageQueryController@destroy')->middleware('checkUserSession');
 
 Route::post('forgot-password', 'UsersController@forgotPassword');
+
+Route::get('terms-of-use', 'PagesController@termsOfUse');

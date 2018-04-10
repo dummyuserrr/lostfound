@@ -68,7 +68,7 @@
 						<a href="javascript:void(0);" class="rate-us">Rate Us</a>
 					@endif
 				@endif
-				&copy; Copyright 2018. All Rights Reserved.
+				&copy; Copyright 2018. All Rights Reserved &bull; <a href="/terms-of-use" target="_blank">Terms of Use</a>
 			</div>
 		</div>
 		<div class="mymodal thankYouModal">
