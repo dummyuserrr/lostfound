@@ -7,7 +7,8 @@
         <link rel="stylesheet" type="text/css" href="/adminpanel/bootstrap-3.3.7-dist/css/bootstrap.min.css">
         <script type="text/javascript" src="/adminpanel/bootstrap-3.3.7-dist/js/jquery.min.js"></script>
         <script type="text/javascript" src="/adminpanel/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
-        <link rel="stylesheet" type="text/css" href="/adminpanel/css/cms.less">
+        <link rel="stylesheet" type="text/less" href="/adminpanel/css/cms.less">
+        <link rel="stylesheet" type="text/css" href="/adminpanel/datatables/datatables.min.css">
         <script type="text/javascript" src="/js/less.min.js"></script>
     </head>
     <body>
@@ -31,7 +32,7 @@
                             <a href="/admin-panel/users/" class="list-group-item {{ adminSetActive3('admin-panel/users') }}">Users</a>
                             <a href="/admin-panel/registration-requests/" class="list-group-item {{ adminSetActive3('admin-panel/registration-requests') }}">Registration Requests {{ countRegistrationRequests() }}</a>
                             <a href="/admin-panel/message-queries/" class="list-group-item {{ adminSetActive3('admin-panel/message-queries') }}">Message Queries {{ countMessageQueries() }}</a>
-                            <a href="/admin-panel/system-logs/" class="list-group-item {{ adminSetActive3('admin-panel/system-logs') }}">System Logs</a>
+                            <a href="/admin-panel/system-logs/" class="list-group-item {{ adminSetActive3('admin-panel/system-logs') }}"> System Logs/Database</a>
                         </div>
                     </div>
                 </div>
@@ -66,6 +67,7 @@
             <h3 class="text-center">You are not logged in.</h3>
         </div>
         @endif
+        <script type="text/javascript" src="/adminpanel/datatables/datatables.min.js"></script>
         <script type="text/javascript" src="/adminpanel/js/cms.js"></script>
     </body>
 </html>

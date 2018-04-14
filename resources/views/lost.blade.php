@@ -43,7 +43,7 @@
 								<option>Pet</option>
 								<option>Jewelry</option>
 								<option>Person</option>
-								<option>Others</option>
+								{{-- <option>Others</option> --}}
 							</select>
 						</div>
 					</div>

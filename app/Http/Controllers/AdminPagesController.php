@@ -6,6 +6,17 @@ use Illuminate\Http\Request;
 use App\User;
 use App\MessageQuery;
 use App\Log;
+use App\LostItem;
+use App\LostItemComment;
+use App\LostItemImage;
+use App\FoundItem;
+use App\FoundItemComment;
+use App\FoundItemImage;
+use App\Message;
+use App\Conversation;
+use App\Participation;
+use App\Rating;
+use App\Notification;
 
 class AdminPagesController extends Controller
 {
@@ -58,7 +69,11 @@ class AdminPagesController extends Controller
 
     public function systemLogs(){
         $l = new Log;
+        $u = new User;
+        $li = new LostItem;
         $logs = $l->orderBy('created_at', 'desc')->get();
-        return view('adminpanel.systemLogs', compact('logs'));
+        $users = $u->orderBy('created_at', 'desc')->get();
+        $lostItems = $li->orderBy('created_at', 'desc')->get();
+        return view('adminpanel.systemLogs', compact('logs', 'users', 'lostItems', 'lostItemImages', 'lostItemComments'));
     }
 }

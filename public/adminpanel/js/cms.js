@@ -1,3 +1,7 @@
+$(document).ready( function () {
+	$('.datatables').DataTable();
+});
+
 $('.btnlogout').click(function(){
 	$('#formLogout').submit();
 });
