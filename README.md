@@ -21,8 +21,10 @@ LATEST REVISIONS
 6.	Upon user registration, system must advise the user the user to read Terms of use.
 Parang maglalagay po ng note sa registration kuya na basahin po ang terms of use.
 
-1) Pag gagawing tabs yung system logs, anong maghahati hati sa kanila?
-2) Done
+SAGOTS
+
+1) Suggestion: Gamit na lang ng phpMyAdmin kasi for maintenance and monitoring purposes naman ng database yung purpose nun e. Mabigat kasi pag ilalagay siya sa system. 
+<!-- 2) Done -->
 3) Can't build an AI para makita kung may similar items. Instead, ang magagawa ko lang is maicompare kung may kaparehas siya ng name at category.
 4) 
 5) I think tapos na to

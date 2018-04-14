@@ -160,6 +160,10 @@
 								<input required id="selfie" type="file" name="selfie" accept="image/*;capture=camera">
 							</div>
 						</div>
+						<div>
+							<input type="checkbox" required name="agree" id="agree">
+							<label for="agree">I have read and agreed to <a href="/terms-of-use" target="_blank" style="color:red">Terms of Use</a></label>
+						</div>
 						<div class="form_group">
 							<button type="submit">Register</button>
 						</div>

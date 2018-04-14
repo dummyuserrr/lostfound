@@ -5,7 +5,7 @@
 	<li class="active"><a data-toggle="pill" href="#systemLogs">System Logs/Database</a></li>
 	<li><a data-toggle="pill" href="#users">Users</a></li>
 	<li><a data-toggle="pill" href="#lostItems">Lost Items</a></li>
-	<li><a data-toggle="pill" href="#lostItemComments">Lost Item Comments</a></li>
+	{{-- <li><a data-toggle="pill" href="#lostItemComments">Lost Item Comments</a></li> --}}
 </ul>
 <br>
 <div class="tab-content">
