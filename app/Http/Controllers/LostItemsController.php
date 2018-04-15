@@ -23,6 +23,13 @@ class LostItemsController extends Controller
     		'images.*' => 'sometimes|mimes:jpeg,bmp,png,jpg',
     	]);
 
+        $li = new LostItem;
+        $similars = $li->where('otherdetails', 'like', '%'.$r->otherdetails.'%')->count();
+        if($similars > 0){
+            return redirect()->back()->withInput()->with('posterror', 1);
+            exit;
+        }
+
     	$l = new LostItem;
     	$l->user_id = session('id');
     	$l->name = $r->name;

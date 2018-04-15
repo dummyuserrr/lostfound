@@ -19,24 +19,24 @@
 					@include('prompts.validation_errors')
 					<div class="form_group">
 						<label>Item Name: <i>*</i></label>
-						<input required type="text" name="name" autofocus>
+						<input required type="text" value="{{ old('name') }}" name="name" {{ (session()->has('posterror')) ? '' : 'autofocus' }}>
 					</div>
 					<div class="column">
 						<div class="form_group">
 							<label>Date Lost: <i>*</i></label>
-							<input required type="date" name="datelost" style="padding: 5px;" max="{{ date('Y-m-d') }}">
+							<input required type="date" name="datelost" style="padding: 5px;" max="{{ date('Y-m-d') }}" value="{{ old('datelost') }}">
 						</div>
 					</div>
 					<div class="column">
 						<div class="form_group">
 							<label>Time Lost: <i>*</i></label>
-							<input required type="time" name="timelost" style="padding: 5px;">
+							<input required type="time" name="timelost" style="padding: 5px;"value="{{ old('timelost') }}">
 						</div>
 					</div>
 					<div class="column">
 						<div class="form_group">
 							<label>Category: <i>*</i></label>
-							<select name="category" required>
+							<select name="category" required value="{{ old('category') }}">
 								<option selected disabled>Select Category</option>
 								<option>Gadget</option>
 								<option>License (ID, Passport, etc)</option>
@@ -50,16 +50,19 @@
 					<div class="column">
 						<div class="form_group">
 							<label>Photo/s (You can upload multiple): <i>*</i></label>
-							<input type="file" name="images[]" multiple>
+							<input type="file" name="images[]" multiple value="{{ old('images') }}">
 						</div>
 					</div>
 					<div class="form_group">
 						<label>Place Where You Lost It: <i>*</i></label>
-						<input required type="text" name="place">
+						<input required type="text" name="place" value="{{ old('place') }}">
 					</div>
 					<div class="form_group">
+						@if(session()->has('posterror'))
+							<p style="color:red">Someone has posted an item with similar details as this. Please edit yours.</p>
+						@endif
 						<label>Other Details: <i>*</i></label>
-						<textarea name="otherdetails" rows="8" required></textarea>
+						<textarea name="otherdetails" rows="8" required {{ (session()->has('posterror')) ? 'autofocus' : '' }}>{{ old('otherdetails') }}</textarea>
 					</div>
 					<div class="form_group" style="text-align: left; margin-top: -10px;">
 						<button style="max-width: 100px; font-size: 14px;">Post</button>
