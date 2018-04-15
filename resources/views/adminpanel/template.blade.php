@@ -7,8 +7,8 @@
         <link rel="stylesheet" type="text/css" href="/adminpanel/bootstrap-3.3.7-dist/css/bootstrap.min.css">
         <script type="text/javascript" src="/adminpanel/bootstrap-3.3.7-dist/js/jquery.min.js"></script>
         <script type="text/javascript" src="/adminpanel/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="/font-awesome/css/font-awesome.min.css">
         <link rel="stylesheet" type="text/less" href="/adminpanel/css/cms.less">
-        <link rel="stylesheet" type="text/css" href="/adminpanel/datatables/datatables.min.css">
         <script type="text/javascript" src="/js/less.min.js"></script>
     </head>
     <body>
@@ -67,7 +67,6 @@
             <h3 class="text-center">You are not logged in.</h3>
         </div>
         @endif
-        <script type="text/javascript" src="/adminpanel/datatables/datatables.min.js"></script>
         <script type="text/javascript" src="/adminpanel/js/cms.js"></script>
     </body>
 </html>
