@@ -16,7 +16,11 @@
 					@if($notifications->count() > 0)
 						@foreach($notifications as $n)
 							<div class="theirmessage">
-								<p><b>{{ $n->created_at->diffForHumans() }}</b> {{ $n->body }}</p>
+								<p><b>{{ $n->created_at->diffForHumans() }}</b> {{ $n->body }}
+									@if($n->url)
+									<a href="{{ $n->url }}" style="color:#f99292; float: right;" target="_blank">Visit <i class="fa fa-external-link" aria-hidden="true"></i></a>
+									@endif
+								</p>
 							</div>
 						@endforeach
 					@else

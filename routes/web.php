@@ -70,3 +70,6 @@ Route::delete('admin-panel/message-queries/{item}/delete', 'MessageQueryControll
 Route::post('forgot-password', 'UsersController@forgotPassword');
 
 Route::get('terms-of-use', 'PagesController@termsOfUse');
+
+Route::get('lost-something/item/{item}', 'PagesController@lostView');
+Route::get('found-something/item/{item}', 'PagesController@foundView');

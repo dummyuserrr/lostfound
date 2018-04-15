@@ -18,6 +18,7 @@ class CreateNotificationsTable extends Migration
             $table->integer('user_id')->unsigned();
             $table->text('body');
             $table->integer('read')->default(0);
+            $table->text('url')->nullable();
             $table->timestamps();
         });
     }

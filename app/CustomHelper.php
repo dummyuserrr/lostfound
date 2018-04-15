@@ -35,7 +35,7 @@ function checkPostsThenDelete(){
     }
 }
 
-function storeNotification($users, $body){
+function storeNotification($users, $body, $url){
     // if(count($users) > 1){
     //     foreach($users as $user){
     //         $n = new Notification;
@@ -47,6 +47,7 @@ function storeNotification($users, $body){
         $n = new Notification;
         $n->user_id = $users;
         $n->body = $body;
+        $n->url = $url;
         $n->save();
     // }
 }

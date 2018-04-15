@@ -17,7 +17,7 @@
 				@foreach($logs as $log)
 				<tr>
 					<td>{{ $log->body }}</td>
-					<td>{{ $log->created_at }}</td>
+					<td>{{ $log->created_at }} &bull; {{ $log->created_at->diffForHumans() }}</td>
 				</tr>
 				@endforeach
 			</tbody>
